@@ -1,0 +1,15 @@
+---
+import Name from '../Name.astro'
+import Bio from '../Bio.astro'
+import ProfileImage from '../ProfileImage.astro'
+import SocialLinks from '../sections/SocialLinks.astro'
+---
+
+<section class="w-full flex gap-4 justify-between">
+  <div class="flex flex-col gap-4">
+    <Name />
+    <Bio class:list={'mb-10'} />
+    <SocialLinks />
+  </div>
+  <ProfileImage />
+</section>

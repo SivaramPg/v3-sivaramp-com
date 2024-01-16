@@ -1,0 +1,32 @@
+---
+import SectionTitle from '../SectionTitle.astro'
+import Work from '../Work.astro'
+---
+
+<section class="flex flex-col gap-4">
+  <SectionTitle title="Work Experience" />
+  <div class="">
+    <Work
+      companyName="Open Consulting Group"
+      companyWebsiteUrl="https://evm.ink"
+      duration="2021 - Now"
+      jobTitle="SDE-2, Blockchain Solutions Architect"
+      jobDescription="getfriday.app, evm.ink, mobland, raresea, tron apes, arb-nfts"
+      isRemote={true}
+    />
+    <Work
+      companyName="Finkraft"
+      companyWebsiteUrl="https://finkraft.ai"
+      duration="2019 - 2021"
+      jobTitle="Technical Associate"
+      jobDescription="Finkraft.ai, qatar.finkraft.ai"
+    />
+    <Work
+      companyName="Listenlights Pvt Ltd"
+      companyWebsiteUrl="https://listenlights.com"
+      duration="2018 - 2019"
+      jobTitle="Web Developer"
+      jobDescription="LLAPP360 website, LL360 mobile app"
+    />
+  </div>
+</section>

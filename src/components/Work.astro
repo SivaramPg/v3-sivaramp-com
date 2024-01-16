@@ -1,0 +1,43 @@
+---
+import Pulse from './Pulse.astro'
+
+const {
+  companyName,
+  companyWebsiteUrl,
+  duration,
+  jobTitle,
+  jobDescription,
+  isRemote,
+} = Astro.props
+---
+
+<div class="border-gray-500 border-l-2 pl-4 pb-8 relative last-of-type:pb-2">
+  <Pulse
+    class:list={'absolute top-0 left-0 -translate-x-[9px] translate-y-[6px]'}
+  />
+  <div class="flex items-center justify-between gap-4 flex-wrap">
+    <div class="flex items-center gap-4">
+      <a
+        target="_blank"
+        href={companyWebsiteUrl}
+        class="hover:underline underline-offset-4 hover:text-indigo-600"
+      >
+        <h4 class="font-bold text-2xl">{companyName}</h4>
+      </a>
+      {
+        isRemote && (
+          <div class="rounded border border-gray-400 py-1 px-2 bg-gray-300 text-xs font-bold ">
+            <span class="opacity-75">Remote</span>
+          </div>
+        )
+      }
+    </div>
+    <p class="text-xl opacity-50 font-bold">{duration}</p>
+  </div>
+  <p class="text-lg font-bold opacity-85">
+    {jobTitle}
+  </p>
+  <p class="opacity-75 w-3/4">
+    {jobDescription}
+  </p>
+</div>

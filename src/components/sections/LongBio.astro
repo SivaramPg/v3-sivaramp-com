@@ -1,0 +1,21 @@
+---
+import SectionTitle from '../SectionTitle.astro'
+
+const { class: className } = Astro.props
+---
+
+<section class="flex flex-col gap-4">
+  <SectionTitle title="About Me" />
+  <h2 class:list={['text-lg opacity-75', className]}>
+    Self taught software developer, with {new Date().getFullYear() - 2019}+
+    years of experience across various aspects of web development, specializing
+    in highly functional, optimized & performant user interfaces, enabling
+    better accessibility, deliverability and higher user satisfaction. Gained
+    most of my work experience in highly dynamic startups. Highly in-tune with
+    startup culture & its gruelling needs. Rapidly prototype ideas for MVPs,
+    facilitate pivots, bootstrap new projects utilizing remanents of older
+    projects, all whilst maintaining superior code quality, unit, end-to-end
+    tests & stories, manage deployment stages & ensure that all ideas go to
+    market so <span class="font-bold">#wagmi</span>!
+  </h2>
+</section>

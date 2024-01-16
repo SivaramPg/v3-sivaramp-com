@@ -1,0 +1,50 @@
+---
+import Project from '../Project.astro'
+import SectionTitle from '../SectionTitle.astro'
+---
+
+<section class="flex flex-col gap-4">
+  <SectionTitle title="Projects" />
+  <div class="flex flex-col gap-8">
+    <Project
+      imageUrl="https://desilog.sivaramp.com/opengraph-image.jpg"
+      title="Anaek Desilog"
+      description={`Desi logon ke colourful avatar aur characters vibrant aur black & white dono bilkul India ki tarah :)\nFree CC0 Desi/Indian placeholder APIs for dynamically sized Avatars, Colourful as well as Black & White Characters!`}
+      stack={['Nextjs', 'Vercel', 'Cloudflare']}
+      websiteUrl="https://desilog.sivaramp.com/"
+      repoUrl="https://github.com/SivaramPg/desilog"
+    />
+    <Project
+      imageUrl="https://swapi.info/opengraph-image.png"
+      title="Swapi.info"
+      description={`JSON-only, CDN-powered, Wicked-fast, Unrestricted Star Wars data Explorer & GET API endpoints.`}
+      stack={['Nextjs', 'Cloudflare']}
+      websiteUrl="https://swapi.info/"
+      repoUrl="https://github.com/SivaramPg/swapi.info"
+    />
+    <Project
+      imageUrl="https://anonimizer.sivaramp.com/anonymous-face-mask.svg"
+      title="URL Anonimizer"
+      description={`Shorten and anonimize any URL quickly.`}
+      stack={['Nextjs', 'Vercel']}
+      websiteUrl="https://anonimizer.sivaramp.com/"
+      repoUrl="https://github.com/SivaramPg/url-masker"
+    />
+    <Project
+      imageUrl="https://snake.sivaramp.com/assets/favicons/favicon.ico"
+      title="JS Canvas Snake Game"
+      description={`A fun web canvas based snake game created in collaboration with a fellow student during my course.`}
+      stack={['HTML', 'CSS', 'JS', 'Cloudflare']}
+      websiteUrl="https://snake.sivaramp.com/"
+      repoUrl="https://github.com/SivaramPg/JS_Snake_Game"
+    />
+    <Project
+      imageUrl="https://bg.sivaramp.com/og.png"
+      title="Random Linear Gradients"
+      description={`Simple utility website to generate randomized linear gradient backgrounds with full page visual preview`}
+      stack={['HTML', 'CSS', 'JS', 'Cloudflare']}
+      websiteUrl="https://bg.sivaramp.com/"
+      repoUrl="https://github.com/SivaramPg/Gradient-Background-Generator"
+    />
+  </div>
+</section>

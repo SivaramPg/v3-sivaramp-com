@@ -1,0 +1,27 @@
+---
+import SectionTitle from '../SectionTitle.astro'
+
+const experiences = [
+  'Javascript',
+  'Typescript',
+  'React/Next.js',
+  'Node.js',
+  'SQL/MongoDB',
+  'Flutter',
+  'Netlify/Vercel/Cloudflare',
+]
+---
+
+<section class="flex flex-col gap-4">
+  <SectionTitle title="Experience" />
+  <div class="flex items-center gap-2 flex-wrap">
+    {
+      experiences.map((experience) => (
+        <div class="border shadow rounded-full p-2 px-4 invert bg-gray-50 flex items-center justify-center gap-1">
+          <img src="/icons/work-history.svg" alt="work-history" class="w-4" />
+          <span class="leading-none">{experience}</span>
+        </div>
+      ))
+    }
+  </div>
+</section>

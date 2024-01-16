@@ -1,0 +1,51 @@
+---
+const {
+  imageUrl,
+  title,
+  description,
+  stack = [],
+  repoUrl,
+  websiteUrl,
+} = Astro.props
+---
+
+<div class="flex w-full gap-6 border rounded p-4">
+  <img
+    src={imageUrl}
+    alt={title}
+    class="aspect-video h-full max-w-56 object-contain"
+  />
+  <div class="flex flex-col gap-4 justify-between w-full">
+    <div class="flex flex-col gap-1 w-full">
+      <h4 class="text-3xl font-bold">{title}</h4>
+      <p class="opacity-75 w-full mb-2 whitespace-pre-line">{description}</p>
+      <div class="flex gap-2 flex-wrap w-full">
+        {
+          stack.map((item: string) => (
+            <div class="p-1 px-4 border shadow font-bold rounded-full flex items-center gap-1 text-sm bg-gray-200">
+              <span class="opacity-75 ">{item}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="flex gap-4 items-center">
+      <a
+        target="_blank"
+        href={repoUrl}
+        class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert"
+      >
+        <img src="/icons/github.svg" alt="Github" class="w-6" />
+        <p class="font-bold">View on Github</p>
+      </a>
+      <a
+        target="_blank"
+        href={websiteUrl}
+        class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert"
+      >
+        <img src="/icons/website.svg" alt="Github" class="w-6" />
+        <p class="font-bold">Visit Website</p>
+      </a>
+    </div>
+  </div>
+</div>

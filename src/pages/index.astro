@@ -1,0 +1,54 @@
+---
+import '../styles/global.css'
+
+import About from '../components/sections/About.astro'
+import LongBio from '../components/sections/LongBio.astro'
+import WorkExperience from '../components/sections/WorkExperience.astro'
+import Education from '../components/sections/Education.astro'
+import Experience from '../components/sections/Experience.astro'
+import Projects from '../components/sections/Projects.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
+    />
+    <meta name="og:title" content="Sivaram's Website" />
+    <meta
+      name="og:description"
+      content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
+    />
+    <meta name="twitter:title" content="Sivaram's Website" />
+    <meta
+      name="twitter:description"
+      content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
+    />
+    <meta name="image" property="og:image" content="/me.jpg" />
+    <meta property="og:type" content="portfolio" />
+    <meta name="author" content="Sivaram Pandariganthan" />
+    <meta property="og:url" content="http://sivaramp.com" />
+
+    <title>Sivaram's Website</title>
+  </head>
+  <body class="bg-gray-50 w-full min-h-screen">
+    <main
+      class="w-full max-w-screen-lg mx-auto min-h-screen py-20 px-4 flex flex-col gap-12"
+    >
+      <About />
+      <LongBio />
+      <WorkExperience />
+      <Education />
+      <Experience />
+      <Projects />
+    </main>
+    <Footer />
+  </body>
+</html>
