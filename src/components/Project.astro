@@ -9,11 +9,11 @@ const {
 } = Astro.props
 ---
 
-<div class="flex w-full gap-6 border rounded p-4">
+<div class="flex w-full gap-6 rounded">
   <img
     src={imageUrl}
     alt={title}
-    class="aspect-video h-full max-w-56 object-contain"
+    class="aspect-square h-full w-full max-w-20 object-contain rounded-3xl"
   />
   <div class="flex flex-col gap-4 justify-between w-full">
     <div class="flex flex-col gap-1 w-full">
@@ -35,16 +35,16 @@ const {
         href={repoUrl}
         class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert"
       >
-        <img src="/icons/github.svg" alt="Github" class="w-6" />
-        <p class="font-bold">View on Github</p>
+        <img src="/icons/github.svg" alt="Github" class="w-5" />
+        <p class="font-bold text-sm">View on Github</p>
       </a>
       <a
         target="_blank"
         href={websiteUrl}
         class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert"
       >
-        <img src="/icons/website.svg" alt="Github" class="w-6" />
-        <p class="font-bold">Visit Website</p>
+        <img src="/icons/website.svg" alt="Github" class="w-5" />
+        <p class="font-bold text-sm">Visit Website</p>
       </a>
     </div>
   </div>
