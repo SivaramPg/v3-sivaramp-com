@@ -14,6 +14,8 @@ const {
     src={imageUrl}
     alt={title}
     class="aspect-square h-full w-full max-w-12 object-contain rounded mt-1"
+    width="48"
+    height="48"
   />
   <div class="flex flex-col gap-8 justify-between w-full">
     <div class="flex flex-col gap-0 w-full">
@@ -37,7 +39,13 @@ const {
         href={repoUrl}
         class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert"
       >
-        <img src="/icons/github.svg" alt="Github" class="w-5" />
+        <img
+          src="/icons/github.svg"
+          alt="Github"
+          class="w-5"
+          width="20"
+          height="20"
+        />
         <p class="font-bold text-sm">View Repo</p>
       </a>
       <a
@@ -45,7 +53,7 @@ const {
         href={websiteUrl}
         class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert"
       >
-        <img src="/icons/website.svg" alt="Github" class="w-5" />
+        <img src="/icons/website.svg" alt="Github" class="w-5" width="20" />
         <p class="font-bold text-sm">Visit Website</p>
       </a>
     </div>
