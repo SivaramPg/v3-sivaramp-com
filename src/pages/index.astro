@@ -1,6 +1,4 @@
 ---
-import '../styles/global.css'
-
 import About from '../components/sections/About.astro'
 import LongBio from '../components/sections/LongBio.astro'
 import WorkExperience from '../components/sections/WorkExperience.astro'
@@ -15,6 +13,36 @@ import Footer from '../components/Footer.astro'
     <meta charset="utf-8" />
     <meta name="robots" content="index, follow" />
     <link rel="icon" href="/favicon.ico" />
+
+    <link
+      rel="preload"
+      href="/fonts/Atkinson-Hyperlegible-Bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Atkinson-Hyperlegible-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Atkinson-Hyperlegible-Regular.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Atkinson-Hyperlegible-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta
@@ -37,6 +65,28 @@ import Footer from '../components/Footer.astro'
     <meta property="og:url" content="http://sivaramp.com" />
 
     <title>Sivaram's Website</title>
+
+    <style is:global>
+      @font-face {
+        font-family: 'Atkinson';
+        src:
+          url('/fonts/Atkinson-Hyperlegible-Regular.woff2') format('woff2'),
+          url('/fonts/Atkinson-Hyperlegible-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Atkinson';
+        src:
+          url('/fonts/Atkinson-Hyperlegible-Bold.woff2') format('woff2'),
+          url('/fonts/Atkinson-Hyperlegible-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
   </head>
   <body class="bg-gray-50 w-full min-h-screen">
     <main
