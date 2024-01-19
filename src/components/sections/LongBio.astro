@@ -4,7 +4,7 @@ import SectionTitle from '../SectionTitle.astro'
 const { class: className } = Astro.props
 ---
 
-<section class="flex flex-col gap-4">
+<section class="flex flex-col gap-2 sm:gap-4">
   <SectionTitle title="About Me" />
   <h2 class:list={['text-md md:text-lg opacity-75', className]}>
     Self taught software developer, with {new Date().getFullYear() - 2019}+
