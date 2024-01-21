@@ -1,13 +1,26 @@
 ---
 import Pulse from './Pulse.astro'
 
+interface Props {
+  companyName: string
+  companyWebsiteUrl: string
+  duration: string
+  jobTitle: string
+  isRemote?: boolean
+  jobDescription: {
+    achievement: string
+    description: string[]
+    technologies: string[]
+  }[]
+}
+
 const {
   companyName,
   companyWebsiteUrl,
   duration,
   jobTitle,
   jobDescription,
-  isRemote,
+  isRemote = false,
 } = Astro.props
 ---
 
@@ -15,7 +28,7 @@ const {
   <Pulse
     class:list={'absolute top-0 left-0 -translate-x-[9px] translate-y-[6px]'}
   />
-  <div class="flex items-center justify-between gap-2 md:gap-4 flex-wrap">
+  <div class="flex items-center justify-between gap-2 md:gap-4 flex-wrap mb-2">
     <div class="flex items-center gap-2 md:gap-4">
       <a
         target="_blank"
@@ -34,10 +47,28 @@ const {
     </div>
     <p class="text-xl opacity-50 font-bold">{duration}</p>
   </div>
-  <p class="text-lg font-bold opacity-85">
-    {jobTitle}
+  <p class="text-xl font-bold opacity-85 underline underline-offset-4 mb-2">
+    Title: {jobTitle}
   </p>
-  <p class="opacity-75 w-3/4 text-md md:text-lg">
-    {jobDescription}
-  </p>
+  <div class="flex flex-col gap-4">
+    {
+      jobDescription.map(({ achievement, description, technologies }) => (
+        <div class="">
+          <h6 class="font-bold text-lg">{achievement}</h6>
+          <ul class="list-disc pl-8 mb-2">
+            {description.map((value) => (
+              <li class="list-item w-3/4 text-md opacity-75">{value}</li>
+            ))}
+          </ul>
+          <div class="flex gap-2 flex-wrap w-full">
+            {technologies.map((item: string) => (
+              <div class="p-2 leading-none border shadow font-bold rounded-lg flex items-center gap-1 text-sm bg-gray-200">
+                <span class="opacity-75">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </div>

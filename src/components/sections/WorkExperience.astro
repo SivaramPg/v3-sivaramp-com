@@ -11,22 +11,113 @@ import Work from '../Work.astro'
       companyWebsiteUrl="https://evm.ink"
       duration="2021 - Now"
       jobTitle="SDE-2, Blockchain Solutions Architect"
-      jobDescription="getfriday.app, evm.ink, marketplace.mob.land, raresea.io, solmates.xyz"
       isRemote={true}
+      jobDescription={[
+        {
+          achievement: 'Evm.ink',
+          description: [
+            'Create & maintain frontend for #3 largest inscriptions explorer & trading platform by volume',
+          ],
+          technologies: ['React', 'Cloudflare Pages'],
+        },
+        {
+          achievement: 'Solmates.xyz',
+          description: ['Connect with your friends and hotshots on Solana'],
+          technologies: ['Nextjs', 'Vercel'],
+        },
+        {
+          achievement: 'Getfriday.app',
+          description: [
+            'Collaborate on a team to create a multi-chain wallet application',
+          ],
+          technologies: ['Flutter', 'Play Store', 'App Store'],
+        },
+        {
+          achievement: 'Marketplace.mob.land',
+          description: [
+            'Created & maintained the frontend for the marketplace of the famous mob.land community',
+          ],
+          technologies: ['React', 'Netlify'],
+        },
+        {
+          achievement: 'Raresea.io',
+          description: [
+            'Created & maintained the frontend for a mutlichain marketplace which sold rare assets from OpenSea',
+          ],
+          technologies: ['React', 'Netlify'],
+        },
+      ]}
     />
     <Work
       companyName="Finkraft"
       companyWebsiteUrl="https://finkraft.ai"
       duration="2019 - 2021"
       jobTitle="Technical Associate"
-      jobDescription="Finkraft.ai, qatar.finkraft.ai"
+      jobDescription={[
+        {
+          achievement: 'Finkraft.ai',
+          description: [
+            "Maintain & improve Finkraft's various client specific tools which help retrieve claimable GST amounts from invoices using custom internal tools & processes",
+            'Create an onboarding flow for new customers to improve customer experience',
+          ],
+          technologies: [
+            'React',
+            'Node.js',
+            'MySQL',
+            'Auth0',
+            'AWS',
+            'Netlify',
+          ],
+        },
+        {
+          achievement: 'Qatar.finkraft.ai',
+          description: [
+            'Build the entire frontend portal which allows authorized Qatar Airways employees to view their invoices, statistics, processing statuses, errors & various other useful information',
+            'Create an onboarding flow for new customers to improve customer experience',
+          ],
+          technologies: ['React', 'Node.js', 'MySQL', 'Auth0', 'AWS', 'Box'],
+        },
+        {
+          achievement: 'Various internal tools & AWS administration',
+          description: [
+            'Create scripts to quickly gather required informantion for sales teams',
+            'Maintain and update AWS services to keep things running',
+            'Create custom emails both internal and client facing',
+          ],
+          technologies: ['AWS', 'Auth0', 'Sendgrid', 'Twilio', 'Box'],
+        },
+      ]}
     />
     <Work
       companyName="Listenlights Pvt Ltd"
       companyWebsiteUrl="https://listenlights.com"
       duration="2018 - 2019"
       jobTitle="Web Developer"
-      jobDescription="LLAPP360 website, LL360 mobile app"
+      jobDescription={[
+        {
+          achievement: 'Internal Tool: LLAPP360 Website',
+          description: [
+            'Prototyped & productionized a lightweight tool to externally interface with SAP Business One functionality for on-site engineers with minimal bandwidth/coverage availability',
+            'Created interfaces to enable creation of Purchase Orders, Purchase Requests, Approvals & other miscellaneous interactions with SAP B1',
+            "Created a node server which interfaces with SAP B1's Microsoft SQL Server instance to run custom complex queries to gather insights on various management KPAs",
+            'Created email alerts sent to various stakeholders automatically when a process step in the chain of processes is completed',
+          ],
+          technologies: [
+            'Angular',
+            'Node.js',
+            'MS SQL Server',
+            'SAP Business One',
+            'DigitalOcean',
+          ],
+        },
+        {
+          achievement: 'Internal Tool: LL360 Android App',
+          description: [
+            'Migrate & maintain the frontend of LLAPP360 website to a mobile application for more accessbility and bandwidth savings.',
+          ],
+          technologies: ['Ionic', 'Angular', 'Play Store'],
+        },
+      ]}
     />
   </div>
 </section>
