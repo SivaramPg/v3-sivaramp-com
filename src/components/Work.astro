@@ -33,13 +33,13 @@ const {
       <a
         target="_blank"
         href={companyWebsiteUrl}
-        class="hover:underline underline-offset-4 hover:text-indigo-600"
+        class="hover:underline underline-offset-4 hover:text-indigo-600 dark:hover:text-indigo-400"
       >
         <h4 class="font-bold text-2xl">{companyName}</h4>
       </a>
       {
         isRemote && (
-          <div class="rounded border border-gray-400 py-1 px-2 bg-gray-300 text-xs font-bold ">
+          <div class="rounded border border-gray-400 dark:border-gray-600 py-1 px-2 bg-gray-300 dark:bg-gray-800 text-xs font-bold ">
             <span class="opacity-75">Remote</span>
           </div>
         )
@@ -62,7 +62,7 @@ const {
           </ul>
           <div class="flex gap-2 flex-wrap w-full">
             {technologies.map((item: string) => (
-              <div class="p-2 leading-none border shadow font-bold rounded-lg flex items-center gap-1 text-sm bg-gray-200">
+              <div class="p-2 leading-none border shadow font-bold rounded-lg flex items-center gap-1 text-sm bg-gray-200 dark:bg-gray-900">
                 <span class="opacity-75">{item}</span>
               </div>
             ))}

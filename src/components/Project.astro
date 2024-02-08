@@ -26,7 +26,7 @@ const {
       <div class="flex gap-2 flex-wrap w-full">
         {
           stack.map((item: string) => (
-            <div class="p-2 leading-none border shadow font-bold rounded-lg flex items-center gap-1 text-sm bg-gray-200">
+            <div class="p-2 leading-none border shadow font-bold rounded-lg flex items-center gap-1 text-sm bg-gray-200 dark:bg-gray-800">
               <span class="opacity-75">{item}</span>
             </div>
           ))
@@ -37,7 +37,7 @@ const {
       <a
         target="_blank"
         href={repoUrl}
-        class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert"
+        class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
       >
         <img
           src="/icons/github.svg"
@@ -46,12 +46,12 @@ const {
           width="20"
           height="20"
         />
-        <p class="font-bold text-sm">View Repo</p>
+        <p class="font-bold text-sm dark:text-black">View Repo</p>
       </a>
       <a
         target="_blank"
         href={websiteUrl}
-        class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert"
+        class="border rounded flex gap-2 items-center justify-center p-2 shadow hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
       >
         <img
           src="/icons/website.svg"
@@ -60,7 +60,7 @@ const {
           width="20"
           height="20"
         />
-        <p class="font-bold text-sm">Visit Website</p>
+        <p class="font-bold text-sm dark:text-black">Visit Website</p>
       </a>
     </div>
   </div>
