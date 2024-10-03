@@ -2,7 +2,12 @@
 const { class: className } = Astro.props
 ---
 
-<h2 class:list={['text-md md:text-lg opacity-75 font-bold', className]}>
+<h2
+  class:list={[
+    'text-base md:text-lg font-bold text-gray-700 dark:text-gray-300',
+    className,
+  ]}
+>
   Full stack developer, specializing in React based frontends, with a keen eye
   on functionality & performance.
 </h2>

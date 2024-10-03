@@ -1,11 +1,11 @@
 ---
+import Footer from '../components/Footer.astro'
 import About from '../components/sections/About.astro'
-import LongBio from '../components/sections/LongBio.astro'
-import WorkExperience from '../components/sections/WorkExperience.astro'
 import Education from '../components/sections/Education.astro'
 import Experience from '../components/sections/Experience.astro'
+import LongBio from '../components/sections/LongBio.astro'
 import Projects from '../components/sections/Projects.astro'
-import Footer from '../components/Footer.astro'
+import WorkExperience from '../components/sections/WorkExperience.astro'
 ---
 
 <html lang="en">
@@ -59,8 +59,16 @@ import Footer from '../components/Footer.astro'
       name="twitter:description"
       content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
     />
-    <meta name="image" property="og:image" content="https://sivaramp.com/me.jpg" />
-    <meta name="image" property="twitter:image" content="https://sivaramp.com/me.jpg" />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://sivaramp.com/me.jpg"
+    />
+    <meta
+      name="image"
+      property="twitter:image"
+      content="https://sivaramp.com/me.jpg"
+    />
     <meta property="og:type" content="portfolio" />
     <meta name="author" content="Sivaram Pandariganthan" />
     <meta property="og:url" content="https://sivaramp.com" />
@@ -68,6 +76,11 @@ import Footer from '../components/Footer.astro'
     <title>Sivaram's Website</title>
 
     <style is:global>
+      body {
+        transition:
+          background-color 150ms linear,
+          color 150ms linear;
+      }
       @font-face {
         font-family: 'Atkinson';
         src:
