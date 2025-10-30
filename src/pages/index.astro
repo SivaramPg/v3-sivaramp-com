@@ -73,8 +73,10 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
     <meta name="author" content="Sivaram Pandariganthan" />
     <meta property="og:url" content="https://sivaramp.com" />
 
-    <script defer data-domain="sivaramp.com" src="https://plausible-analytics-ce-production-eaee.up.railway.app/js/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js"></script>
-    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script is:inline defer data-domain="sivaramp.com" src="https://plausible-analytics-ce-production-eaee.up.railway.app/js/script.js"></script>
+    <script is:inline>
+      window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+    </script>
 
 
 
