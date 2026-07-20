@@ -2,9 +2,12 @@
 import '../styles/global.css'
 import Footer from '../components/Footer.astro'
 import About from '../components/sections/About.astro'
+import ClientWork from '../components/sections/ClientWork.astro'
+import CTA from '../components/sections/CTA.astro'
 import Education from '../components/sections/Education.astro'
 import Experience from '../components/sections/Experience.astro'
 import LongBio from '../components/sections/LongBio.astro'
+import OpenSource from '../components/sections/OpenSource.astro'
 import Projects from '../components/sections/Projects.astro'
 import WorkExperience from '../components/sections/WorkExperience.astro'
 ---
@@ -48,17 +51,23 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
+      content="Full-stack product engineer with 8+ years across AI platforms, crypto & payment systems, smart contracts (EVM, Solana), analytics infrastructure, mobile apps, and developer tools. I design, build, deploy, and operate complete products end to end."
     />
-    <meta name="og:title" content="Sivaram's Website" />
+    <meta
+      name="og:title"
+      content="Sivaram Pandariganthan — Full-Stack Product Engineer · AI, Crypto & Web"
+    />
     <meta
       name="og:description"
-      content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
+      content="Full-stack product engineer with 8+ years across AI platforms, crypto & payment systems, smart contracts (EVM, Solana), analytics infrastructure, mobile apps, and developer tools. I design, build, deploy, and operate complete products end to end."
     />
-    <meta name="twitter:title" content="Sivaram's Website" />
+    <meta
+      name="twitter:title"
+      content="Sivaram Pandariganthan — Full-Stack Product Engineer · AI, Crypto & Web"
+    />
     <meta
       name="twitter:description"
-      content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
+      content="Full-stack product engineer with 8+ years across AI platforms, crypto & payment systems, smart contracts (EVM, Solana), analytics infrastructure, mobile apps, and developer tools. I design, build, deploy, and operate complete products end to end."
     />
     <meta
       name="image"
@@ -74,7 +83,42 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
     <meta name="author" content="Sivaram Pandariganthan" />
     <meta property="og:url" content="https://sivaramp.com" />
 
-    <title>Sivaram's Website</title>
+    <title>Sivaram Pandariganthan — Full-Stack Product Engineer · AI, Crypto & Web</title>
+
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Sivaram Pandariganthan',
+        url: 'https://sivaramp.com',
+        image: 'https://sivaramp.com/me.jpg',
+        jobTitle: 'Full-Stack Product Engineer',
+        description:
+          'Full-stack product engineer building AI platforms, crypto & payment systems, smart contracts, analytics infrastructure, mobile apps, and developer tools.',
+        email: 'mailto:dev.sivaramp@gmail.com',
+        sameAs: [
+          'https://github.com/SivaramPg',
+          'https://www.linkedin.com/in/sivaram-pandariganthan-b753a2145/',
+          'https://x.com/SivaramPg',
+          'https://sivarampg.medium.com/',
+          'https://dev.to/sivarampg',
+        ],
+        knowsAbout: [
+          'AI infrastructure',
+          'LLM applications',
+          'Payments & billing systems',
+          'Usage metering & reconciliation',
+          'Smart contracts (Solidity, Rust, Solana)',
+          'Cloudflare Workers',
+          'React & Next.js',
+          'Flutter',
+          'Self-hosted analytics',
+          'Developer tools',
+        ],
+      })}
+    />
 
     {import.meta.env.PROD ? (
       <script
@@ -124,10 +168,13 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
     >
       <About />
       <LongBio />
-      <WorkExperience />
-      <Education />
-      <Experience />
       <Projects />
+      <ClientWork />
+      <WorkExperience />
+      <Experience />
+      <OpenSource />
+      <Education />
+      <CTA />
     </main>
     <Footer />
   </body>

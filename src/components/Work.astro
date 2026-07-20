@@ -3,7 +3,7 @@ import Pulse from './Pulse.astro'
 
 interface Props {
   companyName: string
-  companyWebsiteUrl: string
+  companyWebsiteUrl?: string
   duration: string
   jobTitle: string
   isRemote?: boolean
@@ -30,13 +30,19 @@ const {
   />
   <div class="flex items-center justify-between gap-2 md:gap-4 flex-wrap mb-2">
     <div class="flex items-center gap-2 md:gap-4">
-      <a
-        target="_blank"
-        href={companyWebsiteUrl}
-        class="hover:underline underline-offset-4 hover:text-indigo-600 dark:hover:text-indigo-400"
-      >
-        <h4 class="font-bold text-xl md:text-2xl">{companyName}</h4>
-      </a>
+      {
+        companyWebsiteUrl ? (
+          <a
+            target="_blank"
+            href={companyWebsiteUrl}
+            class="hover:underline underline-offset-4 hover:text-indigo-600 dark:hover:text-indigo-400"
+          >
+            <h4 class="font-bold text-xl md:text-2xl">{companyName}</h4>
+          </a>
+        ) : (
+          <h4 class="font-bold text-xl md:text-2xl">{companyName}</h4>
+        )
+      }
       {
         isRemote && (
           <div class="rounded border border-gray-400 dark:border-gray-600 py-1 px-2 bg-gray-300 dark:bg-gray-800 text-xs font-bold ">

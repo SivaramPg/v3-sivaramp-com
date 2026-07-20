@@ -6,20 +6,35 @@ const {
   stack = [],
   repoUrl,
   websiteUrl,
+  websiteLabel = 'Visit Website',
+  status,
 } = Astro.props
 ---
 
 <div class="flex w-full gap-2 md:gap-4 rounded">
-  <img
-    src={imageUrl}
-    alt={title}
-    class="aspect-square h-full w-full max-w-12 object-contain rounded mt-1 bg-gray-50"
-    width="48"
-    height="48"
-  />
+  {
+    imageUrl && (
+      <img
+        src={imageUrl}
+        alt={title}
+        class="aspect-square h-full w-full max-w-12 object-contain rounded mt-1 bg-gray-50"
+        width="48"
+        height="48"
+      />
+    )
+  }
   <div class="flex flex-col gap-8 justify-between w-full">
     <div class="flex flex-col gap-0 w-full">
-      <h4 class="text-xl sm:text-2xl md:text-3xl font-bold">{title}</h4>
+      <div class="flex items-center gap-3 flex-wrap">
+        <h4 class="text-xl sm:text-2xl md:text-3xl font-bold">{title}</h4>
+        {
+          status && (
+            <div class="rounded border border-gray-400 dark:border-gray-600 py-1 px-2 bg-gray-300 dark:bg-gray-800 text-xs font-bold">
+              <span>{status}</span>
+            </div>
+          )
+        }
+      </div>
       <p
         class="w-full mb-2 whitespace-pre-line text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300"
       >
@@ -35,35 +50,43 @@ const {
         }
       </div>
     </div>
-    <div class="flex gap-2 md:gap-4 items-center flex-wrap">
-      <a
-        target="_blank"
-        href={repoUrl}
-        class="border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
-      >
-        <img
-          src="/icons/github.svg"
-          alt="Github"
-          class="w-5"
-          width="20"
-          height="20"
-        />
-        <p class="font-bold text-sm dark:text-black">View Repo</p>
-      </a>
-      <a
-        target="_blank"
-        href={websiteUrl}
-        class="border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
-      >
-        <img
-          src="/icons/website.svg"
-          alt="website"
-          class="w-5"
-          width="20"
-          height="20"
-        />
-        <p class="font-bold text-sm dark:text-black">Visit Website</p>
-      </a>
-    </div>
+    {
+      (repoUrl || websiteUrl) && (
+        <div class="flex gap-2 md:gap-4 items-center flex-wrap">
+          {repoUrl && (
+            <a
+              target="_blank"
+              href={repoUrl}
+              class="border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
+            >
+              <img
+                src="/icons/github.svg"
+                alt="Github"
+                class="w-5"
+                width="20"
+                height="20"
+              />
+              <p class="font-bold text-sm dark:text-black">View Repo</p>
+            </a>
+          )}
+          {websiteUrl && (
+            <a
+              target="_blank"
+              href={websiteUrl}
+              class="border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
+            >
+              <img
+                src="/icons/website.svg"
+                alt="website"
+                class="w-5"
+                width="20"
+                height="20"
+              />
+              <p class="font-bold text-sm dark:text-black">{websiteLabel}</p>
+            </a>
+          )}
+        </div>
+      )
+    }
   </div>
 </div>
