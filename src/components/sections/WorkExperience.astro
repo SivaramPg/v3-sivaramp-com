@@ -7,9 +7,38 @@ import Work from '../Work.astro'
   <SectionTitle title="Work Experience" />
   <div class="">
     <Work
+      companyName="Freelance Consultant"
+      duration="2025 - Now"
+      jobTitle="Independent Consultant"
+      isRemote={true}
+      jobDescription={[
+        {
+          achievement: 'Client systems — see Selected Client Work above',
+          description: [
+            'Sole engineer on SuperPower/SuperClaw (AI-agent commerce platform with metered LLM billing), Prolly.so (AI-powered on-chain prediction markets), and SpotRoyale (fractional music-royalty marketplace)',
+          ],
+          technologies: ['AI / LLM', 'Payments', 'Smart contracts', 'Infra'],
+        },
+        {
+          achievement: 'Security-analytics platform (UK cybersecurity firm)',
+          description: [
+            'Built a multi-tenant analytics dashboard — Next.js server components over a typed Splunk query layer (30+ saved-search fetchers, 11 dashboards), with Azure AD B2C SAML SSO brokering per-tenant tokens via AWS Secrets Manager',
+          ],
+          technologies: ['Next.js', 'Splunk', 'Azure AD B2C', 'AWS'],
+        },
+        {
+          achievement: 'Equity-management SaaS (early-stage startup)',
+          description: [
+            'Designed the platform foundation: a 27-table multi-tenant Postgres domain model (cap tables, ESOPs, funding rounds) with RBAC and audit logging, plus the Docker + GitHub Actions → Azure deployment pipeline',
+          ],
+          technologies: ['Next.js', 'Hono', 'Postgres / Drizzle', 'Azure'],
+        },
+      ]}
+    />
+    <Work
       companyName="Open Consulting Group"
       companyWebsiteUrl="https://evm.ink"
-      duration="2021 - Now"
+      duration="2021 - 2025"
       jobTitle="Blockchain Solutions Architect"
       isRemote={true}
       jobDescription={[
@@ -33,28 +62,6 @@ import Work from '../Work.astro'
             'Built & ran marketplaces for mob.land and Raresea.io (multi-chain rare-asset trading), plus Solmates.xyz on Solana',
           ],
           technologies: ['React', 'Next.js', 'Netlify', 'Vercel'],
-        },
-      ]}
-    />
-    <Work
-      companyName="Freelance Engagements"
-      duration="2024 - Now"
-      jobTitle="Independent Consultant"
-      isRemote={true}
-      jobDescription={[
-        {
-          achievement: 'Security-analytics platform (UK cybersecurity firm)',
-          description: [
-            'Built a multi-tenant analytics dashboard — Next.js server components over a typed Splunk query layer (30+ saved-search fetchers, 11 dashboards), with Azure AD B2C SAML SSO brokering per-tenant tokens via AWS Secrets Manager',
-          ],
-          technologies: ['Next.js', 'Splunk', 'Azure AD B2C', 'AWS'],
-        },
-        {
-          achievement: 'Equity-management SaaS (early-stage startup)',
-          description: [
-            'Designed the platform foundation: a 27-table multi-tenant Postgres domain model (cap tables, ESOPs, funding rounds) with RBAC and audit logging, plus the Docker + GitHub Actions → Azure deployment pipeline',
-          ],
-          technologies: ['Next.js', 'Hono', 'Postgres / Drizzle', 'Azure'],
         },
       ]}
     />
