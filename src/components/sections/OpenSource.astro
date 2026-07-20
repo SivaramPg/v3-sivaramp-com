@@ -1,4 +1,11 @@
 ---
+import desilogImg from '../../assets/projects/desilog.jpg'
+import markdownbinImg from '../../assets/projects/markdownbin.png'
+import contractsImg from '../../assets/projects/prediction-contracts.webp'
+import pwaIconsImg from '../../assets/projects/pwa-icons.png'
+import siteMetadataImg from '../../assets/projects/site-metadata.png'
+import swapiImg from '../../assets/projects/swapi.jpg'
+import tuulkitImg from '../../assets/projects/tuulkit.png'
 import Project from '../Project.astro'
 import SectionTitle from '../SectionTitle.astro'
 ---
@@ -8,7 +15,7 @@ import SectionTitle from '../SectionTitle.astro'
   <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-800 [&>*]:py-8 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
     <Project
       title="Prediction Market Contracts (EVM + Solana)"
-      imageUrl="/projects/prediction-contracts.jpg"
+      image={contractsImg}
       description="Open-source parimutuel binary prediction markets for EVM and Solana. Unaudited and educational by design: an independent, clean-room companion to my client prediction-market work."
       highlights={[
         'Gas-optimized Solidity implementation backed by a comprehensive Foundry suite (unit, integration, and fuzz tests)',
@@ -28,7 +35,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="pwa-icons"
-      imageUrl="/projects/pwa-icons.png"
+      image={pwaIconsImg}
       description="An npm CLI that turns one image (SVG or raster) into 118 production-ready PWA icons in under a second."
       highlights={[
         'iOS, Android, Windows 11, favicons, and multi-size ICO from a single SVG or raster input',
@@ -42,7 +49,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="Site Metadata Explorer"
       iconUrl="/projects/icons/site-metadata.png"
-      imageUrl="/projects/site-metadata.png"
+      image={siteMetadataImg}
       description="A live web tool that audits a site's entire metadata surface in one scan."
       highlights={[
         'Meta/OG/Twitter tags, JSON-LD, robots.txt, sitemaps, web manifest, security.txt, and llms.txt, with per-file size reporting',
@@ -67,7 +74,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="Tuulkit"
       iconUrl="/projects/icons/tuulkit.png"
-      imageUrl="/projects/tuulkit.png"
+      image={tuulkitImg}
       description="25 browser-based developer utilities in one app, deployed at the edge on Cloudflare Workers."
       highlights={[
         'In-browser ML background removal running entirely client-side: GPU-accelerated ONNX, no server round-trip',
@@ -87,7 +94,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="markdownbin"
       iconUrl="/projects/icons/markdownbin.png"
-      imageUrl="/projects/markdownbin.png"
+      image={markdownbinImg}
       description="A zero-knowledge markdown pastebin, live in production since 2025."
       highlights={[
         'Client-side AES-256-GCM encryption (PBKDF2, 310k iterations) with self-decrypting share links',
@@ -101,7 +108,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="Swapi.info"
       iconUrl="/projects/icons/swapi.png"
-      imageUrl="/projects/swapi.jpg"
+      image={swapiImg}
       description="The Star Wars API, rebuilt for reliability: a community drop-in replacement used for prototyping and teaching."
       highlights={[
         'Serverless, file-based GET API and data explorer serving static JSON from the CDN edge',
@@ -116,7 +123,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="Anaek Desilog"
       iconUrl="/projects/icons/desilog.png"
-      imageUrl="/projects/desilog.jpg"
+      image={desilogImg}
       description="Free, CC0 Desi/Indian placeholder-image APIs for anyone who wants placeholders with desi flair."
       highlights={[
         'Dynamically sized avatars and characters, in colour or black & white',

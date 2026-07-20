@@ -1,4 +1,5 @@
 ---
+import { getImage, Image } from 'astro:assets'
 import { techIcon, techTint } from '../lib/techIcons'
 
 interface Link {
@@ -8,7 +9,7 @@ interface Link {
 }
 
 const {
-  imageUrl,
+  image,
   imageAlt,
   iconUrl,
   title,
@@ -34,6 +35,15 @@ const links: Link[] = [
     icon: '/icons/website.svg',
   })),
 ]
+
+// Large webp variant for the lightbox, so it never upscales the thumbnail.
+const fullImage = image
+  ? await getImage({
+      src: image,
+      format: 'webp',
+      width: Math.min(image.width, 1600),
+    })
+  : null
 ---
 
 <div class="flex w-full gap-4 md:gap-6 flex-col-reverse sm:flex-row">
@@ -109,7 +119,7 @@ const links: Link[] = [
       </div>
     </div>
     {
-      !imageUrl && links.length > 0 && (
+      !image && links.length > 0 && (
         <div class="flex gap-2 md:gap-4 items-center flex-wrap">
           {links.map(({ href, label, icon }) => (
             <a
@@ -126,16 +136,18 @@ const links: Link[] = [
     }
   </div>
   {
-    imageUrl && (
+    image && (
       <div class="w-full sm:w-72 md:w-96 shrink-0 self-center flex flex-col gap-2">
-        <img
-          src={imageUrl}
+        <Image
+          src={image}
           alt={imageAlt ?? `${title} preview`}
           class="w-full aspect-[1.9/1] object-cover rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 cursor-zoom-in"
           loading="lazy"
-          width="800"
-          height="421"
+          format="webp"
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 640px) 384px, 92vw"
           data-lightbox
+          data-full={fullImage?.src}
         />
         {links.length > 0 && (
           <div class="grid grid-cols-2 gap-2">

@@ -1,4 +1,7 @@
 ---
+import prollyImg from '../../assets/projects/prolly.png'
+import spotroyaleImg from '../../assets/projects/spotroyale.png'
+import superclawImg from '../../assets/projects/superclaw.png'
 import Project from '../Project.astro'
 import SectionTitle from '../SectionTitle.astro'
 ---
@@ -16,7 +19,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="SuperPower / SuperClaw"
       iconUrl="/projects/icons/superclaw.png"
       status="Case Study"
-      imageUrl="/projects/superclaw.png"
+      image={superclawImg}
       description="A crypto-native platform selling autonomous AI agents for USDT on BNB Chain: each purchase auto-provisioned a dedicated, cert-pinned VM from golden images in about two minutes, running a full agent with chat, skills, and an operator wallet. Built and operated solo, end-to-end, in 15 weeks. The product has since been sunset; the engineering stands."
       highlights={[
         'VM fleet automation: golden-image provisioning, capacity-aware size fallback, orphan-leak prevention, and ordered, never-throwing teardown',
@@ -39,7 +42,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="Prolly.so"
       iconUrl="/projects/icons/prolly.png"
       status="Case Study"
-      imageUrl="/projects/prolly.png"
+      image={prollyImg}
       description="An AI-powered, on-chain prediction-market platform, built as sole engineer through three client rebrands over ~13 months."
       highlights={[
         'Multi-LLM consensus oracle (Claude + Gemini + Grok over multi-source evidence) autonomously resolving markets on-chain',
@@ -60,7 +63,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="SpotRoyale"
       iconUrl="/projects/icons/spotroyale.png"
       status="Client work"
-      imageUrl="/projects/spotroyale.png"
+      image={spotroyaleImg}
       description="A fractional music-royalty marketplace: sellers list a share of a song's royalties, investors buy via Stripe (card + stablecoin), and ownership is minted as an ERC-721 certificate on Polygon mainnet."
       highlights={[
         'Idempotent Stripe checkout and signed webhooks driving a 7-state settlement pipeline (payment → mint → on-chain confirmation) on a job queue',

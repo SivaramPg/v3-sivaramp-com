@@ -1,4 +1,10 @@
 ---
+import oneCentImg from '../../assets/projects/1cent.png'
+import inferplaneImg from '../../assets/projects/inferplane.png'
+import signalBriefImg from '../../assets/projects/signal-brief.webp'
+import stackfightImg from '../../assets/projects/stackfight.png'
+import varamAnalyticsImg from '../../assets/projects/varam-analytics.png'
+import varamChatImg from '../../assets/projects/varam-chat.png'
 import Project from '../Project.astro'
 import SectionTitle from '../SectionTitle.astro'
 ---
@@ -9,7 +15,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="InferPlane"
       iconUrl="/projects/icons/inferplane.png"
-      imageUrl="/projects/inferplane.png"
+      image={inferplaneImg}
       status="In Stealth"
       description="An AI control plane for teams: governed model access, credit metering, retained LLM request logs, and audit trails across providers. Currently building in stealth."
       highlights={[
@@ -30,7 +36,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="stackfight"
       iconUrl="/projects/icons/stackfight.png"
-      imageUrl="/projects/stackfight.png"
+      image={stackfightImg}
       description="A credit-billing & AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games."
       highlights={[
         'Stripe-funded prepaid wallets with fail-closed webhook fulfillment and idempotent integer-microcredit ledger writes',
@@ -50,7 +56,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="1-cent-requests"
       iconUrl="/projects/icons/1cent.png"
-      imageUrl="/projects/1cent.png"
+      image={oneCentImg}
       description="A live x402 pay-per-request API marketplace: 14 crypto/web-context endpoints for AI agents at $0.01 each, settled in USDC through signed HTTP 402 exchanges. No accounts, no API keys."
       highlights={[
         'Full x402 v2 resource-server implementation: EIP-3009 USDC authorizations with facilitator verification',
@@ -65,7 +71,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="varam.chat"
       iconUrl="/projects/icons/varam-chat.png"
       status="Invite-only"
-      imageUrl="/projects/varam-chat.png"
+      image={varamChatImg}
       description="A live, self-hosted multi-model AI chat platform routing 23 models through OpenRouter. Production plumbing throughout, running daily."
       highlights={[
         'Every response persists full inference telemetry (token usage, TTFT, tokens/sec, provider metadata) to Postgres as an auditable usage trail',
@@ -87,7 +93,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="Varam Analytics"
       iconUrl="/projects/icons/varam-analytics.png"
       status="Invite-only"
-      imageUrl="/projects/varam-analytics.png"
+      image={varamAnalyticsImg}
       description="Self-hosted, cookieless web analytics, running in production and powering the analytics on this very site."
       highlights={[
         'Dependency-free tracker script, Bun/Hono event collector, and a TimescaleDB event store',
@@ -101,7 +107,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="Signal Brief"
       iconUrl="/projects/icons/signal-brief.png"
-      imageUrl="/projects/signal-brief.jpg"
+      image={signalBriefImg}
       description="A cost-aware, multi-source LLM research pipeline over X, Reddit & Hacker News, at ~$1/day all-in."
       highlights={[
         'A cheap-model triage gate scores every candidate before any paid scrape or frontier-model call is spent',

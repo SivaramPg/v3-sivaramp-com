@@ -49,7 +49,7 @@
 
   function open(thumb: HTMLImageElement) {
     activeThumb = thumb
-    dialogImg.src = thumb.currentSrc || thumb.src
+    dialogImg.src = thumb.dataset.full || thumb.currentSrc || thumb.src
     dialogImg.alt = thumb.alt
     thumb.style.viewTransitionName = 'lightbox'
     transition(() => {
