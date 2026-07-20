@@ -14,6 +14,7 @@ import SectionTitle from '../SectionTitle.astro'
   <div class="flex flex-col gap-8">
     <Project
       title="SuperPower / SuperClaw"
+      iconUrl="/projects/icons/superclaw.png"
       status="Case Study"
       imageUrl="/projects/superclaw.png"
       description="A crypto-native platform selling autonomous AI agents for USDT on BNB Chain, where each purchase auto-provisioned a dedicated, cert-pinned VM in about two minutes. Built and operated solo, end-to-end, in 15 weeks. The product has since been sunset; the engineering stands."
@@ -24,16 +25,17 @@ import SectionTitle from '../SectionTitle.astro'
       ]}
       stack={[
         'OpenRouter',
-        'viem / BNB Chain',
+        'viem', 'BNB Chain',
         'Privy',
-        'Hono + oRPC',
-        'Postgres / Drizzle',
+        'Hono', 'oRPC',
+        'Postgres', 'Drizzle',
         'DigitalOcean',
         'AWS KMS',
       ]}
     />
     <Project
       title="Prolly.so"
+      iconUrl="/projects/icons/prolly.png"
       status="Case Study"
       imageUrl="/projects/prolly.png"
       description="An AI-powered, on-chain prediction-market platform, built as sole engineer through three client rebrands over ~13 months."
@@ -45,8 +47,8 @@ import SectionTitle from '../SectionTitle.astro'
       ]}
       stack={[
         'Vercel AI SDK',
-        'Solidity / Foundry',
-        'Rust / Solana',
+        'Solidity', 'Foundry',
+        'Rust', 'Solana',
         'tRPC',
         'TimescaleDB',
         'Trigger.dev',
@@ -54,6 +56,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="SpotRoyale"
+      iconUrl="/projects/icons/spotroyale.png"
       status="Client work"
       imageUrl="/projects/spotroyale.png"
       description="A fractional music-royalty marketplace: sellers list a share of a song's royalties, investors buy via Stripe (card + stablecoin), and ownership is minted as an ERC-721 certificate on Polygon mainnet."
@@ -64,10 +67,10 @@ import SectionTitle from '../SectionTitle.astro'
       ]}
       stack={[
         'Stripe',
-        'Solidity / Polygon',
+        'Solidity', 'Polygon',
         'Next.js',
-        'Hono + oRPC',
-        'Postgres / Drizzle',
+        'Hono', 'oRPC',
+        'Postgres', 'Drizzle',
         'pg-boss',
       ]}
       websiteUrl="https://sr-app-9f4e.vercel.app"

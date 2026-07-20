@@ -8,6 +8,8 @@ import SectionTitle from '../SectionTitle.astro'
   <div class="flex flex-col gap-8">
     <Project
       title="InferPlane"
+      iconUrl="/projects/icons/inferplane.png"
+      imageUrl="/projects/inferplane.png"
       status="In Stealth"
       description="An AI control plane for teams: governed model access, credit metering, retained LLM request logs, and audit trails across providers. Currently building in stealth."
       highlights={[
@@ -18,7 +20,7 @@ import SectionTitle from '../SectionTitle.astro'
       stack={[
         'Hono',
         'oRPC',
-        'Postgres / Drizzle',
+        'Postgres', 'Drizzle',
         'Redis',
         'Trigger.dev',
         'Stripe',
@@ -27,6 +29,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="stackfight"
+      iconUrl="/projects/icons/stackfight.png"
       imageUrl="/projects/stackfight.png"
       description="A credit-billing & AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games."
       highlights={[
@@ -39,13 +42,14 @@ import SectionTitle from '../SectionTitle.astro'
         'Durable Objects',
         'Stripe',
         'OpenRouter',
-        'Postgres / Drizzle',
+        'Postgres', 'Drizzle',
       ]}
       websiteUrl="https://stackfight.sivaram.dev"
       repoUrl="https://github.com/SivaramPg/agent-vs-agent-poker-platform"
     />
     <Project
       title="1-cent-requests"
+      iconUrl="/projects/icons/1cent.png"
       imageUrl="/projects/1cent.png"
       description="A live x402 pay-per-request API marketplace: 14 crypto/web-context endpoints for AI agents at $0.01 each, settled in USDC through signed HTTP 402 exchanges. No accounts, no API keys."
       highlights={[
@@ -53,12 +57,13 @@ import SectionTitle from '../SectionTitle.astro'
         'Single payment-gate middleware over a typed service catalog, with per-route unit-economics tracking',
         'Agent-native discovery (OpenAPI, llms.txt); deployed on Cloudflare Workers + D1 via IaC',
       ]}
-      stack={['x402', 'USDC', 'Hono', 'Cloudflare Workers', 'D1 / Drizzle']}
+      stack={['x402', 'USDC', 'Hono', 'Cloudflare Workers', 'Cloudflare D1', 'Drizzle']}
       websiteUrl="https://1cent.sivaram.dev"
       repoUrl="https://github.com/SivaramPg/1-cent-requests"
     />
     <Project
       title="varam.chat"
+      iconUrl="/projects/icons/varam-chat.png"
       status="Invite-only"
       imageUrl="/projects/varam-chat.png"
       description="A live, self-hosted multi-model AI chat platform routing 23 models through OpenRouter. Production plumbing throughout, running daily."
@@ -71,7 +76,7 @@ import SectionTitle from '../SectionTitle.astro'
         'OpenRouter',
         'AI SDK',
         'TanStack Start',
-        'Postgres / Drizzle',
+        'Postgres', 'Drizzle',
         'Redis',
         'E2B',
       ]}
@@ -80,6 +85,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="Varam Analytics"
+      iconUrl="/projects/icons/varam-analytics.png"
       status="Invite-only"
       imageUrl="/projects/varam-analytics.png"
       description="Self-hosted, cookieless web analytics, running in production and powering the analytics on this very site."
@@ -103,7 +109,7 @@ import SectionTitle from '../SectionTitle.astro'
       ]}
       stack={[
         'OpenRouter',
-        'Postgres / Drizzle',
+        'Postgres', 'Drizzle',
         'Firecrawl',
         'TanStack Start',
       ]}

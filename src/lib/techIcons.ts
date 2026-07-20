@@ -3,10 +3,16 @@
 // metering" have no canonical brand icon).
 const slugByLabel: Record<string, string> = {
   Hono: 'hono',
-  'Hono + oRPC': 'hono',
   oRPC: 'orpc',
-  'Postgres / Drizzle': 'postgres',
+  Postgres: 'postgres',
   'pg-boss': 'postgres',
+  'Cloudflare D1': 'cloudflare',
+  Foundry: 'foundry',
+  Rust: 'rust',
+  Solana: 'solana',
+  Solidity: 'solidity',
+  Docker: 'docker',
+  Stablecoins: 'usdc',
   Redis: 'redis',
   'Trigger.dev': 'trigger',
   Stripe: 'stripe',
