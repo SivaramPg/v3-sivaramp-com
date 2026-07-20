@@ -6,6 +6,7 @@ import Pulse from './Pulse.astro'
 
 interface Props {
   companyName: string
+  companyLogo?: string
   companyWebsiteUrl?: string
   duration: string
   jobTitle: string
@@ -19,6 +20,7 @@ interface Props {
 
 const {
   companyName,
+  companyLogo,
   companyWebsiteUrl,
   duration,
   jobTitle,
@@ -33,6 +35,18 @@ const {
   />
   <div class="flex items-center justify-between gap-2 md:gap-4 flex-wrap mb-2">
     <div class="flex items-center gap-2 md:gap-4">
+      {
+        companyLogo && (
+          <img
+            src={companyLogo}
+            alt=""
+            class="w-8 h-8 md:w-9 md:h-9 rounded-lg object-contain bg-white"
+            loading="lazy"
+            width="36"
+            height="36"
+          />
+        )
+      }
       {
         companyWebsiteUrl ? (
           <a
