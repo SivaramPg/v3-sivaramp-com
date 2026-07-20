@@ -1,0 +1,88 @@
+---
+import prollyImg from '../../assets/projects/prolly.png'
+import spotroyaleImg from '../../assets/projects/spotroyale.png'
+import superclawImg from '../../assets/projects/superclaw.png'
+import Project from '../Project.astro'
+import SectionTitle from '../SectionTitle.astro'
+---
+
+<section class="flex flex-col gap-4 sm:gap-6">
+  <SectionTitle title="Selected Client Work" />
+  <p
+    class="text-sm sm:text-base text-gray-700 dark:text-gray-300 -mt-1 sm:-mt-2"
+  >
+    Closed-source engagements: the code is private, but I'm happy to walk
+    through the architecture of any of these in detail.
+  </p>
+  <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-800 [&>*]:py-8 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
+    <Project
+      title="SuperPower"
+      iconUrl="/projects/icons/superclaw.png"
+      status="Case Study"
+      statuses={['Closed Source']}
+      image={superclawImg}
+      description="A crypto-native platform selling autonomous AI agents for USDT on BNB Chain: each purchase auto-provisioned a dedicated, cert-pinned VM from golden images in about two minutes, running a full agent with chat, skills, and an operator wallet. Built and operated solo, end-to-end, in 15 weeks. The product has since been sunset; the engineering stands."
+      highlights={[
+        'VM fleet automation: golden-image provisioning, capacity-aware size fallback, orphan-leak prevention, and ordered, never-throwing teardown',
+        'Integer-credit LLM metering ledger with per-key provider spend caps, top-ups, and drift reconciliation across a dozen monitoring crons',
+        'Crash-safe two-phase on-chain USDT orders with gas-sponsored server-side signing, plus a 30-day subscription state machine (charge → grace → rescue → teardown)',
+        'Multi-level referral compensation computed in-transaction via recursive CTEs, a full admin surface, and three-language i18n',
+        'An isolation proxy as sole ingress to the fleet (per-VM TLS pinning, RPC allowlisting, fleet-wide model overrides) and an agent-operated wallet CLI with OAuth device flow + HPKE',
+      ]}
+      stack={[
+        'OpenRouter',
+        'viem', 'BNB Chain',
+        'Privy',
+        'Hono', 'oRPC',
+        'Postgres', 'Drizzle',
+        'DigitalOcean',
+        'AWS KMS',
+      ]}
+    />
+    <Project
+      title="Prolly.so"
+      iconUrl="/projects/icons/prolly.png"
+      status="Case Study"
+      statuses={['Closed Source']}
+      image={prollyImg}
+      description="An AI-powered, on-chain prediction-market platform, built as sole engineer through three client rebrands over ~13 months."
+      highlights={[
+        'Multi-LLM consensus oracle (Claude + Gemini + Grok over multi-source evidence) autonomously resolving markets on-chain',
+        'Two-phase USDT checkout with advisory-lock inventory reservation and mempool-aware reconciliation crons',
+        'AMM contracts iterated through four fuzz-tested Solidity versions, with Solana (Rust) and Move ports',
+        'A scheduled job fleet, Telegram/Discord/Twitter bots, and a key-authenticated agent API with an MCP server',
+      ]}
+      stack={[
+        'Vercel AI SDK',
+        'Solidity', 'Foundry',
+        'Rust', 'Solana',
+        'tRPC',
+        'TimescaleDB',
+        'Trigger.dev',
+      ]}
+    />
+    <Project
+      title="SpotRoyale"
+      iconUrl="/projects/icons/spotroyale.png"
+      status="Client work"
+      statuses={['Closed Source']}
+      image={spotroyaleImg}
+      description="A fractional music-royalty marketplace: sellers list a share of a song's royalties, investors buy via Stripe (card + stablecoin), and ownership is minted as an ERC-721 certificate on Polygon mainnet."
+      highlights={[
+        'Idempotent Stripe checkout and signed webhooks driving a 7-state settlement pipeline (payment → mint → on-chain confirmation) on a job queue',
+        'Failed/refunded purchases excluded from ownership accounting; on-chain metadata with dynamically generated SVG certificates',
+        'Streaming-data valuation pipeline aggregating billions of plays',
+      ]}
+      stack={[
+        'Stripe',
+        'Solidity', 'Polygon',
+        'Next.js',
+        'Hono', 'oRPC',
+        'Postgres', 'Drizzle',
+        'pg-boss',
+      ]}
+      websiteUrl="https://sr-app-9f4e.vercel.app"
+      websiteLabel="Live Site"
+    />
+  </div>
+</section>

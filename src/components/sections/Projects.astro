@@ -1,72 +1,133 @@
 ---
+import oneCentImg from '../../assets/projects/1cent.png'
+import inferplaneImg from '../../assets/projects/inferplane.png'
+import signalBriefImg from '../../assets/projects/signal-brief.webp'
+import stackfightImg from '../../assets/projects/stackfight.png'
+import varamAnalyticsImg from '../../assets/projects/varam-analytics.png'
+import varamChatImg from '../../assets/projects/varam-chat.png'
 import Project from '../Project.astro'
 import SectionTitle from '../SectionTitle.astro'
 ---
 
-<section class="flex flex-col gap-2 sm:gap-4">
-  <SectionTitle title="Projects" />
-  <div class="flex flex-col gap-8">
+<section class="flex flex-col gap-4 sm:gap-6">
+  <SectionTitle title="Featured Work" />
+  <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-800 [&>*]:py-8 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
     <Project
-      imageUrl="https://desilog.sivaramp.com/i/avatars/33/200"
-      title="Anaek Desilog"
-      description={`Free CC0 Desi/Indian placeholder APIs for dynamically sized Avatars, Colourful as well as Black & White Characters!\n Purely built with Next 13 for UI & backend routes, hosted on Vercel + Cloudflare pages for larger static assets. My solution for the question what if placeholder images had a desi flare & were highly available for anyone to use day to day :)`}
-      stack={['Nextjs 13', 'Vercel + Cloudflare']}
-      websiteUrl="https://desilog.sivaramp.com/"
-      repoUrl="https://github.com/SivaramPg/desilog"
-    />
-    <Project
-      imageUrl="https://swapi.info/favicon.ico"
-      title="Swapi.info"
-      description={`JSON-only, CDN-powered, Wicked-fast, Unrestricted Star Wars data Explorer & GET API endpoints. \n Built with Nextjs 13's exported output & JSON files hosted on Cloudflare Pages to solve my question, why do placeholders API need to be slow & I don't really need anything more than just a GET API to mock/prototype my stuff :)`}
-      stack={['Nextjs 13', 'Cloudflare']}
-      websiteUrl="https://swapi.info/"
-      repoUrl="https://github.com/SivaramPg/swapi.info"
-    />
-    <Project
-      imageUrl="https://bg.sivaramp.com/og.png"
-      title="Random Linear Gradients"
-      description={`Simple utility website to generate randomized linear gradient backgrounds with full page visual preview\n Well, everyone needs a linear gradient at sometime!. I needed one and made this :)`}
-      stack={['HTML', 'CSS', 'JS', 'Cloudflare']}
-      websiteUrl="https://bg.sivaramp.com/"
-      repoUrl="https://github.com/SivaramPg/Gradient-Background-Generator"
-    />
-    <Project
-      imageUrl="https://data-url.sivaramp.com/favicon.ico"
-      title="Data URL"
-      description={`View, validate, verify data URLs in a browser.\n Need is the mother of all invention, am I right 😀. Needed this, so I made it!`}
-      stack={['Nextjs 13', 'Cloudflare']}
-      websiteUrl="https://data-url.sivaramp.com/"
-      repoUrl="https://github.com/SivaramPg/data-url"
-    />
-    <Project
-      imageUrl="https://link-masker.sivaramp.com/icons/mask.svg"
-      title="Link Masker"
-      description={`Shorten and Mask any URL in an instant. Built using the Vercel stack!. Next 13's React Server Components, Server Actions & form status hooks + Vercel's KV store for persisted high-performance storage.`}
-      stack={[
-        'Nextjs 13',
-        'React Server Components',
-        'Server Actions',
-        'Vercel KV',
-        'Vercel',
+      title="InferPlane"
+      iconUrl="/projects/icons/inferplane.png"
+      image={inferplaneImg}
+      status="In Stealth"
+      description="An AI control plane for teams: governed model access, credit metering, retained LLM request logs, and audit trails across providers. Currently building in stealth."
+      highlights={[
+        'Append-only credits ledger with reservation/settlement lifecycle and idempotency guarantees',
+        'OTLP ingestion of provider usage telemetry, with request/response artifacts archived to object storage',
+        'Hardened Hono/oRPC API with org-scoped rate limiting; the control plane comes before the product surface',
       ]}
-      websiteUrl="https://link-masker.sivaramp.com/"
-      repoUrl="https://github.com/SivaramPg/link-masker"
+      stack={[
+        'Hono',
+        'oRPC',
+        'Postgres', 'Drizzle',
+        'Redis',
+        'Trigger.dev',
+        'Stripe',
+        'Cloudflare',
+      ]}
     />
     <Project
-      imageUrl="https://anonimizer.sivaramp.com/anonymous-face-mask.svg"
-      title="URL Anonimizer"
-      description={`Shorten and anonimize any URL quickly.`}
-      stack={['Nextjs 11', 'Vercel', 'Firestore']}
-      websiteUrl="https://anonimizer.sivaramp.com/"
-      repoUrl="https://github.com/SivaramPg/url-masker"
+      title="stackfight"
+      statuses={['Open Source']}
+      iconUrl="/projects/icons/stackfight.png"
+      image={stackfightImg}
+      description="A credit-billing & AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games."
+      highlights={[
+        'Stripe-funded prepaid wallets with fail-closed webhook fulfillment and idempotent integer-microcredit ledger writes',
+        'Per-call inference metering with budget-capped OpenRouter keys and automated ledger reconciliation',
+        'Financial invariant auditing (balance floors, ledger conservation), an extensive test suite, and rigorous ops documentation',
+      ]}
+      stack={[
+        'Cloudflare Workers',
+        'Durable Objects',
+        'Stripe',
+        'OpenRouter',
+        'Postgres', 'Drizzle',
+      ]}
+      websiteUrl="https://stackfight.sivaram.dev"
+      repoUrl="https://github.com/SivaramPg/agent-vs-agent-poker-platform"
     />
     <Project
-      imageUrl="https://snake.sivaramp.com/assets/favicons/favicon.ico"
-      title="JS Canvas Snake Game"
-      description={`A fun web canvas based snake game created in collaboration with a fellow student during my course.`}
-      stack={['HTML', 'CSS', 'JS', 'Cloudflare']}
-      websiteUrl="https://snake.sivaramp.com/"
-      repoUrl="https://github.com/SivaramPg/JS_Snake_Game"
+      title="1-cent-requests"
+      statuses={['Open Source']}
+      iconUrl="/projects/icons/1cent.png"
+      image={oneCentImg}
+      description="A live x402 pay-per-request API marketplace: 14 crypto/web-context endpoints for AI agents at $0.01 each, settled in USDC through signed HTTP 402 exchanges. No accounts, no API keys."
+      highlights={[
+        'Full x402 v2 resource-server implementation: EIP-3009 USDC authorizations with facilitator verification',
+        'Single payment-gate middleware over a typed service catalog, with per-route unit-economics tracking',
+        'Agent-native discovery (OpenAPI, llms.txt); deployed on Cloudflare Workers + D1 via IaC',
+      ]}
+      stack={['x402', 'USDC', 'Hono', 'Cloudflare Workers', 'Cloudflare D1', 'Drizzle']}
+      websiteUrl="https://1cent.sivaram.dev"
+      repoUrl="https://github.com/SivaramPg/1-cent-requests"
+    />
+    <Project
+      title="varam.chat"
+      iconUrl="/projects/icons/varam-chat.png"
+      status="Invite-only"
+      statuses={['Closed Source']}
+      image={varamChatImg}
+      description="A live, self-hosted multi-model AI chat platform routing 23 models through OpenRouter. Production plumbing throughout, running daily."
+      highlights={[
+        'Every response persists full inference telemetry (token usage, TTFT, tokens/sec, provider metadata) to Postgres as an auditable usage trail',
+        'Price-floor cost routing with flex service tiers, and resumable Redis-backed streams that survive client disconnects',
+        'Sandboxed agentic tool execution (code sandbox, web search, docs retrieval) and atomic Lua-scripted rate limiting',
+      ]}
+      stack={[
+        'OpenRouter',
+        'AI SDK',
+        'TanStack Start',
+        'Postgres', 'Drizzle',
+        'Redis',
+        'E2B',
+      ]}
+      websiteUrl="https://varam-chat.sivaramp.com"
+      websiteLabel="Live Site"
+    />
+    <Project
+      title="Varam Analytics"
+      iconUrl="/projects/icons/varam-analytics.png"
+      status="Invite-only"
+      statuses={['Closed Source']}
+      image={varamAnalyticsImg}
+      description="Self-hosted, cookieless web analytics, running in production and powering the analytics on this very site."
+      highlights={[
+        'Dependency-free tracker script, Bun/Hono event collector, and a TimescaleDB event store',
+        'Ingestion with Redis rate limiting, sequence-based deduplication, and realtime visitors via sliding-window sorted sets',
+        'Hypertables with compression, retention policies, and continuous aggregates precomputing bounce rate, session duration, and scroll depth',
+      ]}
+      stack={['Bun', 'Hono', 'TimescaleDB', 'Redis', 'Drizzle', 'Railway']}
+      websiteUrl="https://varam-analytics.sivaramp.com"
+      websiteLabel="Live Service"
+    />
+    <Project
+      title="Signal Brief"
+      status="Internal Tooling"
+      statuses={['Closed Source']}
+      iconUrl="/projects/icons/signal-brief.png"
+      image={signalBriefImg}
+      description="A cost-aware, multi-source LLM research pipeline over X, Reddit & Hacker News, at ~$1/day all-in."
+      highlights={[
+        'A cheap-model triage gate scores every candidate before any paid scrape or frontier-model call is spent',
+        "Every run reconciled against the provider's actual billing ledger, not estimates",
+        'Parallel per-source fan-out with cross-platform corroboration, citation-backed daily digests, and one-click publishing to dev.to',
+      ]}
+      stack={[
+        'OpenRouter',
+        'Postgres', 'Drizzle',
+        'Firecrawl',
+        'TanStack Start',
+      ]}
+      websiteUrl="https://dev.to/sivarampg"
+      websiteLabel="Live Output"
     />
   </div>
 </section>

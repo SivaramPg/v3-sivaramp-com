@@ -2,6 +2,10 @@
   "name": "sivaramp-com",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,12 +15,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
+    "@astrojs/sitemap": "^3.7.3",
+    "@iconify-json/lucide": "^1.2.118",
+    "@iconify-json/simple-icons": "^1.2.91",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.1.1",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.3.3",
     "typescript": "6"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/pngjs": "^6.0.5",
+    "pngjs": "^7.0.0",
     "prettier": "^3.9.5",
     "prettier-plugin-astro": "^0.14.1"
   }

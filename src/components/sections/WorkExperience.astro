@@ -3,119 +3,106 @@ import SectionTitle from '../SectionTitle.astro'
 import Work from '../Work.astro'
 ---
 
-<section class="flex flex-col gap-2 sm:gap-4">
+<section class="flex flex-col gap-4 sm:gap-6">
   <SectionTitle title="Work Experience" />
   <div class="">
     <Work
+      companyName="Freelance Consultant"
+      duration="2025 - Now"
+      jobTitle="Independent Consultant"
+      isRemote={true}
+      jobDescription={[
+        {
+          achievement: 'SuperPower & Prolly.so (crypto-native AI client)',
+          description: [
+            'Sole engineer across an AI-agent commerce platform (metered LLM billing, on-chain USDT payments, automated VM fleet) and an AI-powered on-chain prediction-market platform (multi-LLM oracle, multi-chain AMM contracts); both detailed in Selected Client Work above',
+          ],
+          technologies: ['OpenRouter', 'Solidity', 'Solana', 'DigitalOcean'],
+        },
+        {
+          achievement: 'SpotRoyale (music-fintech client)',
+          description: [
+            'Built a fractional music-royalty marketplace end-to-end: Stripe card + stablecoin checkout driving a settlement pipeline that mints ERC-721 ownership certificates on Polygon mainnet',
+          ],
+          technologies: ['Stripe', 'Polygon', 'Next.js', 'Postgres'],
+        },
+        {
+          achievement: 'Security-analytics platform (UK cybersecurity firm)',
+          description: [
+            'Built a multi-tenant analytics product: 11 dashboards on Next.js server components over a typed Splunk query layer, with Azure AD B2C SAML SSO brokering per-tenant tokens via AWS Secrets Manager',
+          ],
+          technologies: ['Next.js', 'Splunk', 'Azure AD B2C', 'AWS'],
+        },
+        {
+          achievement: 'Equity-management SaaS (early-stage startup)',
+          description: [
+            'Designed the platform foundation: a multi-tenant Postgres domain model covering cap tables, ESOPs, and funding rounds with RBAC and audit logging, plus the Docker + GitHub Actions → Azure deployment pipeline',
+          ],
+          technologies: ['Next.js', 'Hono', 'Postgres', 'Drizzle', 'Azure'],
+        },
+      ]}
+    />
+    <Work
       companyName="Open Consulting Group"
-      companyWebsiteUrl="https://evm.ink"
-      duration="2021 - Now"
-      jobTitle="SDE-2, Blockchain Solutions Architect"
+      companyLogo="/icons/companies/ocg.png"
+      companyWebsiteUrl="https://in.linkedin.com/company/open-consulting-grp"
+      duration="2021 - 2025"
+      jobTitle="Blockchain Solutions Architect"
       isRemote={true}
       jobDescription={[
         {
           achievement: 'Evm.ink',
           description: [
-            'Create & maintain frontend for #3 largest inscriptions explorer & trading platform by volume',
+            'Architected & built the #3-largest inscriptions explorer & trading platform by volume: high-throughput indexing, marketplace flows, and real-money trading at scale',
           ],
           technologies: ['React', 'Cloudflare Pages'],
         },
         {
-          achievement: 'Solmates.xyz',
-          description: ['Connect with your friends and hotshots on Solana'],
-          technologies: ['Nextjs', 'Vercel'],
-        },
-        {
           achievement: 'Getfriday.app',
           description: [
-            'Collaborate on a team to create a multi-chain wallet application',
+            'Built a multi-chain wallet application shipped to both app stores: key management, signing, and cross-chain asset flows',
           ],
           technologies: ['Flutter', 'Play Store', 'App Store'],
         },
         {
-          achievement: 'Marketplace.mob.land',
+          achievement: 'NFT marketplaces & communities',
           description: [
-            'Created & maintained the frontend for the marketplace of the famous mob.land community',
+            'Built & ran marketplaces for mob.land and Raresea.io (multi-chain rare-asset trading), plus Solmates.xyz on Solana',
           ],
-          technologies: ['React', 'Netlify'],
-        },
-        {
-          achievement: 'Raresea.io',
-          description: [
-            'Created & maintained the frontend for a mutlichain marketplace which sold rare assets from OpenSea',
-          ],
-          technologies: ['React', 'Netlify'],
+          technologies: ['React', 'Next.js', 'Netlify', 'Vercel'],
         },
       ]}
     />
     <Work
       companyName="Finkraft"
+      companyLogo="/icons/companies/finkraft.png"
       companyWebsiteUrl="https://finkraft.ai"
       duration="2019 - 2021"
       jobTitle="Technical Associate"
       jobDescription={[
         {
-          achievement: 'Finkraft.ai',
+          achievement: 'Invoice & GST financial-data systems',
           description: [
-            "Maintain & improve Finkraft's various client specific tools which help retrieve claimable GST amounts from invoices using custom internal tools & processes",
-            'Create an onboarding flow for new customers to improve customer experience',
-          ],
-          technologies: [
-            'React',
-            'Node.js',
-            'MySQL',
-            'Auth0',
-            'AWS',
-            'Netlify',
-          ],
-        },
-        {
-          achievement: 'Qatar.finkraft.ai',
-          description: [
-            'Build the entire frontend portal which allows authorized Qatar Airways employees to view their invoices, statistics, processing statuses, errors & various other useful information',
-            'Create an onboarding flow for new customers to improve customer experience',
+            'Built & maintained client-facing tools that extract claimable GST from invoice data at scale: parsing, validation, and reconciliation against filings',
+            'Built the Qatar Airways employee portal end-to-end: invoices, processing statuses, statistics, and error reporting for authorized staff',
           ],
           technologies: ['React', 'Node.js', 'MySQL', 'Auth0', 'AWS', 'Box'],
-        },
-        {
-          achievement: 'Various internal tools & AWS administration',
-          description: [
-            'Create scripts to quickly gather required informantion for sales teams',
-            'Maintain and update AWS services to keep things running',
-            'Create custom emails both internal and client facing',
-          ],
-          technologies: ['AWS', 'Auth0', 'Sendgrid', 'Twilio', 'Box'],
         },
       ]}
     />
     <Work
       companyName="Listenlights Pvt Ltd"
+      companyLogo="/icons/companies/listenlights.png"
       companyWebsiteUrl="https://listenlights.com"
       duration="2018 - 2019"
       jobTitle="Web Developer"
       jobDescription={[
         {
-          achievement: 'Internal Tool: LLAPP360 Website',
+          achievement: 'Earlier work',
           description: [
-            'Prototyped & productionized a lightweight tool to externally interface with SAP Business One functionality for on-site engineers with minimal bandwidth/coverage availability',
-            'Created interfaces to enable creation of Purchase Orders, Purchase Requests, Approvals & other miscellaneous interactions with SAP B1',
-            "Created a node server which interfaces with SAP B1's Microsoft SQL Server instance to run custom complex queries to gather insights on various management KPAs",
-            'Created email alerts sent to various stakeholders automatically when a process step in the chain of processes is completed',
+            'Built LLAPP360 (web + Android): a lightweight interface to SAP Business One for on-site engineers, covering purchase orders, approvals, KPI reporting, and automated stakeholder alerts',
           ],
-          technologies: [
-            'Angular',
-            'Node.js',
-            'MS SQL Server',
-            'SAP Business One',
-            'DigitalOcean',
-          ],
-        },
-        {
-          achievement: 'Internal Tool: LL360 Android App',
-          description: [
-            'Migrate & maintain the frontend of LLAPP360 website to a mobile application for more accessbility and bandwidth savings.',
-          ],
-          technologies: ['Ionic', 'Angular', 'Play Store'],
+          technologies: ['Angular', 'Node.js', 'MS SQL Server', 'SAP B1'],
         },
       ]}
     />

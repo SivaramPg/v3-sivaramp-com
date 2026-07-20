@@ -1,17 +1,17 @@
 ---
-
+import { Icon } from 'astro-icon/components'
 ---
 
 <section class="flex gap-2 sm:gap-3 items-center flex-wrap">
   <a
     target="_blank"
     href="https://github.com/SivaramPg"
-    class="border rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 hover:shadow-md duration-100"
+    class="border border-gray-300 dark:border-gray-700 rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-900 hover:shadow-md dark:hover:bg-gray-800 duration-100"
   >
     <img
       src="/icons/github.svg"
       alt="Github"
-      class="w-6"
+      class="w-6 dark:invert"
       loading="eager"
       width="24"
       height="24"
@@ -20,12 +20,12 @@
   <a
     target="_blank"
     href="https://www.linkedin.com/in/sivaram-pandariganthan-b753a2145/"
-    class="border rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 hover:shadow-md duration-100"
+    class="border border-gray-300 dark:border-gray-700 rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-900 hover:shadow-md dark:hover:bg-gray-800 duration-100"
   >
     <img
       src="/icons/linkedin.svg"
       alt="LinkedIn"
-      class="w-6"
+      class="w-6 dark:invert"
       loading="eager"
       width="24"
       height="24"
@@ -33,27 +33,46 @@
   </a>
   <a
     target="_blank"
+    href="https://blog.sivaramp.com/"
+    aria-label="Blog"
+    class="border border-gray-300 dark:border-gray-700 rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-900 hover:shadow-md dark:hover:bg-gray-800 duration-100"
+  >
+    <Icon name="lucide:rss" class="w-6 h-6 text-black dark:text-white" />
+  </a>
+  <a
+    target="_blank"
     href="https://sivarampg.medium.com/"
-    class="border rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 hover:shadow-md duration-100"
+    class="border border-gray-300 dark:border-gray-700 rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-900 hover:shadow-md dark:hover:bg-gray-800 duration-100"
   >
     <img
       src="/icons/medium.svg"
       alt="Medium"
-      class="w-6"
+      class="w-6 dark:invert"
       loading="eager"
       width="24"
       height="24"
+    />
+  </a>
+  <a
+    target="_blank"
+    href="https://dev.to/sivarampg"
+    aria-label="DEV Community"
+    class="border border-gray-300 dark:border-gray-700 rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-900 hover:shadow-md dark:hover:bg-gray-800 duration-100"
+  >
+    <Icon
+      name="simple-icons:devdotto"
+      class="w-6 h-6 text-black dark:text-white"
     />
   </a>
   <a
     target="_blank"
     href="https://x.com/SivaramPg"
-    class="border rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 hover:shadow-md duration-100"
+    class="border border-gray-300 dark:border-gray-700 rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-900 hover:shadow-md dark:hover:bg-gray-800 duration-100"
   >
     <img
       src="/icons/x.svg"
-      alt="Email Address"
-      class="w-6"
+      alt="X (Twitter)"
+      class="w-6 dark:invert"
       loading="eager"
       width="24"
       height="24"
@@ -62,16 +81,16 @@
   <a
     target="_blank"
     href="mailto:dev.sivaramp@gmail.com"
-    class="border rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 hover:shadow-md duration-100"
+    class="border border-gray-300 dark:border-gray-700 rounded flex gap-3 items-center justify-center p-2 sm:p-3 bg-gray-50 dark:bg-gray-900 hover:shadow-md dark:hover:bg-gray-800 duration-100"
   >
     <img
       src="/icons/email.svg"
       alt="Email Address"
-      class="w-6"
+      class="w-6 dark:invert"
       loading="eager"
       width="24"
       height="24"
     />
-    <p class="font-bold dark:text-black">Contact Me</p>
+    <p class="font-semibold">Contact Me</p>
   </a>
 </section>

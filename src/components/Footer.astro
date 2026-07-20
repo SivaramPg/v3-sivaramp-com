@@ -1,11 +1,11 @@
 ---
-
+import { Icon } from 'astro-icon/components'
 ---
 
 <footer
-  class="min-h-32 flex items-center justify-between flex-wrap max-w-screen-lg mx-auto px-4"
+  class="min-h-32 flex items-center justify-between flex-wrap max-w-5xl mx-auto px-4"
 >
-  <p class="text-sm sm:text-base md:text-lg font-bold">
+  <p class="text-sm sm:text-base md:text-lg font-medium">
     Made with ❤️ by Sivaram Pandariganthan © {new Date().getFullYear()}
   </p>
 
@@ -31,6 +31,12 @@
         height="24"
       />
     </a>
+    <a target="_blank" href="https://blog.sivaramp.com/" aria-label="Blog">
+      <Icon
+        name="lucide:rss"
+        class="w-5 h-5 md:w-6 md:h-6 text-gray-900 dark:text-gray-100"
+      />
+    </a>
     <a target="_blank" href="https://sivarampg.medium.com/">
       <img
         src="/icons/medium.svg"
@@ -40,10 +46,16 @@
         height="24"
       />
     </a>
+    <a target="_blank" href="https://dev.to/sivarampg" aria-label="DEV Community">
+      <Icon
+        name="simple-icons:devdotto"
+        class="w-5 h-5 md:w-6 md:h-6 text-gray-900 dark:text-gray-100"
+      />
+    </a>
     <a target="_blank" href="https://x.com/SivaramPg">
       <img
         src="/icons/x.svg"
-        alt="Email Address"
+        alt="X (Twitter)"
         class="w-5 md:w-6 dark:invert"
         width="24"
         height="24"

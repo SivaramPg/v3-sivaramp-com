@@ -1,2 +1,8 @@
+# sivaramp.com
+# All crawlers welcome, including AI/LLM agents.
+# Machine-readable summaries: /llms.txt and /llms-full.txt
+
 User-agent: *
 Allow: /
+
+Sitemap: https://sivaramp.com/sitemap-index.xml

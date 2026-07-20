@@ -1,0 +1,259 @@
+# Sivaram Pandariganthan, Full-Stack Product Engineer
+
+> Complete content of sivaramp.com in markdown. Short index: https://sivaramp.com/llms.txt
+
+I build complete products across the stack: AI platforms, crypto & payment systems, smart contracts, analytics infrastructure, mobile apps, and developer tools.
+
+## About Me
+
+Self-taught engineer, shipping for 8+ years (since 2018) across startups, client work, and my own products. My range runs from React & Flutter apps to smart contracts on EVM and Solana, LLM platforms and cost-aware AI pipelines, payment & metering systems, self-hosted analytics, and the infrastructure it all runs on. I'm at my best owning a whole system end to end (design, build, deploy, operate) and I've done it solo for products handling real users and real money.
+
+## Featured Work
+
+### InferPlane (In Stealth)
+
+An AI control plane for teams: governed model access, credit metering, retained LLM request logs, and audit trails across providers. Currently building in stealth.
+
+- Append-only credits ledger with reservation/settlement lifecycle and idempotency guarantees
+- OTLP ingestion of provider usage telemetry, with request/response artifacts archived to object storage
+- Hardened Hono/oRPC API with org-scoped rate limiting; the control plane comes before the product surface
+
+Stack: Hono, oRPC, Postgres, Drizzle, Redis, Trigger.dev, Stripe, Cloudflare
+
+### stackfight (Open Source)
+
+A credit-billing & AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games.
+
+- Stripe-funded prepaid wallets with fail-closed webhook fulfillment and idempotent integer-microcredit ledger writes
+- Per-call inference metering with budget-capped OpenRouter keys and automated ledger reconciliation
+- Financial invariant auditing (balance floors, ledger conservation), an extensive test suite, and rigorous ops documentation
+
+Stack: Cloudflare Workers, Durable Objects, Stripe, OpenRouter, Postgres, Drizzle
+Live: https://stackfight.sivaram.dev
+Repo: https://github.com/SivaramPg/agent-vs-agent-poker-platform
+
+### 1-cent-requests (Open Source)
+
+A live x402 pay-per-request API marketplace: 14 crypto/web-context endpoints for AI agents at $0.01 each, settled in USDC through signed HTTP 402 exchanges. No accounts, no API keys.
+
+- Full x402 v2 resource-server implementation: EIP-3009 USDC authorizations with facilitator verification
+- Single payment-gate middleware over a typed service catalog, with per-route unit-economics tracking
+- Agent-native discovery (OpenAPI, llms.txt); deployed on Cloudflare Workers + D1 via IaC
+
+Stack: x402, USDC, Hono, Cloudflare Workers, Cloudflare D1, Drizzle
+Live: https://1cent.sivaram.dev
+Repo: https://github.com/SivaramPg/1-cent-requests
+
+### varam.chat (Invite-only, Closed Source)
+
+A live, self-hosted multi-model AI chat platform routing 23 models through OpenRouter. Production plumbing throughout, running daily.
+
+- Every response persists full inference telemetry (token usage, TTFT, tokens/sec, provider metadata) to Postgres as an auditable usage trail
+- Price-floor cost routing with flex service tiers, and resumable Redis-backed streams that survive client disconnects
+- Sandboxed agentic tool execution (code sandbox, web search, docs retrieval) and atomic Lua-scripted rate limiting
+
+Stack: OpenRouter, AI SDK, TanStack Start, Postgres, Drizzle, Redis, E2B
+Live: https://varam-chat.sivaramp.com
+
+### Varam Analytics (Invite-only, Closed Source)
+
+Self-hosted, cookieless web analytics, running in production and powering the analytics on sivaramp.com itself.
+
+- Dependency-free tracker script, Bun/Hono event collector, and a TimescaleDB event store
+- Ingestion with Redis rate limiting, sequence-based deduplication, and realtime visitors via sliding-window sorted sets
+- Hypertables with compression, retention policies, and continuous aggregates precomputing bounce rate, session duration, and scroll depth
+
+Stack: Bun, Hono, TimescaleDB, Redis, Drizzle, Railway
+Live: https://varam-analytics.sivaramp.com
+
+### Signal Brief (Internal Tooling, Closed Source)
+
+A cost-aware, multi-source LLM research pipeline over X, Reddit & Hacker News, at ~$1/day all-in.
+
+- A cheap-model triage gate scores every candidate before any paid scrape or frontier-model call is spent
+- Every run reconciled against the provider's actual billing ledger, not estimates
+- Parallel per-source fan-out with cross-platform corroboration, citation-backed daily digests, and one-click publishing to dev.to
+
+Stack: OpenRouter, Postgres, Drizzle, Firecrawl, TanStack Start
+Live output: https://dev.to/sivarampg
+
+## Selected Client Work
+
+Closed-source engagements: the code is private, but architecture walkthroughs are available on request.
+
+### SuperPower (Case Study, Closed Source)
+
+A crypto-native platform selling autonomous AI agents for USDT on BNB Chain: each purchase auto-provisioned a dedicated, cert-pinned VM from golden images in about two minutes, running a full agent with chat, skills, and an operator wallet. Built and operated solo, end-to-end, in 15 weeks. The product has since been sunset; the engineering stands.
+
+- VM fleet automation: golden-image provisioning, capacity-aware size fallback, orphan-leak prevention, and ordered, never-throwing teardown
+- Integer-credit LLM metering ledger with per-key provider spend caps, top-ups, and drift reconciliation across a dozen monitoring crons
+- Crash-safe two-phase on-chain USDT orders with gas-sponsored server-side signing, plus a 30-day subscription state machine (charge, grace, rescue, teardown)
+- Multi-level referral compensation computed in-transaction via recursive CTEs, a full admin surface, and three-language i18n
+- An isolation proxy as sole ingress to the fleet (per-VM TLS pinning, RPC allowlisting, fleet-wide model overrides) and an agent-operated wallet CLI with OAuth device flow + HPKE
+
+Stack: OpenRouter, viem, BNB Chain, Privy, Hono, oRPC, Postgres, Drizzle, DigitalOcean, AWS KMS
+
+### Prolly.so (Case Study, Closed Source)
+
+An AI-powered, on-chain prediction-market platform, built as sole engineer through three client rebrands over ~13 months.
+
+- Multi-LLM consensus oracle (Claude + Gemini + Grok over multi-source evidence) autonomously resolving markets on-chain
+- Two-phase USDT checkout with advisory-lock inventory reservation and mempool-aware reconciliation crons
+- AMM contracts iterated through four fuzz-tested Solidity versions, with Solana (Rust) and Move ports
+- A scheduled job fleet, Telegram/Discord/Twitter bots, and a key-authenticated agent API with an MCP server
+
+Stack: Vercel AI SDK, Solidity, Foundry, Rust, Solana, tRPC, TimescaleDB, Trigger.dev
+
+### SpotRoyale (Client work, Closed Source)
+
+A fractional music-royalty marketplace: sellers list a share of a song's royalties, investors buy via Stripe (card + stablecoin), and ownership is minted as an ERC-721 certificate on Polygon mainnet.
+
+- Idempotent Stripe checkout and signed webhooks driving a 7-state settlement pipeline (payment, mint, on-chain confirmation) on a job queue
+- Failed/refunded purchases excluded from ownership accounting; on-chain metadata with dynamically generated SVG certificates
+- Streaming-data valuation pipeline aggregating billions of plays
+
+Stack: Stripe, Solidity, Polygon, Next.js, Hono, oRPC, Postgres, Drizzle, pg-boss
+Live: https://sr-app-9f4e.vercel.app
+
+## Work Experience
+
+### Freelance Consultant (2025 - Now, Remote)
+
+Independent Consultant.
+
+- SuperPower & Prolly.so (crypto-native AI client): Sole engineer across an AI-agent commerce platform (metered LLM billing, on-chain USDT payments, automated VM fleet) and an AI-powered on-chain prediction-market platform (multi-LLM oracle, multi-chain AMM contracts)
+- SpotRoyale (music-fintech client): Built a fractional music-royalty marketplace end-to-end: Stripe card + stablecoin checkout driving a settlement pipeline that mints ERC-721 ownership certificates on Polygon mainnet
+- Security-analytics platform (UK cybersecurity firm): Built a multi-tenant analytics product: 11 dashboards on Next.js server components over a typed Splunk query layer, with Azure AD B2C SAML SSO brokering per-tenant tokens via AWS Secrets Manager
+- Equity-management SaaS (early-stage startup): Designed the platform foundation: a multi-tenant Postgres domain model covering cap tables, ESOPs, and funding rounds with RBAC and audit logging, plus the Docker + GitHub Actions to Azure deployment pipeline
+
+### Open Consulting Group (2021 - 2025, Remote)
+
+Blockchain Solutions Architect. https://in.linkedin.com/company/open-consulting-grp
+
+- Evm.ink: Architected & built the #3-largest inscriptions explorer & trading platform by volume: high-throughput indexing, marketplace flows, and real-money trading at scale
+- Getfriday.app: Built a multi-chain wallet application shipped to both app stores: key management, signing, and cross-chain asset flows
+- NFT marketplaces & communities: Built & ran marketplaces for mob.land and Raresea.io (multi-chain rare-asset trading), plus Solmates.xyz on Solana
+
+### Finkraft (2019 - 2021)
+
+Technical Associate. https://finkraft.ai
+
+- Built & maintained client-facing tools that extract claimable GST from invoice data at scale: parsing, validation, and reconciliation against filings
+- Built the Qatar Airways employee portal end-to-end: invoices, processing statuses, statistics, and error reporting for authorized staff
+
+### Listenlights Pvt Ltd (2018 - 2019)
+
+Web Developer. https://listenlights.com
+
+- Built LLAPP360 (web + Android): a lightweight interface to SAP Business One for on-site engineers, covering purchase orders, approvals, KPI reporting, and automated stakeholder alerts
+
+## Skills
+
+- AI / LLM: OpenRouter, Vercel AI SDK, Agents, RAG, Cost-aware pipelines
+- Payments & Billing: Stripe, x402, USDC, Stablecoins, Usage metering, Reconciliation, Audit trails
+- Blockchain: Solidity, Foundry, Rust, Solana, viem, EVM chains, Wallets & signing
+- Infrastructure: Cloudflare Workers, Durable Objects, Postgres, Drizzle, TimescaleDB, Redis, Trigger.dev, AWS, Azure
+- Frontend & Apps: TypeScript, React, Next.js, TanStack, Astro, Node.js, Bun, Flutter
+
+## Open Source & Tools
+
+### Prediction Market Contracts (Open Source, EVM, Solana)
+
+Open-source parimutuel binary prediction markets for EVM and Solana. Unaudited and educational by design: an independent, clean-room companion to my client prediction-market work.
+
+- Gas-optimized Solidity implementation backed by a comprehensive Foundry suite (unit, integration, and fuzz tests)
+- Rust/Anchor port with PDA vault architecture and its own TypeScript test suite
+- Both walked through end-to-end in a two-part guide series on dev.to
+
+Stack: Solidity, Foundry, Rust, Anchor, ERC20, SPL
+EVM repo: https://github.com/SivaramPg/evm-simple-prediction-market-contract
+Solana repo: https://github.com/SivaramPg/solana-simple-prediction-market-contract
+Guide series: https://dev.to/sivarampg/series/42097
+
+### pwa-icons (Open Source)
+
+An npm CLI that turns one image (SVG or raster) into 118 production-ready PWA icons in under a second.
+
+- iOS, Android, Windows 11, favicons, and multi-size ICO from a single SVG or raster input
+- 2.5k+ downloads on npm, thoroughly tested with cross-platform CI on Linux and Windows
+
+Stack: TypeScript, Sharp, resvg, Bun
+npm: https://www.npmjs.com/package/pwa-icons
+Repo: https://github.com/SivaramPg/pwa-icons
+
+### Site Metadata Explorer (Closed Source)
+
+A live web tool that audits a site's entire metadata surface in one scan.
+
+- Meta/OG/Twitter tags, JSON-LD, robots.txt, sitemaps, web manifest, security.txt, and llms.txt, with per-file size reporting
+- Exports any scan as LLM-ready Markdown with one-click handoff to Claude, ChatGPT, or Gemini
+
+Stack: Next.js 16, React 19, Cheerio, Tailwind 4
+Live: https://site-metadata.sivaramp.com
+
+### rawdocs (Redeploying, Closed Source)
+
+A database-free docs proxy that serves any GitHub repo's markdown to both humans (SSR tree view) and LLMs (auto-generated llms.txt, content negotiation by Accept header).
+
+- Circuit-breakered source abstraction with automatic fallback between upstreams
+- Two-tier caching: in-process LRU plus CDN edge headers
+- Structured request logging that classifies AI crawler traffic (GPTBot, ClaudeBot, Perplexity)
+
+Stack: Bun, Hono, Fastly CDN, Docker, Railway
+
+### Tuulkit (Closed Source)
+
+25 browser-based developer utilities in one app, deployed at the edge on Cloudflare Workers.
+
+- In-browser ML background removal running entirely client-side: GPU-accelerated ONNX, no server round-trip
+- WASM-powered hashing, compression, and JSON-to-TypeScript codegen
+- JSON tooling, image compression, PWA asset generation, and more
+
+Stack: React 19, TanStack Start, onnxruntime-web, WASM, Cloudflare Workers
+Live: https://tuulkit.sixstrides.com
+
+### markdownbin (Closed Source)
+
+A zero-knowledge markdown pastebin, live in production since 2025.
+
+- Client-side AES-256-GCM encryption (PBKDF2, 310k iterations) with self-decrypting share links
+- The server only ever stores ciphertext; passwords ride the URL hash without touching the wire
+- Full GFM rendering with Mermaid and KaTeX
+
+Stack: Next.js, Postgres, Drizzle, Web Crypto, Brotli
+Live: https://mdbin.sivaramp.com
+
+### Swapi.info (Open Source)
+
+The Star Wars API, rebuilt for reliability: a community drop-in replacement used for prototyping and teaching.
+
+- Serverless, file-based GET API and data explorer serving static JSON from the CDN edge
+- No keys, no rate limits; resilient to traffic surges by architecture
+- Runs its own public status page
+
+Stack: Next.js, Static JSON, CDN edge
+Live: https://swapi.info
+Repo: https://github.com/SivaramPg/swapi.info
+
+### Anaek Desilog (Open Source)
+
+Free, CC0 Desi/Indian placeholder-image APIs for anyone who wants placeholders with desi flair.
+
+- Dynamically sized avatars and characters, in colour or black & white
+- Static-first delivery split across Vercel and Cloudflare Pages for high availability
+
+Stack: Next.js, Vercel, Cloudflare Pages
+Live: https://desilog.sivaramp.com
+Repo: https://github.com/SivaramPg/desilog
+
+## Education
+
+Bachelor of Engineering in Electronics (2012 - 2017), Shah & Anchor Kutchhi Engineering College, Chembur, Mumbai University.
+
+## Hire Me
+
+I take on freelance work across the stack: AI products, payments & crypto systems, full-stack apps, smart contracts, and infrastructure. If it needs shipping end to end, I'm your engineer. Based in India, working remotely worldwide.
+
+- Email: dev.sivaramp@gmail.com
+- X (Twitter): https://x.com/SivaramPg
+- GitHub: https://github.com/SivaramPg

@@ -1,0 +1,160 @@
+---
+import SectionTitle from '../SectionTitle.astro'
+
+interface Day {
+  date: string
+  count: number
+  level: 0 | 1 | 2 | 3 | 4
+}
+
+const GITHUB_USER = 'SivaramPg'
+
+let days: Day[] = []
+let total = 0
+try {
+  const res = await fetch(
+    `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`
+  )
+  if (res.ok) {
+    const data = (await res.json()) as {
+      total: { lastYear: number }
+      contributions: Day[]
+    }
+    days = data.contributions
+    total = data.total?.lastYear ?? 0
+  }
+} catch {
+  // API unreachable at build time: render nothing rather than fail the build
+}
+
+// GitHub-style week columns, Sunday-start; pad the first partial week
+const weeks: (Day | null)[][] = []
+if (days.length > 0) {
+  let week: (Day | null)[] = Array.from(
+    { length: new Date(`${days[0].date}T00:00:00Z`).getUTCDay() },
+    () => null
+  )
+  for (const day of days) {
+    week.push(day)
+    if (week.length === 7) {
+      weeks.push(week)
+      week = []
+    }
+  }
+  if (week.length > 0) weeks.push(week)
+}
+
+const monthOf = (week: (Day | null)[]) => {
+  const first = week.find(Boolean)
+  return first
+    ? new Date(`${first.date}T00:00:00Z`).toLocaleDateString('en-US', {
+        month: 'short',
+        timeZone: 'UTC',
+      })
+    : ''
+}
+const monthLabels = weeks.map((week, i) =>
+  i === 0 || monthOf(week) !== monthOf(weeks[i - 1]) ? monthOf(week) : ''
+)
+
+const tooltip = (day: Day) => {
+  const date = new Date(`${day.date}T00:00:00Z`).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  })
+  return day.count === 0
+    ? `No contributions on ${date}`
+    : `${day.count} contribution${day.count === 1 ? '' : 's'} on ${date}`
+}
+
+const LEVEL_CLASSES = [
+  'bg-gray-200 dark:bg-gray-800',
+  'bg-green-200 dark:bg-green-950',
+  'bg-green-400 dark:bg-green-800',
+  'bg-green-600 dark:bg-green-600',
+  'bg-green-800 dark:bg-green-400',
+]
+
+const DAY_LABELS = ['', 'Mon', '', 'Wed', '', 'Fri', '']
+---
+
+{
+  weeks.length > 0 && (
+    <section class="flex flex-col gap-4 sm:gap-6">
+      <SectionTitle title="GitHub Activity" />
+
+      <div class="overflow-x-auto pb-2">
+        <div class="min-w-[720px]">
+          <div class="flex items-baseline justify-between gap-2 mb-3">
+            <p class="text-base md:text-lg text-gray-700 dark:text-gray-300">
+              <span class="font-semibold text-gray-900 dark:text-gray-100">
+                {total.toLocaleString('en-US')}
+              </span>{' '}
+              contributions in the last year
+            </p>
+            <a
+              target="_blank"
+              href={`https://github.com/${GITHUB_USER}`}
+              class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:underline underline-offset-4 hover:text-indigo-600 dark:hover:text-indigo-400"
+            >
+              @{GITHUB_USER}
+            </a>
+          </div>
+          <div class="flex gap-[3px] ml-8 mb-1">
+            {monthLabels.map((label) => (
+              <div class="flex-1 overflow-visible">
+                <span class="text-[10px] leading-none text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div class="flex gap-[3px]">
+            <div class="flex flex-col gap-[3px] w-8 shrink-0 pr-1">
+              {DAY_LABELS.map((label) => (
+                <div class="flex-1 flex items-center justify-end">
+                  <span class="text-[10px] leading-none text-gray-600 dark:text-gray-400">
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {weeks.map((week) => (
+              <div class="flex flex-col gap-[3px] flex-1">
+                {week.map((day) =>
+                  day ? (
+                    <div
+                      class:list={[
+                        'w-full aspect-square rounded-[3px]',
+                        LEVEL_CLASSES[day.level],
+                      ]}
+                      title={tooltip(day)}
+                    />
+                  ) : (
+                    <div class="w-full aspect-square" />
+                  )
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div class="flex items-center justify-end gap-1.5 mt-2">
+            <span class="text-[10px] leading-none text-gray-600 dark:text-gray-400">
+              Less
+            </span>
+            {LEVEL_CLASSES.map((levelClass) => (
+              <div class:list={['w-3 h-3 rounded-[2px]', levelClass]} />
+            ))}
+            <span class="text-[10px] leading-none text-gray-600 dark:text-gray-400">
+              More
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

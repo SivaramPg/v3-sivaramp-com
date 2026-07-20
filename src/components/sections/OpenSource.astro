@@ -1,0 +1,151 @@
+---
+import desilogImg from '../../assets/projects/desilog.jpg'
+import markdownbinImg from '../../assets/projects/markdownbin.png'
+import contractsImg from '../../assets/projects/prediction-contracts.webp'
+import pwaIconsImg from '../../assets/projects/pwa-icons.png'
+import rawdocsImg from '../../assets/projects/rawdocs.png'
+import siteMetadataImg from '../../assets/projects/site-metadata.png'
+import swapiImg from '../../assets/projects/swapi.jpg'
+import tuulkitImg from '../../assets/projects/tuulkit.png'
+import Project from '../Project.astro'
+import SectionTitle from '../SectionTitle.astro'
+---
+
+<section class="flex flex-col gap-4 sm:gap-6">
+  <SectionTitle title="Open Source & Tools" />
+  <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-800 [&>*]:py-8 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
+    <Project
+      title="Prediction Market Contracts"
+      statuses={['Open Source', 'EVM', 'Solana']}
+      image={contractsImg}
+      description="Open-source parimutuel binary prediction markets for EVM and Solana. Unaudited and educational by design: an independent, clean-room companion to my client prediction-market work."
+      highlights={[
+        'Gas-optimized Solidity implementation backed by a comprehensive Foundry suite (unit, integration, and fuzz tests)',
+        'Rust/Anchor port with PDA vault architecture and its own TypeScript test suite',
+        'Both walked through end-to-end in a two-part guide series on dev.to',
+      ]}
+      stack={['Solidity', 'Foundry', 'Rust', 'Anchor', 'ERC20', 'SPL']}
+      repoUrl="https://github.com/SivaramPg/evm-simple-prediction-market-contract"
+      extraLinks={[
+        {
+          href: 'https://github.com/SivaramPg/solana-simple-prediction-market-contract',
+          label: 'Solana Port',
+          icon: 'simple-icons:solana',
+        },
+        {
+          href: 'https://dev.to/sivarampg/series/42097',
+          label: 'Guide Series',
+        },
+      ]}
+    />
+    <Project
+      title="pwa-icons"
+      statuses={['Open Source']}
+      image={pwaIconsImg}
+      description="An npm CLI that turns one image (SVG or raster) into 118 production-ready PWA icons in under a second."
+      highlights={[
+        'iOS, Android, Windows 11, favicons, and multi-size ICO from a single SVG or raster input',
+        '2.5k+ downloads on npm, thoroughly tested with cross-platform CI on Linux and Windows',
+      ]}
+      stack={['TypeScript', 'Sharp', 'resvg', 'Bun']}
+      repoUrl="https://github.com/SivaramPg/pwa-icons"
+      websiteUrl="https://www.npmjs.com/package/pwa-icons"
+      websiteLabel="View on npm"
+    />
+    <Project
+      title="Site Metadata Explorer"
+      statuses={['Closed Source']}
+      iconUrl="/projects/icons/site-metadata.png"
+      image={siteMetadataImg}
+      description="A live web tool that audits a site's entire metadata surface in one scan."
+      highlights={[
+        'Meta/OG/Twitter tags, JSON-LD, robots.txt, sitemaps, web manifest, security.txt, and llms.txt, with per-file size reporting',
+        'Exports any scan as LLM-ready Markdown with one-click handoff to Claude, ChatGPT, or Gemini',
+      ]}
+      stack={['Next.js 16', 'React 19', 'Cheerio', 'Tailwind 4']}
+      websiteUrl="https://site-metadata.sivaramp.com"
+      websiteLabel="Live Site"
+    />
+    <Project
+      title="rawdocs"
+      iconUrl="/projects/icons/rawdocs.png"
+      status="Redeploying"
+      statuses={['Closed Source']}
+      image={rawdocsImg}
+      description="A database-free docs proxy that serves any GitHub repo's markdown to both humans (SSR tree view) and LLMs (auto-generated llms.txt, content negotiation by Accept header)."
+      highlights={[
+        'Circuit-breakered source abstraction with automatic fallback between upstreams',
+        'Two-tier caching: in-process LRU plus CDN edge headers',
+        'Structured request logging that classifies AI crawler traffic (GPTBot, ClaudeBot, Perplexity)',
+      ]}
+      stack={['Bun', 'Hono', 'Fastly CDN', 'Docker', 'Railway']}
+    />
+    <Project
+      title="Tuulkit"
+      statuses={['Closed Source']}
+      iconUrl="/projects/icons/tuulkit.png"
+      image={tuulkitImg}
+      description="25 browser-based developer utilities in one app, deployed at the edge on Cloudflare Workers."
+      highlights={[
+        'In-browser ML background removal running entirely client-side: GPU-accelerated ONNX, no server round-trip',
+        'WASM-powered hashing, compression, and JSON-to-TypeScript codegen',
+        'JSON tooling, image compression, PWA asset generation, and more',
+      ]}
+      stack={[
+        'React 19',
+        'TanStack Start',
+        'onnxruntime-web',
+        'WASM',
+        'Cloudflare Workers',
+      ]}
+      websiteUrl="https://tuulkit.sixstrides.com"
+      websiteLabel="Live Site"
+    />
+    <Project
+      title="markdownbin"
+      statuses={['Closed Source']}
+      iconUrl="/projects/icons/markdownbin.png"
+      image={markdownbinImg}
+      description="A zero-knowledge markdown pastebin, live in production since 2025."
+      highlights={[
+        'Client-side AES-256-GCM encryption (PBKDF2, 310k iterations) with self-decrypting share links',
+        'The server only ever stores ciphertext; passwords ride the URL hash without touching the wire',
+        'Full GFM rendering with Mermaid and KaTeX',
+      ]}
+      stack={['Next.js', 'Postgres', 'Drizzle', 'Web Crypto', 'Brotli']}
+      websiteUrl="https://mdbin.sivaramp.com"
+      websiteLabel="Live Site"
+    />
+    <Project
+      title="Swapi.info"
+      statuses={['Open Source']}
+      iconUrl="/projects/icons/swapi.png"
+      image={swapiImg}
+      description="The Star Wars API, rebuilt for reliability: a community drop-in replacement used for prototyping and teaching."
+      highlights={[
+        'Serverless, file-based GET API and data explorer serving static JSON from the CDN edge',
+        'No keys, no rate limits; resilient to traffic surges by architecture',
+        'Runs its own public status page',
+      ]}
+      stack={['Next.js', 'Static JSON', 'CDN edge']}
+      websiteUrl="https://swapi.info"
+      websiteLabel="Live Site"
+      repoUrl="https://github.com/SivaramPg/swapi.info"
+    />
+    <Project
+      title="Anaek Desilog"
+      statuses={['Open Source']}
+      iconUrl="/projects/icons/desilog.png"
+      image={desilogImg}
+      description="Free, CC0 Desi/Indian placeholder-image APIs for anyone who wants placeholders with desi flair."
+      highlights={[
+        'Dynamically sized avatars and characters, in colour or black & white',
+        'Static-first delivery split across Vercel and Cloudflare Pages for high availability',
+      ]}
+      stack={['Next.js', 'Vercel', 'Cloudflare Pages']}
+      websiteUrl="https://desilog.sivaramp.com"
+      websiteLabel="Live Site"
+      repoUrl="https://github.com/SivaramPg/desilog"
+    />
+  </div>
+</section>

@@ -2,9 +2,15 @@
 import '../styles/global.css'
 import Footer from '../components/Footer.astro'
 import About from '../components/sections/About.astro'
+import ClientWork from '../components/sections/ClientWork.astro'
+import Contributions from '../components/sections/Contributions.astro'
+import CTA from '../components/sections/CTA.astro'
+import Divider from '../components/Divider.astro'
+import Lightbox from '../components/Lightbox.astro'
 import Education from '../components/sections/Education.astro'
 import Experience from '../components/sections/Experience.astro'
 import LongBio from '../components/sections/LongBio.astro'
+import OpenSource from '../components/sections/OpenSource.astro'
 import Projects from '../components/sections/Projects.astro'
 import WorkExperience from '../components/sections/WorkExperience.astro'
 ---
@@ -13,32 +19,22 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
   <head>
     <meta charset="utf-8" />
     <meta name="robots" content="index, follow" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href="https://sivaramp.com/" />
 
     <link
       rel="preload"
-      href="/fonts/Atkinson-Hyperlegible-Bold.woff"
-      as="font"
-      type="font/woff"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/Atkinson-Hyperlegible-Bold.woff2"
+      href="/fonts/AtkinsonHyperlegibleNext-Variable.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="/fonts/Atkinson-Hyperlegible-Regular.woff"
-      as="font"
-      type="font/woff"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/Atkinson-Hyperlegible-Regular.woff2"
+      href="/fonts/FunnelDisplay-Variable.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -48,33 +44,90 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
+      content="Full-stack product engineer with 8+ years building AI platforms, payment & crypto systems, smart contracts, analytics, mobile apps, and developer tools."
     />
-    <meta name="og:title" content="Sivaram's Website" />
     <meta
-      name="og:description"
-      content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
+      property="og:title"
+      content="Sivaram Pandariganthan | Full-Stack Product Engineer"
     />
-    <meta name="twitter:title" content="Sivaram's Website" />
+    <meta
+      property="og:description"
+      content="Full-stack product engineer with 8+ years building AI platforms, payment & crypto systems, smart contracts, analytics, mobile apps, and developer tools."
+    />
+    <meta
+      name="twitter:title"
+      content="Sivaram Pandariganthan | Full-Stack Product Engineer"
+    />
     <meta
       name="twitter:description"
-      content="Full stack developer, specializing in React based frontends, with a keen eye on functionality & performance."
+      content="Full-stack product engineer with 8+ years building AI platforms, payment & crypto systems, smart contracts, analytics, mobile apps, and developer tools."
+    />
+    <meta name="twitter:site" content="@SivaramPg" />
+    <meta name="twitter:creator" content="@SivaramPg" />
+    <meta property="og:image" content="https://sivaramp.com/og-image.png" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta
+      property="og:image:alt"
+      content="Sivaram Pandariganthan, Full-Stack Product Engineer across AI, crypto, and web."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://sivaramp.com/twitter-image.png"
     />
     <meta
-      name="image"
-      property="og:image"
-      content="https://sivaramp.com/me.jpg"
+      name="twitter:image:alt"
+      content="Sivaram Pandariganthan, Full-Stack Product Engineer across AI, crypto, and web."
     />
-    <meta
-      name="image"
-      property="twitter:image"
-      content="https://sivaramp.com/me.jpg"
-    />
-    <meta property="og:type" content="portfolio" />
+    <meta property="og:type" content="website" />
     <meta name="author" content="Sivaram Pandariganthan" />
-    <meta property="og:url" content="https://sivaramp.com" />
+    <meta property="og:url" content="https://sivaramp.com/" />
 
-    <title>Sivaram's Website</title>
+    <title>Sivaram Pandariganthan | Full-Stack Product Engineer · AI, Crypto & Web</title>
+
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        '@id': 'https://sivaramp.com/#profile',
+        url: 'https://sivaramp.com/',
+        mainEntity: {
+        '@type': 'Person',
+        '@id': 'https://sivaramp.com/#person',
+        name: 'Sivaram Pandariganthan',
+        url: 'https://sivaramp.com/',
+        image: 'https://sivaramp.com/me.jpg',
+        jobTitle: 'Full-Stack Product Engineer',
+        description:
+          'Full-stack product engineer building AI platforms, crypto & payment systems, smart contracts, analytics infrastructure, mobile apps, and developer tools.',
+        email: 'mailto:dev.sivaramp@gmail.com',
+        homeLocation: { '@type': 'Country', name: 'India' },
+        sameAs: [
+          'https://blog.sivaramp.com/',
+          'https://github.com/SivaramPg',
+          'https://www.linkedin.com/in/sivaram-pandariganthan-b753a2145/',
+          'https://x.com/SivaramPg',
+          'https://sivarampg.medium.com/',
+          'https://dev.to/sivarampg',
+        ],
+        knowsAbout: [
+          'AI infrastructure',
+          'LLM applications',
+          'Payments & billing systems',
+          'Usage metering & reconciliation',
+          'Smart contracts (Solidity, Rust, Solana)',
+          'Cloudflare Workers',
+          'React & Next.js',
+          'Flutter',
+          'Self-hosted analytics',
+          'Developer tools',
+        ],
+        },
+      })}
+    />
 
     {import.meta.env.PROD ? (
       <script
@@ -96,39 +149,48 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
           color 150ms linear;
       }
       @font-face {
-        font-family: 'Atkinson';
-        src:
-          url('/fonts/Atkinson-Hyperlegible-Regular.woff2') format('woff2'),
-          url('/fonts/Atkinson-Hyperlegible-Regular.woff') format('woff');
-        font-weight: normal;
+        font-family: 'Atkinson Hyperlegible Next';
+        src: url('/fonts/AtkinsonHyperlegibleNext-Variable.woff2')
+          format('woff2');
+        font-weight: 200 800;
         font-style: normal;
         font-display: swap;
       }
 
       @font-face {
-        font-family: 'Atkinson';
-        src:
-          url('/fonts/Atkinson-Hyperlegible-Bold.woff2') format('woff2'),
-          url('/fonts/Atkinson-Hyperlegible-Bold.woff') format('woff');
-        font-weight: bold;
+        font-family: 'Funnel Display';
+        src: url('/fonts/FunnelDisplay-Variable.woff2') format('woff2');
+        font-weight: 300 800;
         font-style: normal;
         font-display: swap;
       }
     </style>
   </head>
   <body
-    class="bg-gray-50 dark:bg-black text-black dark:text-white w-full min-h-screen"
+    class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 w-full min-h-screen"
   >
     <main
       class="w-full max-w-5xl mx-auto min-h-screen py-6 sm:py-10 md:py-14 lg:py-20 px-4 flex flex-col gap-6 sm:gap-8 md:gap-12 relative"
     >
       <About />
       <LongBio />
-      <WorkExperience />
-      <Education />
-      <Experience />
+      <Divider />
       <Projects />
+      <Divider />
+      <ClientWork />
+      <Divider />
+      <WorkExperience />
+      <Divider />
+      <Experience />
+      <Divider />
+      <OpenSource />
+      <Divider />
+      <Contributions />
+      <Divider />
+      <Education />
+      <CTA />
     </main>
     <Footer />
+    <Lightbox />
   </body>
 </html>

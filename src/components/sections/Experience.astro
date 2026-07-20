@@ -1,31 +1,95 @@
 ---
+import { techIcon, techTint } from '../../lib/techIcons'
 import SectionTitle from '../SectionTitle.astro'
 
-const experiences = [
-  'Javascript',
-  'Typescript',
-  'React/Next.js',
-  'Node.js',
-  'SQL/MongoDB',
-  'Flutter',
-  'Netlify/Vercel/Cloudflare',
+const skillGroups: { category: string; skills: string[] }[] = [
+  {
+    category: 'AI / LLM',
+    skills: [
+      'OpenRouter',
+      'Vercel AI SDK',
+      'Agents',
+      'RAG',
+      'Cost-aware pipelines',
+    ],
+  },
+  {
+    category: 'Payments & Billing',
+    skills: [
+      'Stripe',
+      'x402',
+      'USDC', 'Stablecoins',
+      'Usage metering',
+      'Reconciliation',
+      'Audit trails',
+    ],
+  },
+  {
+    category: 'Blockchain',
+    skills: [
+      'Solidity', 'Foundry',
+      'Rust', 'Solana',
+      'viem',
+      'EVM chains',
+      'Wallets & signing',
+    ],
+  },
+  {
+    category: 'Infrastructure',
+    skills: [
+      'Cloudflare Workers',
+      'Durable Objects',
+      'Postgres', 'Drizzle',
+      'TimescaleDB',
+      'Redis',
+      'Trigger.dev',
+      'AWS',
+      'Azure',
+    ],
+  },
+  {
+    category: 'Frontend & Apps',
+    skills: [
+      'TypeScript',
+      'React', 'Next.js',
+      'TanStack',
+      'Astro',
+      'Node.js', 'Bun',
+      'Flutter',
+    ],
+  },
 ]
 ---
 
-<section class="flex flex-col gap-2 sm:gap-4">
-  <SectionTitle title="Experience" />
-  <div class="flex items-center gap-2 flex-wrap">
+<section class="flex flex-col gap-4 sm:gap-6">
+  <SectionTitle title="Skills" />
+  <div class="flex flex-col gap-3">
     {
-      experiences.map((experience) => (
-        <div class="border  rounded-full p-2 px-4 invert bg-gray-50 dark:bg-black flex items-center justify-center gap-1">
-          <img
-            src="/icons/work-history.svg"
-            alt="work-history"
-            class="w-4 dark:invert"
-            width="16"
-            height="16"
-          />
-          <span class="leading-none text-sm sm:text-base">{experience}</span>
+      skillGroups.map(({ category, skills }) => (
+        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+          <p class="font-semibold text-sm sm:text-base w-full sm:w-44 shrink-0">
+            {category}
+          </p>
+          <div class="flex items-center gap-2 flex-wrap">
+            {skills.map((skill) => (
+              <div
+                class="rounded-full py-1.5 px-3 bg-gray-100 dark:bg-gray-900 flex items-center justify-center gap-1.5"
+                style={techTint(skill)}
+              >
+                {techIcon(skill) && (
+                  <img
+                    src={techIcon(skill)}
+                    alt=""
+                    class="w-4 h-4 rounded-xs object-contain"
+                    loading="lazy"
+                    width="16"
+                    height="16"
+                  />
+                )}
+                <span class="leading-none text-sm sm:text-base">{skill}</span>
+              </div>
+            ))}
+          </div>
         </div>
       ))
     }
