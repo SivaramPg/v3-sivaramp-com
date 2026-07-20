@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+/* Dark mode is toggled via a `.dark` class on <html> (see ThemeSwitch.astro) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Atkinson', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Tailwind v4 changed the default border color from gray-200 to currentColor.
+   Restore the v3 default for the bare `border` classes used across the site. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
