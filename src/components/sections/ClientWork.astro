@@ -8,14 +8,14 @@ import SectionTitle from '../SectionTitle.astro'
   <p
     class="text-sm sm:text-base text-gray-700 dark:text-gray-300 -mt-1 sm:-mt-2"
   >
-    Closed-source engagements — the code is private, but I'm happy to walk
+    Closed-source engagements: the code is private, but I'm happy to walk
     through the architecture of any of these in detail.
   </p>
   <div class="flex flex-col gap-8">
     <Project
       title="SuperPower / SuperClaw"
       status="Case Study"
-      description={`A crypto-native platform selling autonomous AI agents for USDT on BNB Chain — each purchase auto-provisioned a dedicated, cert-pinned VM running the agent in about two minutes. Built and operated solo, end-to-end, in ~765 commits over 15 weeks. The product has since been sunset — the engineering stands.\nInteger-credit LLM metering ledger with per-key provider spend caps as the enforcement boundary and cron-driven drift reconciliation; crash-safe two-phase on-chain USDT orders with gas-sponsored server-side signing and idempotent chain reconciliation; and an isolation proxy as the sole ingress to the VM fleet — per-VM TLS pinning, RPC allowlisting, and fleet-wide model overrides without redeploys.`}
+      description={`A crypto-native platform selling autonomous AI agents for USDT on BNB Chain, where each purchase auto-provisioned a dedicated, cert-pinned VM running the agent in about two minutes. Built and operated solo, end-to-end, in 15 weeks. The product has since been sunset; the engineering stands.\nInteger-credit LLM metering ledger with per-key provider spend caps as the enforcement boundary and cron-driven drift reconciliation; crash-safe two-phase on-chain USDT orders with gas-sponsored server-side signing and idempotent chain reconciliation; and an isolation proxy as the sole ingress to the VM fleet: per-VM TLS pinning, RPC allowlisting, and fleet-wide model overrides without redeploys.`}
       stack={[
         'OpenRouter',
         'viem / BNB Chain',
@@ -29,7 +29,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="Prolly.so"
       status="Case Study"
-      description={`An AI-powered, on-chain prediction-market platform — sole engineer through three client rebrands: 4,500+ commits over ~13 months.\nA multi-LLM consensus oracle (Claude + Gemini + Grok over multi-source evidence) autonomously resolves markets on-chain; two-phase USDT checkout with advisory-lock inventory reservation and mempool-aware reconciliation crons; AMM contracts iterated through four Solidity versions (360+ Foundry tests) with Solana (Rust) and Move ports; plus a 40-job scheduled fleet, Telegram/Discord/Twitter bots, and a key-authenticated agent API with an MCP server.`}
+      description={`An AI-powered, on-chain prediction-market platform, built as sole engineer through three client rebrands over ~13 months.\nA multi-LLM consensus oracle (Claude + Gemini + Grok over multi-source evidence) autonomously resolves markets on-chain; two-phase USDT checkout with advisory-lock inventory reservation and mempool-aware reconciliation crons; AMM contracts iterated through four fuzz-tested Solidity versions with Solana (Rust) and Move ports; plus a scheduled job fleet, Telegram/Discord/Twitter bots, and a key-authenticated agent API with an MCP server.`}
       stack={[
         'Vercel AI SDK',
         'Solidity / Foundry',
@@ -41,6 +41,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="SpotRoyale"
+      imageUrl="/projects/spotroyale.png"
       status="Client work"
       description={`A fractional music-royalty marketplace: sellers list a share of a song's royalties, investors buy via Stripe (card + stablecoin), and ownership is minted as an ERC-721 certificate on Polygon mainnet.\nIdempotent Stripe checkout and signed webhooks drive a 7-state settlement pipeline (payment → mint → on-chain confirmation) on a job queue, with failed/refunded purchases excluded from ownership accounting, on-chain metadata with dynamically generated SVG certificates, and a streaming-data valuation pipeline aggregating billions of plays.`}
       stack={[

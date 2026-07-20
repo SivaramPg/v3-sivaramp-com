@@ -1,14 +1,14 @@
 # sivaramp.com
 
-Personal portfolio of Sivaram Pandariganthan — full-stack product engineer across AI platforms, crypto & payment systems, smart contracts, analytics infrastructure, mobile apps, and developer tools.
+Personal portfolio of Sivaram Pandariganthan: full-stack product engineer across AI platforms, crypto & payment systems, smart contracts, analytics infrastructure, mobile apps, and developer tools.
 
 Live at [sivaramp.com](https://sivaramp.com/), hosted on Cloudflare Pages as a fully static build.
 
 ## Stack
 
-- [Astro 7](https://astro.build/) — static output, zero client JS except the theme toggle
-- [Tailwind CSS 4](https://tailwindcss.com/) — CSS-first config via `@tailwindcss/vite` (see `src/styles/global.css`; there is no `tailwind.config` file)
-- TypeScript 6 (pinned to 6.x — `astro check` does not yet support the TS 7 native compiler)
+- [Astro 7](https://astro.build/): static output, zero client JS except the theme toggle
+- [Tailwind CSS 4](https://tailwindcss.com/): CSS-first config via `@tailwindcss/vite` (see `src/styles/global.css`; there is no `tailwind.config` file)
+- TypeScript 6 (pinned to 6.x; `astro check` does not yet support the TS 7 native compiler)
 - [Bun](https://bun.sh/) as package manager and script runner
 
 ## Commands

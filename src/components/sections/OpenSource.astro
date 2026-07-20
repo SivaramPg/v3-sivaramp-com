@@ -8,15 +8,23 @@ import SectionTitle from '../SectionTitle.astro'
   <div class="flex flex-col gap-8">
     <Project
       title="Prediction Market Contracts (EVM + Solana)"
-      description={`Open-source parimutuel binary prediction markets: a gas-optimized Solidity implementation backed by a 95-test Foundry suite (unit + integration + fuzz, ~98% line coverage), and a Rust/Anchor port with PDA vault architecture and a 48-case test suite.\nUnaudited and educational by design — an independent, clean-room companion to my client prediction-market work.`}
+      imageUrl="/projects/prediction-contracts.jpg"
+      description={`Open-source parimutuel binary prediction markets: a gas-optimized Solidity implementation backed by a comprehensive Foundry suite (unit, integration, and fuzz tests), and a Rust/Anchor port with PDA vault architecture and its own TypeScript test suite.\nUnaudited and educational by design: an independent, clean-room companion to my client prediction-market work.`}
       stack={['Solidity / Foundry', 'Rust / Anchor', 'ERC20', 'SPL']}
       repoUrl="https://github.com/SivaramPg/evm-simple-prediction-market-contract"
       websiteUrl="https://github.com/SivaramPg/solana-simple-prediction-market-contract"
       websiteLabel="Solana Port"
+      extraLinks={[
+        {
+          href: 'https://dev.to/sivarampg/series/42097',
+          label: 'Guide Series',
+        },
+      ]}
     />
     <Project
       title="pwa-icons"
-      description={`An npm CLI that turns one image (SVG or raster) into 118 production-ready PWA icons in under a second — iOS, Android, Windows 11, favicons, and multi-size ICO.\n2.5k+ downloads, 96 unit & integration tests, cross-platform CI on Linux and Windows.`}
+      imageUrl="/projects/pwa-icons.png"
+      description={`An npm CLI that turns one image (SVG or raster) into 118 production-ready PWA icons in under a second: iOS, Android, Windows 11, favicons, and multi-size ICO.\n2.5k+ downloads on npm, thoroughly tested with cross-platform CI on Linux and Windows.`}
       stack={['TypeScript', 'Sharp', 'resvg', 'Bun']}
       repoUrl="https://github.com/SivaramPg/pwa-icons"
       websiteUrl="https://www.npmjs.com/package/pwa-icons"
@@ -24,7 +32,8 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="Site Metadata Explorer"
-      description={`A live web tool that audits a site's entire metadata surface in one scan — meta/OG/Twitter tags, JSON-LD, robots.txt, sitemaps, web manifest, security.txt, and llms.txt — with per-file size reporting.\nExports any scan as LLM-ready Markdown with one-click handoff to Claude, ChatGPT, or Gemini.`}
+      imageUrl="/projects/site-metadata.png"
+      description={`A live web tool that audits a site's entire metadata surface in one scan: meta/OG/Twitter tags, JSON-LD, robots.txt, sitemaps, web manifest, security.txt, and llms.txt, with per-file size reporting.\nExports any scan as LLM-ready Markdown with one-click handoff to Claude, ChatGPT, or Gemini.`}
       stack={['Next.js 16', 'React 19', 'Cheerio', 'Tailwind 4']}
       websiteUrl="https://site-metadata.sivaramp.com"
       websiteLabel="Live Site"
@@ -37,21 +46,24 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="Tuulkit"
-      description={`25 browser-based developer utilities in one app — JSON tooling, hashing, image compression, PWA asset generation, and in-browser ML background removal running entirely client-side (GPU-accelerated ONNX, no server round-trip).\nWASM-powered hashing, compression, and JSON-to-TypeScript codegen, deployed at the edge on Cloudflare Workers.`}
+      imageUrl="/projects/tuulkit.png"
+      description={`25 browser-based developer utilities in one app: JSON tooling, hashing, image compression, PWA asset generation, and in-browser ML background removal running entirely client-side (GPU-accelerated ONNX, no server round-trip).\nWASM-powered hashing, compression, and JSON-to-TypeScript codegen, deployed at the edge on Cloudflare Workers.`}
       stack={['React 19', 'TanStack Start', 'onnxruntime-web', 'WASM', 'Cloudflare Workers']}
       websiteUrl="https://tuulkit.sixstrides.com"
       websiteLabel="Live Site"
     />
     <Project
       title="markdownbin"
-      description={`A zero-knowledge markdown pastebin: client-side AES-256-GCM encryption (PBKDF2, 310k iterations) with self-decrypting share links — the server only ever stores ciphertext, and passwords ride the URL hash without touching the wire.\nFull GFM rendering with Mermaid and KaTeX; live in production since 2025.`}
+      imageUrl="/projects/markdownbin.png"
+      description={`A zero-knowledge markdown pastebin: client-side AES-256-GCM encryption (PBKDF2, 310k iterations) with self-decrypting share links. The server only ever stores ciphertext, and passwords ride the URL hash without touching the wire.\nFull GFM rendering with Mermaid and KaTeX; live in production since 2025.`}
       stack={['Next.js', 'Postgres / Drizzle', 'Web Crypto', 'Brotli']}
       websiteUrl="https://mdbin.sivaramp.com"
       websiteLabel="Live Site"
     />
     <Project
       title="Swapi.info"
-      description={`The Star Wars API, rebuilt for reliability: a serverless, file-based GET API and data explorer serving the classic SWAPI dataset as static JSON from the CDN edge — no keys, no rate limits, resilient to traffic surges by architecture.\nA community drop-in replacement used for prototyping and teaching, with its own public status page.`}
+      imageUrl="/projects/swapi.jpg"
+      description={`The Star Wars API, rebuilt for reliability: a serverless, file-based GET API and data explorer serving the classic SWAPI dataset as static JSON from the CDN edge. No keys, no rate limits, resilient to traffic surges by architecture.\nA community drop-in replacement used for prototyping and teaching, with its own public status page.`}
       stack={['Next.js', 'Static JSON', 'CDN edge']}
       websiteUrl="https://swapi.info"
       websiteLabel="Live Site"
@@ -59,7 +71,8 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="Anaek Desilog"
-      description={`Free, CC0 Desi/Indian placeholder-image APIs — dynamically sized avatars and characters, in colour or black & white, for anyone who wants placeholders with desi flair.\nStatic-first delivery split across Vercel and Cloudflare Pages for high availability.`}
+      imageUrl="/projects/desilog.jpg"
+      description={`Free, CC0 Desi/Indian placeholder-image APIs: dynamically sized avatars and characters, in colour or black & white, for anyone who wants placeholders with desi flair.\nStatic-first delivery split across Vercel and Cloudflare Pages for high availability.`}
       stack={['Next.js', 'Vercel', 'Cloudflare Pages']}
       websiteUrl="https://desilog.sivaramp.com"
       websiteLabel="Live Site"

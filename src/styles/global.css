@@ -4,7 +4,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: 'Atkinson', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Atkinson Hyperlegible Next', ui-sans-serif, system-ui,
+    sans-serif;
+  --font-display: 'Funnel Display', 'Atkinson Hyperlegible Next',
+    ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Tailwind v4 changed the default border color from gray-200 to currentColor.
