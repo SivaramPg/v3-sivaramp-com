@@ -1,5 +1,6 @@
 ---
 import oneCentImg from '../../assets/projects/1cent.png'
+import sentinel3Img from '../../assets/projects/sentinel3.png'
 import inferplaneImg from '../../assets/projects/inferplane.png'
 import signalBriefImg from '../../assets/projects/signal-brief.webp'
 import stackfightImg from '../../assets/projects/stackfight.png'
@@ -112,6 +113,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="Sentinel3"
       status="Prototype"
       statuses={['Closed Source', 'EVM']}
+      image={sentinel3Img}
       description="A pay-per-audit security service for Solidity contracts: submit a repo, get a verified findings report. Built end to end as a working prototype, never launched commercially."
       highlights={[
         'A consensus pipeline rather than a single model call: four analysis agents run in parallel, three jurors then vote on every candidate finding, and only deadlocked findings escalate to a judge model',
