@@ -12,6 +12,8 @@ const badges: Record<string, StatusBadge> = {
   'Client work': { icon: 'lucide:briefcase', color: '#10b981' },
   Redeploying: { icon: 'lucide:refresh-cw', color: '#f97316' },
   'Internal Tooling': { icon: 'lucide:wrench', color: '#64748b' },
+  Prototype: { icon: 'lucide:flask-conical', color: '#d946ef' },
+  Archived: { icon: 'lucide:archive', color: '#a1a1aa' },
   'Open Source': { icon: 'lucide:code', color: '#84cc16' },
   'Closed Source': { icon: 'lucide:shield', color: '#71717a' },
   Private: { icon: 'lucide:key-round', color: '#78716c' },

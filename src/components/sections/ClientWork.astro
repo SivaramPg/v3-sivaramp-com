@@ -47,9 +47,10 @@ import SectionTitle from '../SectionTitle.astro'
       image={prollyImg}
       description="An AI-powered, on-chain prediction-market platform, built as sole engineer through three client rebrands over ~13 months."
       highlights={[
+        'Core CPAMM contracts audited by ScaleBit (BitsLab): zero critical and zero major findings, with every finding remediated, including a rounding correction that now favors the pool',
         'Multi-LLM consensus oracle (Claude + Gemini + Grok over multi-source evidence) autonomously resolving markets on-chain',
         'Two-phase USDT checkout with advisory-lock inventory reservation and mempool-aware reconciliation crons',
-        'AMM contracts iterated through four fuzz-tested Solidity versions, with Solana (Rust) and Move ports',
+        'Four Solidity generations under a Foundry fuzz suite, from V5 through a post-audit V8 with configurable pool parameters, plus Solana (Rust) and Move ports',
         'A scheduled job fleet, Telegram/Discord/Twitter bots, and a key-authenticated agent API with an MCP server',
       ]}
       stack={[
