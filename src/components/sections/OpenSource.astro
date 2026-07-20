@@ -1,5 +1,7 @@
 ---
+import branchyardImg from '../../assets/projects/branchyard.png'
 import desilogImg from '../../assets/projects/desilog.jpg'
+import displayYourBagsImg from '../../assets/projects/display-your-bags.png'
 import markdownbinImg from '../../assets/projects/markdownbin.png'
 import contractsImg from '../../assets/projects/prediction-contracts.webp'
 import pwaIconsImg from '../../assets/projects/pwa-icons.png'
@@ -55,6 +57,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="branchyard"
       statuses={['Open Source']}
+      image={branchyardImg}
       description="A CLI that makes git worktrees practical: spin up several branches side by side, get an editor workspace wired to all of them, and tear the whole set down when you're done."
       highlights={[
         'Creates multiple worktrees in one command, generates a multi-root editor workspace, and opens it in VS Code, Cursor, Windsurf, Zed, or Trae',
@@ -69,6 +72,8 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="Display Your Bags"
       statuses={['Closed Source']}
+      iconUrl="/projects/icons/display-your-bags.png"
+      image={displayYourBagsImg}
       description="An embeddable badge service for Bags.fm tokens: paste a token address, get a live SVG badge of its creator fees and market data to drop into a README or a site."
       highlights={[
         'Badges are rendered server-side in Go with avatars inlined as base64, because remote images are blocked inside SVGs on GitHub and X, which is what makes them work anywhere',
