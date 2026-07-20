@@ -1,5 +1,5 @@
 ---
-import { techIcon } from '../lib/techIcons'
+import { techIcon, techTint } from '../lib/techIcons'
 import Pulse from './Pulse.astro'
 
 interface Props {
@@ -75,7 +75,10 @@ const {
           </ul>
           <div class="flex gap-2 flex-wrap w-full">
             {technologies.map((item: string) => (
-              <div class="p-1 px-2 md:px-3 leading-none border border-gray-400 font-medium rounded-lg flex items-center gap-1.5 text-xs md:text-sm bg-gray-200 dark:bg-gray-900">
+              <div
+                class="p-1 px-2 md:px-3 leading-none font-medium rounded-lg flex items-center gap-1.5 text-xs md:text-sm bg-gray-200 dark:bg-gray-900"
+                style={techTint(item)}
+              >
                 {techIcon(item) && (
                   <img
                     src={techIcon(item)}

@@ -72,7 +72,17 @@ const slugByLabel: Record<string, string> = {
   'App Store': 'appstore',
 }
 
+import { techColors } from './techColors'
+
 export function techIcon(label: string): string | undefined {
   const slug = slugByLabel[label]
   return slug ? `/icons/tech/${slug}.png` : undefined
+}
+
+// Subtle chip tint derived from the icon's average color; renders identically
+// in both themes via color-mix against transparent.
+export function techTint(label: string): string | undefined {
+  const color = techColors[slugByLabel[label] ?? '']
+  if (!color) return undefined
+  return `background-color: color-mix(in oklab, ${color} 16%, transparent);`
 }

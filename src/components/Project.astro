@@ -1,9 +1,10 @@
 ---
-import { techIcon } from '../lib/techIcons'
+import { techIcon, techTint } from '../lib/techIcons'
 
 interface Link {
   href: string
   label: string
+  icon: string
 }
 
 const {
@@ -21,13 +22,21 @@ const {
 } = Astro.props
 
 const links: Link[] = [
-  ...(websiteUrl ? [{ href: websiteUrl, label: websiteLabel }] : []),
-  ...extraLinks,
+  ...(repoUrl
+    ? [{ href: repoUrl, label: 'View Repo', icon: '/icons/github.svg' }]
+    : []),
+  ...(websiteUrl
+    ? [{ href: websiteUrl, label: websiteLabel, icon: '/icons/website.svg' }]
+    : []),
+  ...extraLinks.map((link: { href: string; label: string }) => ({
+    ...link,
+    icon: '/icons/website.svg',
+  })),
 ]
 ---
 
 <div class="flex w-full gap-4 md:gap-6 flex-col-reverse sm:flex-row">
-  <div class="flex flex-col gap-6 justify-between w-full">
+  <div class="flex flex-col gap-4 w-full">
     <div class="flex flex-col gap-0 w-full">
       <div class="flex items-center gap-3 flex-wrap">
         <h4 class="font-display text-xl sm:text-2xl md:text-3xl font-bold">
@@ -66,7 +75,10 @@ const links: Link[] = [
       <div class="flex gap-2 flex-wrap w-full">
         {
           stack.map((item: string) => (
-            <div class="p-2 sm:p-2 px-2 sm:px-3 leading-none border  font-medium rounded-lg flex items-center gap-1.5 text-xs md:text-sm bg-gray-200 dark:bg-gray-800 border-gray-400">
+            <div
+              class="p-2 sm:p-2 px-2 sm:px-3 leading-none font-medium rounded-lg flex items-center gap-1.5 text-xs md:text-sm bg-gray-200 dark:bg-gray-800"
+              style={techTint(item)}
+            >
               {techIcon(item) && (
                 <img
                   src={techIcon(item)}
@@ -84,37 +96,15 @@ const links: Link[] = [
       </div>
     </div>
     {
-      (repoUrl || links.length > 0) && (
+      !imageUrl && links.length > 0 && (
         <div class="flex gap-2 md:gap-4 items-center flex-wrap">
-          {repoUrl && (
-            <a
-              target="_blank"
-              href={repoUrl}
-              class="border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
-            >
-              <img
-                src="/icons/github.svg"
-                alt="Github"
-                class="w-5"
-                width="20"
-                height="20"
-              />
-              <p class="font-semibold text-sm dark:text-black">View Repo</p>
-            </a>
-          )}
-          {links.map(({ href, label }) => (
+          {links.map(({ href, label, icon }) => (
             <a
               target="_blank"
               href={href}
               class="border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
             >
-              <img
-                src="/icons/website.svg"
-                alt="website"
-                class="w-5"
-                width="20"
-                height="20"
-              />
+              <img src={icon} alt="" class="w-5" width="20" height="20" />
               <p class="font-semibold text-sm dark:text-black">{label}</p>
             </a>
           ))}
@@ -124,14 +114,30 @@ const links: Link[] = [
   </div>
   {
     imageUrl && (
-      <img
-        src={imageUrl}
-        alt={imageAlt ?? `${title} preview`}
-        class="w-full sm:w-72 md:w-96 shrink-0 self-center aspect-[1.9/1] object-cover rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900"
-        loading="lazy"
-        width="800"
-        height="450"
-      />
+      <div class="w-full sm:w-72 md:w-96 shrink-0 self-center flex flex-col gap-2">
+        <img
+          src={imageUrl}
+          alt={imageAlt ?? `${title} preview`}
+          class="w-full aspect-[1.9/1] object-cover rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900"
+          loading="lazy"
+          width="800"
+          height="421"
+        />
+        {links.length > 0 && (
+          <div class="grid grid-cols-2 gap-2">
+            {links.map(({ href, label, icon }) => (
+              <a
+                target="_blank"
+                href={href}
+                class="odd:last:col-span-2 border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
+              >
+                <img src={icon} alt="" class="w-5" width="20" height="20" />
+                <p class="font-semibold text-sm dark:text-black">{label}</p>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
     )
   }
 </div>

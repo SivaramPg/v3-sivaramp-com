@@ -1,5 +1,5 @@
 ---
-import { techIcon } from '../../lib/techIcons'
+import { techIcon, techTint } from '../../lib/techIcons'
 import SectionTitle from '../SectionTitle.astro'
 
 const skillGroups: { category: string; skills: string[] }[] = [
@@ -72,7 +72,10 @@ const skillGroups: { category: string; skills: string[] }[] = [
           </p>
           <div class="flex items-center gap-2 flex-wrap">
             {skills.map((skill) => (
-              <div class="border border-gray-400 dark:border-gray-600 rounded-full py-1.5 px-3 bg-gray-100 dark:bg-gray-900 flex items-center justify-center gap-1.5">
+              <div
+                class="rounded-full py-1.5 px-3 bg-gray-100 dark:bg-gray-900 flex items-center justify-center gap-1.5"
+                style={techTint(skill)}
+              >
                 {techIcon(skill) && (
                   <img
                     src={techIcon(skill)}
