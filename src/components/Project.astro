@@ -11,6 +11,7 @@ const {
   imageAlt,
   title,
   description,
+  highlights = [],
   stack = [],
   repoUrl,
   websiteUrl,
@@ -45,6 +46,23 @@ const links: Link[] = [
       >
         {description}
       </p>
+      {
+        highlights.length > 0 && (
+          <ul class="flex flex-col gap-1.5 mb-3">
+            {highlights.map((highlight: string) => (
+              <li class="flex gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <span
+                  class="font-mono text-gray-400 dark:text-gray-500 select-none shrink-0"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+                <span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
       <div class="flex gap-2 flex-wrap w-full">
         {
           stack.map((item: string) => (

@@ -9,7 +9,12 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="InferPlane"
       status="In Stealth"
-      description={`An AI control plane for teams: governed model access, credit metering, retained LLM request logs, and audit trails across providers. Currently building in stealth.\nArchitecture-first: an append-only credits ledger with reservation/settlement lifecycle and idempotency guarantees, OTLP ingestion of provider usage telemetry with request/response artifacts archived to object storage, and a hardened Hono/oRPC API with org-scoped rate limiting. The control plane comes before the product surface. More soon.`}
+      description="An AI control plane for teams: governed model access, credit metering, retained LLM request logs, and audit trails across providers. Currently building in stealth."
+      highlights={[
+        'Append-only credits ledger with reservation/settlement lifecycle and idempotency guarantees',
+        'OTLP ingestion of provider usage telemetry, with request/response artifacts archived to object storage',
+        'Hardened Hono/oRPC API with org-scoped rate limiting; the control plane comes before the product surface',
+      ]}
       stack={[
         'Hono',
         'oRPC',
@@ -23,7 +28,12 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="stackfight"
       imageUrl="/projects/stackfight.png"
-      description={`A credit-billing & AI-usage-metering platform on Cloudflare Workers: Stripe-funded prepaid wallets, per-call inference metering with budget-capped OpenRouter keys, and automated ledger reconciliation, exercised in production by live agent-vs-agent games.\nFail-closed Stripe webhook fulfillment with idempotent integer-microcredit ledger writes, financial invariant auditing (balance floors, ledger conservation), an extensive test suite, and rigorous architecture & operations documentation.`}
+      description="A credit-billing & AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games."
+      highlights={[
+        'Stripe-funded prepaid wallets with fail-closed webhook fulfillment and idempotent integer-microcredit ledger writes',
+        'Per-call inference metering with budget-capped OpenRouter keys and automated ledger reconciliation',
+        'Financial invariant auditing (balance floors, ledger conservation), an extensive test suite, and rigorous ops documentation',
+      ]}
       stack={[
         'Cloudflare Workers',
         'Durable Objects',
@@ -37,16 +47,26 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="1-cent-requests"
       imageUrl="/projects/1cent.png"
-      description={`A live x402 pay-per-request API marketplace: 14 crypto/web-context endpoints for AI agents at $0.01 each, settled in USDC through signed HTTP 402 exchanges. No accounts, no API keys.\nFull x402 v2 resource-server implementation (EIP-3009 USDC authorizations, facilitator verification) as a single payment-gate middleware over a typed service catalog, with agent-native discovery (OpenAPI, llms.txt) and per-route unit-economics tracking. Deployed on Cloudflare Workers + D1 via IaC.`}
+      description="A live x402 pay-per-request API marketplace: 14 crypto/web-context endpoints for AI agents at $0.01 each, settled in USDC through signed HTTP 402 exchanges. No accounts, no API keys."
+      highlights={[
+        'Full x402 v2 resource-server implementation: EIP-3009 USDC authorizations with facilitator verification',
+        'Single payment-gate middleware over a typed service catalog, with per-route unit-economics tracking',
+        'Agent-native discovery (OpenAPI, llms.txt); deployed on Cloudflare Workers + D1 via IaC',
+      ]}
       stack={['x402', 'USDC', 'Hono', 'Cloudflare Workers', 'D1 / Drizzle']}
       websiteUrl="https://1cent.sivaram.dev"
       repoUrl="https://github.com/SivaramPg/1-cent-requests"
     />
     <Project
       title="varam.chat"
-      imageUrl="/projects/varam-chat.png"
       status="Invite-only"
-      description={`A live, self-hosted multi-model AI chat platform routing 23 models through OpenRouter, where every response persists full inference telemetry (token usage, TTFT, tokens/sec, provider metadata) to Postgres as an auditable usage trail.\nPrice-floor cost routing with flex service tiers, resumable Redis-backed streams that survive client disconnects, sandboxed agentic tool execution (code sandbox, web search, docs retrieval), and atomic Lua-scripted rate limiting. Production plumbing throughout, running daily.`}
+      imageUrl="/projects/varam-chat.png"
+      description="A live, self-hosted multi-model AI chat platform routing 23 models through OpenRouter. Production plumbing throughout, running daily."
+      highlights={[
+        'Every response persists full inference telemetry (token usage, TTFT, tokens/sec, provider metadata) to Postgres as an auditable usage trail',
+        'Price-floor cost routing with flex service tiers, and resumable Redis-backed streams that survive client disconnects',
+        'Sandboxed agentic tool execution (code sandbox, web search, docs retrieval) and atomic Lua-scripted rate limiting',
+      ]}
       stack={[
         'OpenRouter',
         'AI SDK',
@@ -62,7 +82,12 @@ import SectionTitle from '../SectionTitle.astro'
       title="Varam Analytics"
       status="Invite-only"
       imageUrl="/projects/varam-analytics.png"
-      description={`Self-hosted, cookieless web analytics: a dependency-free tracker script, a Bun/Hono event collector, and a TimescaleDB store, running in production and powering the analytics on this very site.\nIngestion with Redis rate limiting and sequence-based deduplication, realtime visitor tracking via sliding-window sorted sets, and TimescaleDB hypertables with compression, retention policies, and continuous aggregates precomputing bounce rate, session duration, and scroll depth.`}
+      description="Self-hosted, cookieless web analytics, running in production and powering the analytics on this very site."
+      highlights={[
+        'Dependency-free tracker script, Bun/Hono event collector, and a TimescaleDB event store',
+        'Ingestion with Redis rate limiting, sequence-based deduplication, and realtime visitors via sliding-window sorted sets',
+        'Hypertables with compression, retention policies, and continuous aggregates precomputing bounce rate, session duration, and scroll depth',
+      ]}
       stack={['Bun', 'Hono', 'TimescaleDB', 'Redis', 'Drizzle', 'Railway']}
       websiteUrl="https://varam-analytics.sivaramp.com"
       websiteLabel="Live Service"
@@ -70,7 +95,12 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="Signal Brief"
       imageUrl="/projects/signal-brief.jpg"
-      description={`A cost-aware, multi-source LLM research pipeline over X, Reddit & Hacker News. A cheap-model triage gate scores every candidate before any paid scrape or frontier-model call is spent, and every run is reconciled against the provider's actual billing ledger, at ~$1/day all-in.\nParallel per-source fan-out with cross-platform corroboration, citation-backed daily digests, and one-click publishing to dev.to.`}
+      description="A cost-aware, multi-source LLM research pipeline over X, Reddit & Hacker News, at ~$1/day all-in."
+      highlights={[
+        'A cheap-model triage gate scores every candidate before any paid scrape or frontier-model call is spent',
+        "Every run reconciled against the provider's actual billing ledger, not estimates",
+        'Parallel per-source fan-out with cross-platform corroboration, citation-backed daily digests, and one-click publishing to dev.to',
+      ]}
       stack={[
         'OpenRouter',
         'Postgres / Drizzle',
