@@ -131,10 +131,11 @@ const links: Link[] = [
         <img
           src={imageUrl}
           alt={imageAlt ?? `${title} preview`}
-          class="w-full aspect-[1.9/1] object-cover rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900"
+          class="w-full aspect-[1.9/1] object-cover rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 cursor-zoom-in"
           loading="lazy"
           width="800"
           height="421"
+          data-lightbox
         />
         {links.length > 0 && (
           <div class="grid grid-cols-2 gap-2">

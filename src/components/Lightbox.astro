@@ -1,0 +1,89 @@
+---
+
+---
+
+<dialog id="lightbox" aria-label="Enlarged project image">
+  <img id="lightbox-img" src="" alt="" />
+</dialog>
+
+<style>
+  #lightbox {
+    margin: auto;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    width: min(96vw, 1320px);
+    max-width: none;
+    overflow: visible;
+    outline: none;
+  }
+  #lightbox img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 24px 80px rgb(0 0 0 / 0.45);
+    outline: none;
+  }
+  #lightbox::backdrop {
+    background: rgb(0 0 0 / 0.65);
+    backdrop-filter: blur(4px);
+  }
+  ::view-transition-group(lightbox) {
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+</style>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement
+  const dialogImg = document.getElementById('lightbox-img') as HTMLImageElement
+  let activeThumb: HTMLImageElement | null = null
+
+  function transition(update: () => void) {
+    if (document.startViewTransition) {
+      return document.startViewTransition(update)
+    }
+    update()
+    return null
+  }
+
+  function open(thumb: HTMLImageElement) {
+    activeThumb = thumb
+    dialogImg.src = thumb.currentSrc || thumb.src
+    dialogImg.alt = thumb.alt
+    thumb.style.viewTransitionName = 'lightbox'
+    transition(() => {
+      thumb.style.viewTransitionName = ''
+      dialogImg.style.viewTransitionName = 'lightbox'
+      dialog.showModal()
+    })
+  }
+
+  function close() {
+    const thumb = activeThumb
+    const done = transition(() => {
+      dialogImg.style.viewTransitionName = ''
+      if (thumb) thumb.style.viewTransitionName = 'lightbox'
+      dialog.close()
+    })
+    const cleanup = () => {
+      if (thumb) thumb.style.viewTransitionName = ''
+      activeThumb = null
+    }
+    done ? done.finished.then(cleanup) : cleanup()
+  }
+
+  document.addEventListener('click', (event) => {
+    const thumb = (event.target as HTMLElement).closest?.(
+      'img[data-lightbox]',
+    ) as HTMLImageElement | null
+    if (thumb) open(thumb)
+  })
+
+  // Any click inside the open dialog (image or backdrop) closes it.
+  dialog.addEventListener('click', close)
+  dialog.addEventListener('cancel', (event) => {
+    event.preventDefault()
+    close()
+  })
+</script>
