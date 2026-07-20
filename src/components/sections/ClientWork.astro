@@ -15,6 +15,7 @@ import SectionTitle from '../SectionTitle.astro'
     <Project
       title="SuperPower / SuperClaw"
       status="Case Study"
+      imageUrl="/projects/superclaw.png"
       description={`A crypto-native platform selling autonomous AI agents for USDT on BNB Chain, where each purchase auto-provisioned a dedicated, cert-pinned VM running the agent in about two minutes. Built and operated solo, end-to-end, in 15 weeks. The product has since been sunset; the engineering stands.\nInteger-credit LLM metering ledger with per-key provider spend caps as the enforcement boundary and cron-driven drift reconciliation; crash-safe two-phase on-chain USDT orders with gas-sponsored server-side signing and idempotent chain reconciliation; and an isolation proxy as the sole ingress to the VM fleet: per-VM TLS pinning, RPC allowlisting, and fleet-wide model overrides without redeploys.`}
       stack={[
         'OpenRouter',
