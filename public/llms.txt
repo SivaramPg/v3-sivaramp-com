@@ -1,0 +1,50 @@
+# Sivaram Pandariganthan
+
+> Full-stack product engineer with 8+ years across AI platforms, crypto & payment systems, smart contracts (EVM, Solana), analytics infrastructure, mobile apps, and developer tools. Available for freelance work. Based in India, working remotely worldwide.
+
+Self-taught engineer, shipping since 2018 across startups, client work, and his own products. At his best owning a whole system end to end (design, build, deploy, operate), and has done it solo for products handling real users and real money.
+
+## Contact
+
+- [Email](mailto:dev.sivaramp@gmail.com): dev.sivaramp@gmail.com
+- [X (Twitter)](https://x.com/SivaramPg): @SivaramPg
+- [GitHub](https://github.com/SivaramPg): SivaramPg
+- [LinkedIn](https://www.linkedin.com/in/sivaram-pandariganthan-b753a2145/): Sivaram Pandariganthan
+- [Blog](https://blog.sivaramp.com/): blog.sivaramp.com
+- [dev.to](https://dev.to/sivarampg): technical guides and daily research digests
+- [Medium](https://sivarampg.medium.com/): earlier writing
+
+## Featured Work
+
+- [InferPlane](https://sivaramp.com/#featured-work): AI control plane for teams: governed model access, credit metering, retained LLM request logs, audit trails across providers (in stealth)
+- [stackfight](https://stackfight.sivaram.dev): Credit-billing and AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games (open source)
+- [1-cent-requests](https://1cent.sivaram.dev): Live x402 pay-per-request API marketplace, 14 endpoints for AI agents at $0.01 each, settled in USDC (open source)
+- [varam.chat](https://varam-chat.sivaramp.com): Self-hosted multi-model AI chat platform routing 23 models through OpenRouter, with full inference telemetry (invite-only)
+- [Varam Analytics](https://varam-analytics.sivaramp.com): Self-hosted, cookieless web analytics on TimescaleDB, running in production (invite-only)
+- [Signal Brief](https://dev.to/sivarampg): Cost-aware multi-source LLM research pipeline over X, Reddit & Hacker News at ~$1/day (internal tooling; public output on dev.to)
+
+## Selected Client Work (closed source, architecture walkthroughs available)
+
+- [SuperPower](https://sivaramp.com/#selected-client-work): Crypto-native platform selling autonomous AI agents for USDT on BNB Chain, with auto-provisioned dedicated VMs. Built and operated solo in 15 weeks.
+- [Prolly.so](https://sivaramp.com/#selected-client-work): AI-powered on-chain prediction-market platform with a multi-LLM consensus oracle, built as sole engineer over ~13 months.
+- [SpotRoyale](https://sr-app-9f4e.vercel.app): Fractional music-royalty marketplace minting ERC-721 ownership certificates on Polygon mainnet.
+
+## Open Source & Tools
+
+- [Prediction Market Contracts](https://github.com/SivaramPg/evm-simple-prediction-market-contract): Parimutuel binary prediction markets for EVM and Solana, with a guide series on dev.to
+- [pwa-icons](https://www.npmjs.com/package/pwa-icons): npm CLI turning one image into 118 production-ready PWA icons (2.5k+ downloads)
+- [Site Metadata Explorer](https://site-metadata.sivaramp.com): Audits a site's entire metadata surface in one scan
+- [rawdocs](https://sivaramp.com/#open-source-and-tools): Database-free docs proxy serving GitHub markdown to humans and LLMs (redeploying)
+- [Tuulkit](https://tuulkit.sixstrides.com): 25 browser-based developer utilities at the edge
+- [markdownbin](https://mdbin.sivaramp.com): Zero-knowledge markdown pastebin with client-side AES-256-GCM encryption
+- [Swapi.info](https://swapi.info): The Star Wars API, rebuilt for reliability
+- [Anaek Desilog](https://desilog.sivaramp.com): Free CC0 Desi/Indian placeholder-image APIs
+
+## Skills
+
+- [Skills](https://sivaramp.com/#skills): AI/LLM (OpenRouter, Vercel AI SDK, agents, RAG, cost-aware pipelines); Payments & Billing (Stripe, x402, USDC, stablecoins, usage metering, reconciliation, audit trails); Blockchain (Solidity, Foundry, Rust, Solana, viem, EVM chains, wallets & signing); Infrastructure (Cloudflare Workers, Durable Objects, Postgres, Drizzle, TimescaleDB, Redis, Trigger.dev, AWS, Azure); Frontend & Apps (TypeScript, React, Next.js, TanStack, Astro, Node.js, Bun, Flutter)
+
+## More
+
+- [Full site content in markdown](https://sivaramp.com/llms-full.txt)
+- [Portfolio](https://sivaramp.com)

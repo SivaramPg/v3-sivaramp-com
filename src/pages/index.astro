@@ -22,6 +22,8 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href="https://sivaramp.com/" />
 
     <link
       rel="preload"
@@ -42,35 +44,45 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Full-stack product engineer with 8+ years across AI platforms, crypto & payment systems, smart contracts (EVM, Solana), analytics infrastructure, mobile apps, and developer tools. I design, build, deploy, and operate complete products end to end."
+      content="Full-stack product engineer with 8+ years building AI platforms, payment & crypto systems, smart contracts, analytics, mobile apps, and developer tools."
     />
     <meta
-      name="og:title"
-      content="Sivaram Pandariganthan | Full-Stack Product Engineer · AI, Crypto & Web"
+      property="og:title"
+      content="Sivaram Pandariganthan | Full-Stack Product Engineer"
     />
     <meta
-      name="og:description"
-      content="Full-stack product engineer with 8+ years across AI platforms, crypto & payment systems, smart contracts (EVM, Solana), analytics infrastructure, mobile apps, and developer tools. I design, build, deploy, and operate complete products end to end."
+      property="og:description"
+      content="Full-stack product engineer with 8+ years building AI platforms, payment & crypto systems, smart contracts, analytics, mobile apps, and developer tools."
     />
     <meta
       name="twitter:title"
-      content="Sivaram Pandariganthan | Full-Stack Product Engineer · AI, Crypto & Web"
+      content="Sivaram Pandariganthan | Full-Stack Product Engineer"
     />
     <meta
       name="twitter:description"
-      content="Full-stack product engineer with 8+ years across AI platforms, crypto & payment systems, smart contracts (EVM, Solana), analytics infrastructure, mobile apps, and developer tools. I design, build, deploy, and operate complete products end to end."
+      content="Full-stack product engineer with 8+ years building AI platforms, payment & crypto systems, smart contracts, analytics, mobile apps, and developer tools."
     />
+    <meta name="twitter:site" content="@SivaramPg" />
+    <meta name="twitter:creator" content="@SivaramPg" />
     <meta property="og:image" content="https://sivaramp.com/og-image.png" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1260" />
+    <meta
+      property="og:image:alt"
+      content="Sivaram Pandariganthan, Full-Stack Product Engineer across AI, crypto, and web."
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:image"
       content="https://sivaramp.com/twitter-image.png"
     />
+    <meta
+      name="twitter:image:alt"
+      content="Sivaram Pandariganthan, Full-Stack Product Engineer across AI, crypto, and web."
+    />
     <meta property="og:type" content="website" />
     <meta name="author" content="Sivaram Pandariganthan" />
-    <meta property="og:url" content="https://sivaramp.com" />
+    <meta property="og:url" content="https://sivaramp.com/" />
 
     <title>Sivaram Pandariganthan | Full-Stack Product Engineer · AI, Crypto & Web</title>
 
@@ -79,14 +91,20 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
       is:inline
       set:html={JSON.stringify({
         '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        '@id': 'https://sivaramp.com/#profile',
+        url: 'https://sivaramp.com/',
+        mainEntity: {
         '@type': 'Person',
+        '@id': 'https://sivaramp.com/#person',
         name: 'Sivaram Pandariganthan',
-        url: 'https://sivaramp.com',
+        url: 'https://sivaramp.com/',
         image: 'https://sivaramp.com/me.jpg',
         jobTitle: 'Full-Stack Product Engineer',
         description:
           'Full-stack product engineer building AI platforms, crypto & payment systems, smart contracts, analytics infrastructure, mobile apps, and developer tools.',
         email: 'mailto:dev.sivaramp@gmail.com',
+        homeLocation: { '@type': 'Country', name: 'India' },
         sameAs: [
           'https://blog.sivaramp.com/',
           'https://github.com/SivaramPg',
@@ -107,6 +125,7 @@ import WorkExperience from '../components/sections/WorkExperience.astro'
           'Self-hosted analytics',
           'Developer tools',
         ],
+        },
       })}
     />
 
