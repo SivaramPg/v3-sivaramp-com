@@ -17,11 +17,13 @@ import SectionTitle from '../SectionTitle.astro'
       iconUrl="/projects/icons/superclaw.png"
       status="Case Study"
       imageUrl="/projects/superclaw.png"
-      description="A crypto-native platform selling autonomous AI agents for USDT on BNB Chain, where each purchase auto-provisioned a dedicated, cert-pinned VM in about two minutes. Built and operated solo, end-to-end, in 15 weeks. The product has since been sunset; the engineering stands."
+      description="A crypto-native platform selling autonomous AI agents for USDT on BNB Chain: each purchase auto-provisioned a dedicated, cert-pinned VM from golden images in about two minutes, running a full agent with chat, skills, and an operator wallet. Built and operated solo, end-to-end, in 15 weeks. The product has since been sunset; the engineering stands."
       highlights={[
-        'Integer-credit LLM metering ledger with per-key provider spend caps as the enforcement boundary and cron-driven drift reconciliation',
-        'Crash-safe two-phase on-chain USDT orders with gas-sponsored server-side signing and idempotent chain reconciliation',
-        'An isolation proxy as the sole ingress to the VM fleet: per-VM TLS pinning, RPC allowlisting, and fleet-wide model overrides without redeploys',
+        'VM fleet automation: golden-image provisioning, capacity-aware size fallback, orphan-leak prevention, and ordered, never-throwing teardown',
+        'Integer-credit LLM metering ledger with per-key provider spend caps, top-ups, and drift reconciliation across a dozen monitoring crons',
+        'Crash-safe two-phase on-chain USDT orders with gas-sponsored server-side signing, plus a 30-day subscription state machine (charge → grace → rescue → teardown)',
+        'Multi-level referral compensation computed in-transaction via recursive CTEs, a full admin surface, and three-language i18n',
+        'An isolation proxy as sole ingress to the fleet (per-VM TLS pinning, RPC allowlisting, fleet-wide model overrides) and an agent-operated wallet CLI with OAuth device flow + HPKE',
       ]}
       stack={[
         'OpenRouter',
