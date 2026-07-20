@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+import { statusBadge, statusTint } from '../lib/statusBadge'
 import { techIcon, techTint } from '../lib/techIcons'
 import Pulse from './Pulse.astro'
 
@@ -50,7 +52,15 @@ const {
       }
       {
         isRemote && (
-          <div class="rounded border border-gray-400 dark:border-gray-600 py-1 px-2 bg-gray-300 dark:bg-gray-800 text-xs font-medium ">
+          <div
+            class="rounded-md py-1 px-2 bg-gray-300 dark:bg-gray-800 text-xs font-medium flex items-center gap-1.5"
+            style={statusTint('Remote')}
+          >
+            <Icon
+              name={statusBadge('Remote')!.icon}
+              class="w-3.5 h-3.5"
+              style={`color: ${statusBadge('Remote')!.color}`}
+            />
             <span class="">Remote</span>
           </div>
         )

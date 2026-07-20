@@ -9,7 +9,7 @@ import Project from '../Project.astro'
 import SectionTitle from '../SectionTitle.astro'
 ---
 
-<section class="flex flex-col gap-2 sm:gap-4">
+<section class="flex flex-col gap-4 sm:gap-6">
   <SectionTitle title="Featured Work" />
   <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-800 [&>*]:py-8 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
     <Project
@@ -35,6 +35,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="stackfight"
+      statuses={['Open Source']}
       iconUrl="/projects/icons/stackfight.png"
       image={stackfightImg}
       description="A credit-billing & AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games."
@@ -55,6 +56,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="1-cent-requests"
+      statuses={['Open Source']}
       iconUrl="/projects/icons/1cent.png"
       image={oneCentImg}
       description="A live x402 pay-per-request API marketplace: 14 crypto/web-context endpoints for AI agents at $0.01 each, settled in USDC through signed HTTP 402 exchanges. No accounts, no API keys."
@@ -71,6 +73,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="varam.chat"
       iconUrl="/projects/icons/varam-chat.png"
       status="Invite-only"
+      statuses={['Closed Source']}
       image={varamChatImg}
       description="A live, self-hosted multi-model AI chat platform routing 23 models through OpenRouter. Production plumbing throughout, running daily."
       highlights={[
@@ -93,6 +96,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="Varam Analytics"
       iconUrl="/projects/icons/varam-analytics.png"
       status="Invite-only"
+      statuses={['Closed Source']}
       image={varamAnalyticsImg}
       description="Self-hosted, cookieless web analytics, running in production and powering the analytics on this very site."
       highlights={[
@@ -106,6 +110,8 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="Signal Brief"
+      status="Internal Tooling"
+      statuses={['Closed Source']}
       iconUrl="/projects/icons/signal-brief.png"
       image={signalBriefImg}
       description="A cost-aware, multi-source LLM research pipeline over X, Reddit & Hacker News, at ~$1/day all-in."

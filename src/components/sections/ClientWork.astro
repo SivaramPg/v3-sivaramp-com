@@ -6,7 +6,7 @@ import Project from '../Project.astro'
 import SectionTitle from '../SectionTitle.astro'
 ---
 
-<section class="flex flex-col gap-2 sm:gap-4">
+<section class="flex flex-col gap-4 sm:gap-6">
   <SectionTitle title="Selected Client Work" />
   <p
     class="text-sm sm:text-base text-gray-700 dark:text-gray-300 -mt-1 sm:-mt-2"
@@ -19,6 +19,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="SuperPower / SuperClaw"
       iconUrl="/projects/icons/superclaw.png"
       status="Case Study"
+      statuses={['Closed Source']}
       image={superclawImg}
       description="A crypto-native platform selling autonomous AI agents for USDT on BNB Chain: each purchase auto-provisioned a dedicated, cert-pinned VM from golden images in about two minutes, running a full agent with chat, skills, and an operator wallet. Built and operated solo, end-to-end, in 15 weeks. The product has since been sunset; the engineering stands."
       highlights={[
@@ -42,6 +43,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="Prolly.so"
       iconUrl="/projects/icons/prolly.png"
       status="Case Study"
+      statuses={['Closed Source']}
       image={prollyImg}
       description="An AI-powered, on-chain prediction-market platform, built as sole engineer through three client rebrands over ~13 months."
       highlights={[
@@ -63,6 +65,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="SpotRoyale"
       iconUrl="/projects/icons/spotroyale.png"
       status="Client work"
+      statuses={['Closed Source']}
       image={spotroyaleImg}
       description="A fractional music-royalty marketplace: sellers list a share of a song's royalties, investors buy via Stripe (card + stablecoin), and ownership is minted as an ERC-721 certificate on Polygon mainnet."
       highlights={[

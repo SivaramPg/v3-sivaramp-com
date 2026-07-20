@@ -1,5 +1,7 @@
 ---
 import { getImage, Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+import { statusBadge, statusTint } from '../lib/statusBadge'
 import { techIcon, techTint } from '../lib/techIcons'
 
 interface Link {
@@ -37,6 +39,9 @@ const links: Link[] = [
 ]
 
 // Large webp variant for the lightbox, so it never upscales the thumbnail.
+const { statuses = [] } = Astro.props
+const statusList: string[] = [...(status ? [status] : []), ...statuses]
+
 const fullImage = image
   ? await getImage({
       src: image,
@@ -66,11 +71,21 @@ const fullImage = image
           {title}
         </h4>
         {
-          status && (
-            <div class="rounded border border-gray-400 dark:border-gray-600 py-1 px-2 bg-gray-300 dark:bg-gray-800 text-xs font-medium">
-              <span>{status}</span>
+          statusList.map((label) => (
+            <div
+              class="rounded-md py-1 px-2 bg-gray-300 dark:bg-gray-800 text-xs font-medium flex items-center gap-1.5"
+              style={statusTint(label)}
+            >
+              {statusBadge(label) && (
+                <Icon
+                  name={statusBadge(label)!.icon}
+                  class="w-3.5 h-3.5"
+                  style={`color: ${statusBadge(label)!.color}`}
+                />
+              )}
+              <span>{label}</span>
             </div>
-          )
+          ))
         }
       </div>
       <p

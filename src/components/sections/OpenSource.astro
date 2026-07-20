@@ -10,11 +10,12 @@ import Project from '../Project.astro'
 import SectionTitle from '../SectionTitle.astro'
 ---
 
-<section class="flex flex-col gap-2 sm:gap-4">
+<section class="flex flex-col gap-4 sm:gap-6">
   <SectionTitle title="Open Source & Tools" />
   <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-800 [&>*]:py-8 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
     <Project
       title="Prediction Market Contracts (EVM + Solana)"
+      statuses={['Open Source']}
       image={contractsImg}
       description="Open-source parimutuel binary prediction markets for EVM and Solana. Unaudited and educational by design: an independent, clean-room companion to my client prediction-market work."
       highlights={[
@@ -35,6 +36,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="pwa-icons"
+      statuses={['Open Source']}
       image={pwaIconsImg}
       description="An npm CLI that turns one image (SVG or raster) into 118 production-ready PWA icons in under a second."
       highlights={[
@@ -48,6 +50,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="Site Metadata Explorer"
+      statuses={['Closed Source']}
       iconUrl="/projects/icons/site-metadata.png"
       image={siteMetadataImg}
       description="A live web tool that audits a site's entire metadata surface in one scan."
@@ -63,6 +66,7 @@ import SectionTitle from '../SectionTitle.astro'
       title="rawdocs"
       iconUrl="/projects/icons/rawdocs.png"
       status="Redeploying"
+      statuses={['Closed Source']}
       description="A database-free docs proxy that serves any GitHub repo's markdown to both humans (SSR tree view) and LLMs (auto-generated llms.txt, content negotiation by Accept header)."
       highlights={[
         'Circuit-breakered source abstraction with automatic fallback between upstreams',
@@ -73,6 +77,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="Tuulkit"
+      statuses={['Closed Source']}
       iconUrl="/projects/icons/tuulkit.png"
       image={tuulkitImg}
       description="25 browser-based developer utilities in one app, deployed at the edge on Cloudflare Workers."
@@ -93,6 +98,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="markdownbin"
+      statuses={['Closed Source']}
       iconUrl="/projects/icons/markdownbin.png"
       image={markdownbinImg}
       description="A zero-knowledge markdown pastebin, live in production since 2025."
@@ -107,6 +113,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="Swapi.info"
+      statuses={['Open Source']}
       iconUrl="/projects/icons/swapi.png"
       image={swapiImg}
       description="The Star Wars API, rebuilt for reliability: a community drop-in replacement used for prototyping and teaching."
@@ -122,6 +129,7 @@ import SectionTitle from '../SectionTitle.astro'
     />
     <Project
       title="Anaek Desilog"
+      statuses={['Open Source']}
       iconUrl="/projects/icons/desilog.png"
       image={desilogImg}
       description="Free, CC0 Desi/Indian placeholder-image APIs for anyone who wants placeholders with desi flair."

@@ -15,8 +15,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
+    "@iconify-json/lucide": "^1.2.118",
+    "@iconify-json/simple-icons": "^1.2.91",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.1.1",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.3.3",
     "typescript": "6"
   },
