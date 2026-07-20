@@ -25,16 +25,26 @@ const {
   extraLinks = [],
 } = Astro.props
 
+// Pick a link icon from the destination; explicit `icon` on a link wins.
+function linkIcon(href: string): string {
+  const host = new URL(href).hostname
+  if (host.endsWith('github.com')) return 'simple-icons:github'
+  if (host.endsWith('npmjs.com')) return 'simple-icons:npm'
+  if (host.endsWith('dev.to')) return 'simple-icons:devdotto'
+  if (host.endsWith('solana.com')) return 'simple-icons:solana'
+  return 'lucide:external-link'
+}
+
 const links: Link[] = [
   ...(repoUrl
-    ? [{ href: repoUrl, label: 'View Repo', icon: '/icons/github.svg' }]
+    ? [{ href: repoUrl, label: 'View Repo', icon: linkIcon(repoUrl) }]
     : []),
   ...(websiteUrl
-    ? [{ href: websiteUrl, label: websiteLabel, icon: '/icons/website.svg' }]
+    ? [{ href: websiteUrl, label: websiteLabel, icon: linkIcon(websiteUrl) }]
     : []),
-  ...extraLinks.map((link: { href: string; label: string }) => ({
+  ...extraLinks.map((link: { href: string; label: string; icon?: string }) => ({
     ...link,
-    icon: '/icons/website.svg',
+    icon: link.icon ?? linkIcon(link.href),
   })),
 ]
 
@@ -140,10 +150,10 @@ const fullImage = image
             <a
               target="_blank"
               href={href}
-              class="border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
+              class="border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0 dark:text-black"
             >
-              <img src={icon} alt="" class="w-5" width="20" height="20" />
-              <p class="font-semibold text-sm dark:text-black">{label}</p>
+              <Icon name={icon} class="w-4 h-4" />
+              <p class="font-semibold text-sm">{label}</p>
             </a>
           ))}
         </div>
@@ -170,10 +180,10 @@ const fullImage = image
               <a
                 target="_blank"
                 href={href}
-                class="odd:last:col-span-2 border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0"
+                class="odd:last:col-span-2 border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0 dark:text-black"
               >
-                <img src={icon} alt="" class="w-5" width="20" height="20" />
-                <p class="font-semibold text-sm dark:text-black">{label}</p>
+                <Icon name={icon} class="w-4 h-4" />
+                <p class="font-semibold text-sm">{label}</p>
               </a>
             ))}
           </div>
