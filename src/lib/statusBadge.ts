@@ -16,6 +16,8 @@ const badges: Record<string, StatusBadge> = {
   'Closed Source': { icon: 'lucide:shield', color: '#71717a' },
   Private: { icon: 'lucide:key-round', color: '#78716c' },
   Public: { icon: 'lucide:eye', color: '#38bdf8' },
+  EVM: { icon: 'simple-icons:ethereum', color: '#627eea' },
+  Solana: { icon: 'simple-icons:solana', color: '#9945ff' },
   Remote: { icon: 'lucide:globe', color: '#14b8a6' },
 }
 
