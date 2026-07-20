@@ -1,0 +1,121 @@
+---
+import '../styles/global.css'
+import { Icon } from 'astro-icon/components'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <link
+      rel="preload"
+      href="/fonts/AtkinsonHyperlegibleNext-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/FunnelDisplay-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>404 · Page Not Found | Sivaram Pandariganthan</title>
+
+    <script is:inline>
+      const theme = (() => {
+        if (
+          typeof localStorage !== 'undefined' &&
+          localStorage.getItem('theme')
+        ) {
+          return localStorage.getItem('theme')
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark'
+        }
+        return 'light'
+      })()
+
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark')
+      }
+    </script>
+
+    {
+      import.meta.env.PROD && (
+        <script
+          src="https://varam-analytics.sivaramp.com/scripts/gojo.js"
+          is:inline
+        />
+      )
+    }
+
+    <style is:global>
+      @font-face {
+        font-family: 'Atkinson Hyperlegible Next';
+        src: url('/fonts/AtkinsonHyperlegibleNext-Variable.woff2')
+          format('woff2');
+        font-weight: 200 800;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Funnel Display';
+        src: url('/fonts/FunnelDisplay-Variable.woff2') format('woff2');
+        font-weight: 300 800;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 w-full min-h-screen"
+  >
+    <main
+      class="w-full max-w-5xl mx-auto min-h-screen px-4 flex flex-col items-center justify-center gap-6 text-center"
+    >
+      <p
+        class="font-mono text-sm text-gray-500 dark:text-gray-400 bg-gray-200 dark:bg-gray-900 rounded-md px-3 py-1.5"
+      >
+        HTTP 404 · Not Found
+      </p>
+
+      <h1 class="font-display font-bold text-7xl sm:text-8xl md:text-9xl">
+        <span
+          class="text-gray-300 dark:text-gray-700 select-none"
+          aria-hidden="true">#</span
+        > 404
+      </h1>
+
+      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-md">
+        This page doesn't exist. The link might be old, or it moved somewhere
+        else while nobody was looking.
+      </p>
+
+      <div class="flex gap-3 flex-wrap items-center justify-center mt-2">
+        <a
+          href="/"
+          class="flex items-center gap-2 rounded border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 hover:shadow-md dark:hover:bg-gray-800 duration-100 px-4 py-2.5 font-semibold"
+        >
+          <Icon name="lucide:home" class="w-4 h-4" />
+          Back to Home
+        </a>
+        <a
+          href="https://blog.sivaramp.com/"
+          class="flex items-center gap-2 rounded border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 hover:shadow-md dark:hover:bg-gray-800 duration-100 px-4 py-2.5 font-semibold"
+        >
+          <Icon name="lucide:rss" class="w-4 h-4" />
+          Read the Blog
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
