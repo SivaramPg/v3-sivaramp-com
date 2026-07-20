@@ -1,0 +1,49 @@
+---
+import Project from '../Project.astro'
+import SectionTitle from '../SectionTitle.astro'
+---
+
+<section class="flex flex-col gap-4 sm:gap-6">
+  <SectionTitle title="Experiments & Prototypes" />
+  <p
+    class="text-sm sm:text-base text-gray-700 dark:text-gray-300 -mt-1 sm:-mt-2"
+  >
+    Short, self-imposed builds. Deliberately scoped to a few days to see how far
+    a stack gets under real time pressure.
+  </p>
+  <div
+    class="flex flex-col divide-y divide-gray-200 dark:divide-gray-800 [&>*]:py-8 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0"
+  >
+    <Project
+      title="Polymarket Copilot"
+      status="Prototype"
+      statuses={['Closed Source']}
+      description="A self-hosted trading assistant for prediction markets: strategies are evaluated against technical indicators, and every proposed trade goes to Telegram or Discord for a human to approve or reject before anything executes."
+      highlights={[
+        'User wallet credentials are sealed with AES-256-GCM envelope encryption, each value carrying its own salt, IV, and auth tag',
+        'Eight background workers take their dependencies by injection rather than importing singletons, so the strategy and risk logic is tested in full without a database or queue',
+        'BullMQ pipeline with dead-letter queues, per-API sliding-window rate limiting, and quiet-hours deferral for notifications',
+      ]}
+      stack={[
+        'Bun',
+        'Hono',
+        'oRPC',
+        'Postgres', 'Drizzle',
+        'Redis',
+        'Next.js',
+      ]}
+    />
+    <Project
+      title="Waitlist & Referral System"
+      statuses={['Open Source', 'Solana']}
+      description="A complete waitlist flow with X sign-in, Solana wallet linking, and a referral leaderboard, built in under two hours as a scoped speed test and open-sourced as a template."
+      highlights={[
+        'Turborepo monorepo with five packages, typed end to end from Zod schemas through oRPC procedures to the client, with server and client env vars validated at separate boundaries',
+        'Referral codes match case-insensitively in SQL while preserving the original handle casing for display',
+        'Written up as a playbook on shipping this class of app quickly, including how to tell a real opportunity from a fake one',
+      ]}
+      stack={['Next.js', 'Turborepo', 'oRPC', 'Postgres', 'Drizzle', 'Bun']}
+      repoUrl="https://github.com/SivaramPg/tapdotfun-waitlist-referral-system"
+    />
+  </div>
+</section>

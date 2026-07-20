@@ -109,6 +109,26 @@ import SectionTitle from '../SectionTitle.astro'
       websiteLabel="Live Service"
     />
     <Project
+      title="Sentinel3"
+      status="Prototype"
+      statuses={['Closed Source', 'EVM']}
+      description="A pay-per-audit security service for Solidity contracts: submit a repo, get a verified findings report. Built end to end as a working prototype, never launched commercially."
+      highlights={[
+        'A consensus pipeline rather than a single model call: four analysis agents run in parallel, three jurors then vote on every candidate finding, and only deadlocked findings escalate to a judge model',
+        'Six static-analysis tools (Slither, Aderyn, Mythril, Echidna, Solhint, Surya) run alongside Foundry in purpose-built e2b sandboxes, so their output grounds the model rather than the reverse',
+        'Benchmarked against the SmartBugs Curated dataset with vulnerability annotations and suggestive filenames stripped first, to keep the models from reading the answers off the contracts',
+      ]}
+      stack={[
+        'OpenRouter',
+        'Hono',
+        'oRPC',
+        'Postgres', 'Drizzle',
+        'Redis',
+        'Next.js',
+        'Bun',
+      ]}
+    />
+    <Project
       title="Signal Brief"
       status="Internal Tooling"
       statuses={['Closed Source']}
