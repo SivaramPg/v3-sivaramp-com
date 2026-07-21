@@ -17,8 +17,8 @@ Self-taught engineer, shipping since 2018 across startups, client work, and his 
 ## Featured Work
 
 - [InferPlane](https://sivaramp.com/#featured-work): AI control plane for teams: governed model access, credit metering, retained LLM request logs, audit trails across providers (in stealth)
-- [stackfight](https://stackfight.sivaram.dev): Credit-billing and AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games (open source)
-- [1-cent-requests](https://1cent.sivaram.dev): Live x402 pay-per-request API marketplace, 14 endpoints for AI agents at $0.01 each, settled in USDC (open source)
+- [stackfight](https://stackfight.sivaram.dev): Credit-billing and AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games
+- [1-cent-requests](https://1cent.sivaram.dev): Live x402 pay-per-request API marketplace, 14 endpoints for AI agents at $0.01 each, settled in USDC
 - [varam.chat](https://varam-chat.sivaramp.com): Self-hosted multi-model AI chat platform routing 23 models through OpenRouter, with full inference telemetry (invite-only)
 - [Varam Analytics](https://varam-analytics.sivaramp.com): Self-hosted, cookieless web analytics on TimescaleDB, running in production (invite-only)
 - [Signal Brief](https://dev.to/sivarampg): Cost-aware multi-source LLM research pipeline over X, Reddit & Hacker News at ~$1/day (internal tooling; public output on dev.to)

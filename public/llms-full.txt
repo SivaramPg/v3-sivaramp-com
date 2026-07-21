@@ -20,7 +20,7 @@ An AI control plane for teams: governed model access, credit metering, retained 
 
 Stack: Hono, oRPC, Postgres, Drizzle, Redis, Trigger.dev, Stripe, Cloudflare
 
-### stackfight (Open Source)
+### stackfight
 
 A credit-billing & AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games.
 
@@ -30,9 +30,8 @@ A credit-billing & AI-usage-metering platform on Cloudflare Workers, exercised i
 
 Stack: Cloudflare Workers, Durable Objects, Stripe, OpenRouter, Postgres, Drizzle
 Live: https://stackfight.sivaram.dev
-Repo: https://github.com/SivaramPg/agent-vs-agent-poker-platform
 
-### 1-cent-requests (Open Source)
+### 1-cent-requests
 
 A live x402 pay-per-request API marketplace: 14 crypto/web-context endpoints for AI agents at $0.01 each, settled in USDC through signed HTTP 402 exchanges. No accounts, no API keys.
 
@@ -44,7 +43,7 @@ Stack: x402, USDC, Hono, Cloudflare Workers, Cloudflare D1, Drizzle
 Live: https://1cent.sivaram.dev
 Repo: https://github.com/SivaramPg/1-cent-requests
 
-### varam.chat (Invite-only, Closed Source)
+### varam.chat (Invite-only)
 
 A live, self-hosted multi-model AI chat platform routing 23 models through OpenRouter. Production plumbing throughout, running daily.
 
@@ -55,7 +54,7 @@ A live, self-hosted multi-model AI chat platform routing 23 models through OpenR
 Stack: OpenRouter, AI SDK, TanStack Start, Postgres, Drizzle, Redis, E2B
 Live: https://varam-chat.sivaramp.com
 
-### Varam Analytics (Invite-only, Closed Source)
+### Varam Analytics (Invite-only)
 
 Self-hosted, cookieless web analytics, running in production and powering the analytics on sivaramp.com itself.
 
@@ -66,7 +65,7 @@ Self-hosted, cookieless web analytics, running in production and powering the an
 Stack: Bun, Hono, TimescaleDB, Redis, Drizzle, Railway
 Live: https://varam-analytics.sivaramp.com
 
-### Signal Brief (Internal Tooling, Closed Source)
+### Signal Brief (Internal Tooling)
 
 A cost-aware, multi-source LLM research pipeline over X, Reddit & Hacker News, at ~$1/day all-in.
 
