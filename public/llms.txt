@@ -17,10 +17,11 @@ Self-taught engineer, shipping since 2018 across startups, client work, and his 
 ## Featured Work
 
 - [InferPlane](https://sivaramp.com/#featured-work): AI control plane for teams: governed model access, credit metering, retained LLM request logs, audit trails across providers (in stealth)
-- [stackfight](https://stackfight.sivaram.dev): Credit-billing and AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games (open source)
-- [1-cent-requests](https://1cent.sivaram.dev): Live x402 pay-per-request API marketplace, 14 endpoints for AI agents at $0.01 each, settled in USDC (open source)
+- [stackfight](https://stackfight.sivaram.dev): Credit-billing and AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games
+- [1-cent-requests](https://1cent.sivaram.dev): Live x402 pay-per-request API marketplace, 14 endpoints for AI agents at $0.01 each, settled in USDC
 - [varam.chat](https://varam-chat.sivaramp.com): Self-hosted multi-model AI chat platform routing 23 models through OpenRouter, with full inference telemetry (invite-only)
 - [Varam Analytics](https://varam-analytics.sivaramp.com): Self-hosted, cookieless web analytics on TimescaleDB, running in production (invite-only)
+- [Sentinel3](https://sivaramp.com/#featured-work): Pay-per-audit Solidity security service: multi-agent consensus pipeline plus six static-analysis tools in sandboxes (working prototype, never launched commercially)
 - [Signal Brief](https://dev.to/sivarampg): Cost-aware multi-source LLM research pipeline over X, Reddit & Hacker News at ~$1/day (internal tooling; public output on dev.to)
 
 ## Selected Client Work (closed source, architecture walkthroughs available)
@@ -34,12 +35,19 @@ Self-taught engineer, shipping since 2018 across startups, client work, and his 
 
 - [Prediction Market Contracts](https://github.com/SivaramPg/evm-simple-prediction-market-contract): Parimutuel binary prediction markets for EVM and Solana, with a guide series on dev.to
 - [pwa-icons](https://www.npmjs.com/package/pwa-icons): npm CLI turning one image into 118 production-ready PWA icons (2.5k+ downloads)
+- [branchyard](https://www.npmjs.com/package/branchyard): CLI that makes git worktrees practical: multi-branch workspaces, named sessions, and editor integration (open source)
+- [Display Your Bags](https://bags.sivaramp.com): Embeddable live SVG badge service for Bags.fm tokens, rendered server-side in Go
 - [Site Metadata Explorer](https://site-metadata.sivaramp.com): Audits a site's entire metadata surface in one scan
 - [rawdocs](https://sivaramp.com/#open-source-and-tools): Database-free docs proxy serving GitHub markdown to humans and LLMs (redeploying)
 - [Tuulkit](https://tuulkit.sixstrides.com): 25 browser-based developer utilities at the edge
 - [markdownbin](https://mdbin.sivaramp.com): Zero-knowledge markdown pastebin with client-side AES-256-GCM encryption
 - [Swapi.info](https://swapi.info): The Star Wars API, rebuilt for reliability
 - [Anaek Desilog](https://desilog.sivaramp.com): Free CC0 Desi/Indian placeholder-image APIs
+
+## Experiments & Prototypes
+
+- [Polymarket Copilot](https://sivaramp.com/#experiments-and-prototypes): Self-hosted human-in-the-loop trading assistant for prediction markets; every proposed trade needs human approval (prototype)
+- [Waitlist & Referral System](https://github.com/SivaramPg/tapdotfun-waitlist-referral-system): Complete waitlist flow with X sign-in, Solana wallet linking, and a referral leaderboard, built in under two hours (open source)
 
 ## Skills
 
