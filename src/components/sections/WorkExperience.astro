@@ -13,6 +13,14 @@ import Work from '../Work.astro'
       isRemote={true}
       jobDescription={[
         {
+          achievement: 'Hotly (creator-payments platform)',
+          achievementUrl: 'https://www.hotly.com',
+          description: [
+            'Led a security & privacy overhaul of message storage: per-message AWS KMS envelope encryption with a zero-downtime cutover path and fail-closed audit logging of admin access; detailed in Selected Client Work above',
+          ],
+          technologies: ['Go', 'AWS KMS', 'Postgres', 'Next.js'],
+        },
+        {
           achievement: 'SuperPower & Prolly.so (crypto-native AI client)',
           description: [
             'Sole engineer across an AI-agent commerce platform (metered LLM billing, on-chain USDT payments, automated VM fleet) and an AI-powered on-chain prediction-market platform (multi-LLM oracle, multi-chain AMM contracts); both detailed in Selected Client Work above',
@@ -27,14 +35,16 @@ import Work from '../Work.astro'
           technologies: ['Stripe', 'Polygon', 'Next.js', 'Postgres'],
         },
         {
-          achievement: 'Security-analytics platform (UK cybersecurity firm)',
+          achievement: 'Leo CybSec, Hoplon (security-analytics platform)',
+          achievementUrl: 'https://leocybsec.com/',
           description: [
             'Built a multi-tenant analytics product: 11 dashboards on Next.js server components over a typed Splunk query layer, with Azure AD B2C SAML SSO brokering per-tenant tokens via AWS Secrets Manager',
           ],
           technologies: ['Next.js', 'Splunk', 'Azure AD B2C', 'AWS'],
         },
         {
-          achievement: 'Equity-management SaaS (early-stage startup)',
+          achievement: 'Equisy (equity-management SaaS)',
+          achievementUrl: 'https://www.linkedin.com/company/equisy/',
           description: [
             'Designed the platform foundation: a multi-tenant Postgres domain model covering cap tables, ESOPs, and funding rounds with RBAC and audit logging, plus the Docker + GitHub Actions → Azure deployment pipeline',
           ],

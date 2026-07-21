@@ -79,7 +79,7 @@ Live output: https://dev.to/sivarampg
 
 ## Selected Client Work
 
-Closed-source engagements: the code is private, but architecture walkthroughs are available on request.
+Closed-source engagements: the code is private, but architecture walkthroughs are available on request. References available on request.
 
 ### SuperPower (Case Study, Closed Source)
 
@@ -97,12 +97,26 @@ Stack: OpenRouter, viem, BNB Chain, Privy, Hono, oRPC, Postgres, Drizzle, Digita
 
 An AI-powered, on-chain prediction-market platform, built as sole engineer through three client rebrands over ~13 months.
 
+- Core CPAMM contracts audited by ScaleBit (BitsLab): zero critical and zero major findings, with every finding remediated, including a rounding correction that now favors the pool
 - Multi-LLM consensus oracle (Claude + Gemini + Grok over multi-source evidence) autonomously resolving markets on-chain
 - Two-phase USDT checkout with advisory-lock inventory reservation and mempool-aware reconciliation crons
-- AMM contracts iterated through four fuzz-tested Solidity versions, with Solana (Rust) and Move ports
+- Four Solidity generations under a Foundry fuzz suite, from V5 through a post-audit V8 with configurable pool parameters, plus Solana (Rust) and Move ports
 - A scheduled job fleet, Telegram/Discord/Twitter bots, and a key-authenticated agent API with an MCP server
 
 Stack: Vercel AI SDK, Solidity, Foundry, Rust, Solana, tRPC, TimescaleDB, Trigger.dev
+
+### Hotly (Client work, Closed Source)
+
+A live creator-payments platform: fans send paid letters, creators answer on a weekly schedule and keep 100%. Brought in for a five-week security & privacy overhaul of message storage, spanning the Go + Postgres backend, the Next.js frontend, and the admin tool.
+
+- Per-message AWS KMS envelope encryption for private paid fan letters: AES-256-GCM data keys with AAD bound to thread and message IDs, backed by a normalized ciphertext and audit schema
+- Zero-downtime cutover design: encrypted writes with legacy plaintext fallback on read, an idempotent internal backfill endpoint behind an API key, and a cleanup migration that refuses to drop plaintext until every row is verifiably encrypted
+- Admin peek-to-reveal built fail-closed: messages stay hidden by default, and a decrypt request fails unless its audit row (actor, access path, grant mode) is persisted
+- Benchmarked per-message KMS decrypt latency (p50/p95) against production ciphertexts to validate render-time decryption cost before cutover
+- Earlier in the engagement: share-slug deep links and DOM-to-PNG share cards for public community notes, plus an AI reply-review dashboard for creator responses
+
+Stack: Go, AWS KMS, Postgres, Next.js
+Live: https://www.hotly.com
 
 ### SpotRoyale (Client work, Closed Source)
 
@@ -121,10 +135,11 @@ Live: https://sr-app-9f4e.vercel.app
 
 Independent Consultant.
 
+- Hotly (creator-payments platform, https://www.hotly.com): Led a security & privacy overhaul of message storage: per-message AWS KMS envelope encryption with a zero-downtime cutover path and fail-closed audit logging of admin access
 - SuperPower & Prolly.so (crypto-native AI client): Sole engineer across an AI-agent commerce platform (metered LLM billing, on-chain USDT payments, automated VM fleet) and an AI-powered on-chain prediction-market platform (multi-LLM oracle, multi-chain AMM contracts)
 - SpotRoyale (music-fintech client): Built a fractional music-royalty marketplace end-to-end: Stripe card + stablecoin checkout driving a settlement pipeline that mints ERC-721 ownership certificates on Polygon mainnet
-- Security-analytics platform (UK cybersecurity firm): Built a multi-tenant analytics product: 11 dashboards on Next.js server components over a typed Splunk query layer, with Azure AD B2C SAML SSO brokering per-tenant tokens via AWS Secrets Manager
-- Equity-management SaaS (early-stage startup): Designed the platform foundation: a multi-tenant Postgres domain model covering cap tables, ESOPs, and funding rounds with RBAC and audit logging, plus the Docker + GitHub Actions to Azure deployment pipeline
+- Leo CybSec, Hoplon (security-analytics platform, https://leocybsec.com/): Built a multi-tenant analytics product: 11 dashboards on Next.js server components over a typed Splunk query layer, with Azure AD B2C SAML SSO brokering per-tenant tokens via AWS Secrets Manager
+- Equisy (equity-management SaaS, https://www.linkedin.com/company/equisy/): Designed the platform foundation: a multi-tenant Postgres domain model covering cap tables, ESOPs, and funding rounds with RBAC and audit logging, plus the Docker + GitHub Actions to Azure deployment pipeline
 
 ### Open Consulting Group (2021 - 2025, Remote)
 
