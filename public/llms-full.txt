@@ -65,6 +65,16 @@ Self-hosted, cookieless web analytics, running in production and powering the an
 Stack: Bun, Hono, TimescaleDB, Redis, Drizzle, Railway
 Live: https://varam-analytics.sivaramp.com
 
+### Sentinel3 (Prototype, EVM)
+
+A pay-per-audit security service for Solidity contracts: submit a repo, get a verified findings report. Built end to end as a working prototype, never launched commercially.
+
+- A consensus pipeline rather than a single model call: four analysis agents run in parallel, three jurors then vote on every candidate finding, and only deadlocked findings escalate to a judge model
+- Six static-analysis tools (Slither, Aderyn, Mythril, Echidna, Solhint, Surya) run alongside Foundry in purpose-built e2b sandboxes, so their output grounds the model rather than the reverse
+- Benchmarked against the SmartBugs Curated dataset with vulnerability annotations and suggestive filenames stripped first, to keep the models from reading the answers off the contracts
+
+Stack: OpenRouter, Hono, oRPC, Postgres, Drizzle, Redis, Next.js, Bun
+
 ### Signal Brief (Internal Tooling)
 
 A cost-aware, multi-source LLM research pipeline over X, Reddit & Hacker News, at ~$1/day all-in.
@@ -195,6 +205,29 @@ Stack: TypeScript, Sharp, resvg, Bun
 npm: https://www.npmjs.com/package/pwa-icons
 Repo: https://github.com/SivaramPg/pwa-icons
 
+### branchyard (Open Source)
+
+A CLI that makes git worktrees practical: spin up several branches side by side, get an editor workspace wired to all of them, and tear the whole set down when you're done.
+
+- Creates multiple worktrees in one command, generates a multi-root editor workspace, and opens it in VS Code, Cursor, Windsurf, Zed, or Trae
+- Named sessions save and restore a working set of branches; orphaned worktrees are detected and pruned
+- Ships as executable TypeScript on Bun with schema-validated config, and only two runtime dependencies
+
+Stack: TypeScript, Bun
+npm: https://www.npmjs.com/package/branchyard
+Repo: https://github.com/SivaramPg/branchyard
+
+### Display Your Bags (Closed Source)
+
+An embeddable badge service for Bags.fm tokens: paste a token address, get a live SVG badge of its creator fees and market data to drop into a README or a site.
+
+- Badges are rendered server-side in Go with avatars inlined as base64, because remote images are blocked inside SVGs on GitHub and X, which is what makes them work anywhere
+- Layered per-source cache TTLs in Redis, with the SOL price falling through Jupiter to Binance to a floor value so a badge never fails to render
+- Runs on a single VPS behind nginx from a distroless image, with graceful shutdown, per-IP rate limiting, and stale-while-revalidate cache headers
+
+Stack: Go, Redis, React, Docker
+Live: https://bags.sivaramp.com
+
 ### Site Metadata Explorer (Closed Source)
 
 A live web tool that audits a site's entire metadata surface in one scan.
@@ -259,6 +292,31 @@ Free, CC0 Desi/Indian placeholder-image APIs for anyone who wants placeholders w
 Stack: Next.js, Vercel, Cloudflare Pages
 Live: https://desilog.sivaramp.com
 Repo: https://github.com/SivaramPg/desilog
+
+## Experiments & Prototypes
+
+Short, self-imposed builds. Deliberately scoped to a few days to see how far a stack gets under real time pressure.
+
+### Polymarket Copilot (Prototype, Closed Source)
+
+A self-hosted trading assistant for prediction markets: strategies are evaluated against technical indicators, and every proposed trade goes to Telegram or Discord for a human to approve or reject before anything executes.
+
+- User wallet credentials are sealed with AES-256-GCM envelope encryption, each value carrying its own salt, IV, and auth tag
+- Eight background workers take their dependencies by injection rather than importing singletons, so the strategy and risk logic is tested in full without a database or queue
+- BullMQ pipeline with dead-letter queues, per-API sliding-window rate limiting, and quiet-hours deferral for notifications
+
+Stack: Bun, Hono, oRPC, Postgres, Drizzle, Redis, Next.js
+
+### Waitlist & Referral System (Open Source, Solana)
+
+A complete waitlist flow with X sign-in, Solana wallet linking, and a referral leaderboard, built in under two hours as a scoped speed test and open-sourced as a template.
+
+- Turborepo monorepo with five packages, typed end to end from Zod schemas through oRPC procedures to the client, with server and client env vars validated at separate boundaries
+- Referral codes match case-insensitively in SQL while preserving the original handle casing for display
+- Written up as a playbook on shipping this class of app quickly, including how to tell a real opportunity from a fake one
+
+Stack: Next.js, Turborepo, oRPC, Postgres, Drizzle, Bun
+Repo: https://github.com/SivaramPg/tapdotfun-waitlist-referral-system
 
 ## Education
 
