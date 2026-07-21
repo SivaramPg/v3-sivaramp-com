@@ -1,4 +1,5 @@
 ---
+import hotlyImg from '../../assets/projects/hotly.png'
 import prollyImg from '../../assets/projects/prolly.png'
 import spotroyaleImg from '../../assets/projects/spotroyale.png'
 import superclawImg from '../../assets/projects/superclaw.png'
@@ -12,7 +13,8 @@ import SectionTitle from '../SectionTitle.astro'
     class="text-sm sm:text-base text-gray-700 dark:text-gray-300 -mt-1 sm:-mt-2"
   >
     Closed-source engagements: the code is private, but I'm happy to walk
-    through the architecture of any of these in detail.
+    through the architecture of any of these in detail. References available
+    on request.
   </p>
   <div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-800 [&>*]:py-8 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
     <Project
@@ -61,6 +63,24 @@ import SectionTitle from '../SectionTitle.astro'
         'TimescaleDB',
         'Trigger.dev',
       ]}
+    />
+    <Project
+      title="Hotly"
+      iconUrl="/projects/icons/hotly.png"
+      status="Client work"
+      statuses={['Closed Source']}
+      image={hotlyImg}
+      description="A live creator-payments platform: fans send paid letters, creators answer on a weekly schedule and keep 100%. Brought in for a five-week security & privacy overhaul of message storage, spanning the Go + Postgres backend, the Next.js frontend, and the admin tool."
+      highlights={[
+        'Per-message AWS KMS envelope encryption for private paid fan letters: AES-256-GCM data keys with AAD bound to thread and message IDs, backed by a normalized ciphertext and audit schema',
+        'Zero-downtime cutover design: encrypted writes with legacy plaintext fallback on read, an idempotent internal backfill endpoint behind an API key, and a cleanup migration that refuses to drop plaintext until every row is verifiably encrypted',
+        'Admin peek-to-reveal built fail-closed: messages stay hidden by default, and a decrypt request fails unless its audit row (actor, access path, grant mode) is persisted',
+        'Benchmarked per-message KMS decrypt latency (p50/p95) against production ciphertexts to validate render-time decryption cost before cutover',
+        'Earlier in the engagement: share-slug deep links and DOM-to-PNG share cards for public community notes, plus an AI reply-review dashboard for creator responses',
+      ]}
+      stack={['Go', 'AWS KMS', 'Postgres', 'Next.js']}
+      websiteUrl="https://www.hotly.com"
+      websiteLabel="Visit Hotly"
     />
     <Project
       title="SpotRoyale"

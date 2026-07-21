@@ -25,6 +25,7 @@ Self-taught engineer, shipping since 2018 across startups, client work, and his 
 
 ## Selected Client Work (closed source, architecture walkthroughs available)
 
+- [Hotly](https://www.hotly.com): Creator-payments platform (paid fan letters). Security & privacy overhaul of message storage: per-message AWS KMS envelope encryption with a zero-downtime cutover path and fail-closed audit logging.
 - [SuperPower](https://sivaramp.com/#selected-client-work): Crypto-native platform selling autonomous AI agents for USDT on BNB Chain, with auto-provisioned dedicated VMs. Built and operated solo in 15 weeks.
 - [Prolly.so](https://sivaramp.com/#selected-client-work): AI-powered on-chain prediction-market platform with a multi-LLM consensus oracle, built as sole engineer over ~13 months.
 - [SpotRoyale](https://sr-app-9f4e.vercel.app): Fractional music-royalty marketplace minting ERC-721 ownership certificates on Polygon mainnet.

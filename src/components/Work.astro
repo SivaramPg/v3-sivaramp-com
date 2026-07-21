@@ -13,6 +13,7 @@ interface Props {
   isRemote?: boolean
   jobDescription: {
     achievement: string
+    achievementUrl?: string
     description: string[]
     technologies: string[]
   }[]
@@ -89,9 +90,19 @@ const {
   </p>
   <div class="flex flex-col gap-4">
     {
-      jobDescription.map(({ achievement, description, technologies }) => (
+      jobDescription.map(({ achievement, achievementUrl, description, technologies }) => (
         <div class="">
-          <h6 class="font-semibold text-lg">{achievement}</h6>
+          {achievementUrl ? (
+            <a
+              target="_blank"
+              href={achievementUrl}
+              class="hover:underline underline-offset-4 hover:text-indigo-600 dark:hover:text-indigo-400"
+            >
+              <h6 class="font-semibold text-lg">{achievement}</h6>
+            </a>
+          ) : (
+            <h6 class="font-semibold text-lg">{achievement}</h6>
+          )}
           <ul class="list-disc pl-8 mb-2">
             {description.map((value) => (
               <li class="list-item w-full md:w-3/4 text-sm sm:text-base text-gray-700 dark:text-gray-300 text-balance">
