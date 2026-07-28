@@ -40,8 +40,8 @@ Self-taught engineer, shipping since 2018 across startups, client work, and his 
 - [Site Metadata Explorer](https://site-metadata.sivaramp.com): Audits a site's entire metadata surface in one scan
 - [rawdocs](https://sivaramp.com/#open-source-and-tools): Database-free docs proxy serving GitHub markdown to humans and LLMs (redeploying)
 - [Tuulkit](https://tuulkit.sixstrides.com): 25 browser-based developer utilities at the edge
-- [markdownbin](https://mdbin.sivaramp.com): Zero-knowledge markdown pastebin with client-side AES-256-GCM encryption
-- [Swapi.info](https://swapi.info): The Star Wars API, rebuilt for reliability
+- [markdownbin](https://mdbin.sivaramp.com): Zero-knowledge markdown pastebin: client-side AES-256-GCM encryption, statically rendered pastes, and correct rendering in every writing system (NFC-normalised passwords, CJK-aware markdown)
+- [Swapi.info](https://swapi.info): Static-first Star Wars API serving 6.1M requests across 33K unique edge clients in 30 days, ~80% from CDN cache
 - [Anaek Desilog](https://desilog.sivaramp.com): Free CC0 Desi/Indian placeholder-image APIs
 
 ## Experiments & Prototypes

@@ -138,26 +138,45 @@ import SectionTitle from '../SectionTitle.astro'
       statuses={['Closed Source']}
       iconUrl="/projects/icons/markdownbin.png"
       image={markdownbinImg}
-      description="A zero-knowledge markdown pastebin, live in production since 2025."
+      description="A zero-knowledge markdown pastebin: end-to-end encrypted, statically rendered, and correct in every writing system. Live in production since 2025."
       highlights={[
         'Client-side AES-256-GCM encryption (PBKDF2, 310k iterations) with self-decrypting share links',
         'The server only ever stores ciphertext; passwords ride the URL hash without touching the wire',
-        'Full GFM rendering with Mermaid and KaTeX',
+        'Passwords are NFC-normalised before key derivation, so an accented or Korean password derives the same key on macOS, Windows and Linux',
+        "Correct emphasis and autolink boundaries in Chinese, Japanese and Korean, where CommonMark's delimiter rules break next to ideographic punctuation",
+        'Every paste is prerendered as an immutable static page; a shared link never re-renders and never hits the database',
+        'Live preview runs the same renderer as the published page, in a CodeMirror 6 editor assembled from hand-picked extensions',
       ]}
-      stack={['Next.js', 'Postgres', 'Drizzle', 'Web Crypto', 'Brotli']}
+      stack={[
+        'Next.js',
+        'React 19',
+        'Tailwind 4',
+        'CodeMirror 6',
+        'Shiki',
+        'KaTeX',
+        'Mermaid',
+        'Web Crypto',
+        'Brotli',
+      ]}
       websiteUrl="https://mdbin.sivaramp.com"
       websiteLabel="Live Site"
+      extraLinks={[
+        {
+          href: 'https://dev.to/sivarampg/series/42542',
+          label: 'Changelog Series',
+        },
+      ]}
     />
     <Project
       title="Swapi.info"
       statuses={['Open Source']}
       iconUrl="/projects/icons/swapi.png"
       image={swapiImg}
-      description="The Star Wars API, rebuilt for reliability: a community drop-in replacement used for prototyping and teaching."
+      description="An open-source, static-first Star Wars API serving 6.1M requests across 33K unique edge clients in 30 days, with 80% handled by CDN cache."
       highlights={[
-        'Serverless, file-based GET API and data explorer serving static JSON from the CDN edge',
-        'No keys, no rate limits; resilient to traffic surges by architecture',
-        'Runs its own public status page',
+        'Static JSON architecture: no application server or database, just clean CDN rewrites',
+        'Approximately 205K requests served daily, most offloaded to Cloudflare',
+        'No keys, no rate limits, with public uptime monitoring',
       ]}
       stack={['Next.js', 'Static JSON', 'CDN edge']}
       websiteUrl="https://swapi.info"
