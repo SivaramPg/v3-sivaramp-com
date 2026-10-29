@@ -7,6 +7,7 @@ interface StatusBadge {
 
 const badges: Record<string, StatusBadge> = {
   'In Stealth': { icon: 'lucide:eye-off', color: '#8b5cf6' },
+  'Pre-launch': { icon: 'lucide:rocket', color: '#ec4899' },
   'Invite-only': { icon: 'lucide:lock', color: '#f59e0b' },
   'Case Study': { icon: 'lucide:book-open', color: '#0ea5e9' },
   'Client work': { icon: 'lucide:briefcase', color: '#10b981' },

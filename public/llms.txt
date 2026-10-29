@@ -16,6 +16,11 @@ Self-taught engineer, shipping since 2018 across startups, client work, and his 
 
 ## Featured Work
 
+- [GreetWala](https://greetwala.com): Live catalogue of AI-generated greeting cards for Indian festivals in 12 languages: 1,520 cards from an automated pipeline with jury-verified text and vision QA
+- [PostBoo](https://sivaramp.com/#featured-work): Social media scheduler across 12 platforms with an MCP server and typed REST API for agents (pre-launch)
+- [Sarathi](https://sivaramp.com/#featured-work): AI strategy studio and execution bridge for Indian intraday F&O; TradingView alerts become Telegram order cards that only reach the broker after a human taps Confirm (pre-launch)
+- [Riby](https://runitby.you): The pager for AI agents: agents page their human over MCP for permissions, plan checks and steering, answered in one tap from Telegram, Discord or the dashboard, with default-deny expiry (pre-launch)
+- [Sourcewell](https://sivaramp.com/#featured-work): Private, local-first research gateway giving coding agents one interface to Context7, Exa, Firecrawl, Parallel and Tavily, with an encrypted key vault and full persisted evidence (internal tooling)
 - [InferPlane](https://sivaramp.com/#featured-work): AI control plane for teams: governed model access, credit metering, retained LLM request logs, audit trails across providers (in stealth)
 - [stackfight](https://stackfight.sivaram.dev): Credit-billing and AI-usage-metering platform on Cloudflare Workers, exercised in production by live agent-vs-agent games
 - [1-cent-requests](https://1cent.sivaram.dev): Live x402 pay-per-request API marketplace, 14 endpoints for AI agents at $0.01 each, settled in USDC

@@ -10,6 +10,58 @@ Self-taught engineer, shipping for 8+ years (since 2018) across startups, client
 
 ## Featured Work
 
+### GreetWala
+
+A live catalogue of AI-generated greeting cards for Indian festivals and occasions in 12 languages, with 1,520 cards across 190 collections produced and published by an automated pipeline.
+
+- Greeting text never comes from the image model: idiomatic phrases are drafted with web search and verified by a three-model jury (2/3 majority), and generation aborts before spending if a spec carries an unverified phrase
+- Vision-model QA on the published artifact catches broken Indic conjuncts, wrong matras and clipped text; failures regenerate idempotently, converging from 93% to 99.3% pass in two rounds
+- Prerendered pages on Cloudflare Workers and a zero-egress Tigris image CDN serving watermarked derivatives, with clean masters kept private behind presigned downloads
+
+Stack: OpenRouter, Sharp, TanStack Start, Cloudflare Workers, Hono, Postgres, Drizzle, Railway
+Live: https://greetwala.com
+
+### PostBoo (Pre-launch)
+
+Social media scheduling across 12 platforms, with an MCP server and a typed REST API so AI agents can schedule posts as well as people.
+
+- Two-level publish state machine on pg-boss in Postgres: an attempt row is written before every platform call, and unknown outcomes go to a verifying reconciler instead of a blind retry, because a double post is worse than a missed one
+- Twelve providers behind one OAuth/publish interface with a normalized error taxonomy; tokens are AES-256-GCM encrypted and refreshed single-flight under row locks, since X and TikTok rotate refresh tokens on use
+- OAuth-granted MCP access with per-plan quotas enforced by atomic conditional increments, a DNS-rebind-aware SSRF guard for Mastodon instances, and webhook-mirrored billing with out-of-order event protection
+
+Stack: Hono, oRPC, Postgres, Drizzle, pg-boss, MCP, TanStack Start, Cloudflare Workers
+
+### Sarathi (Pre-launch)
+
+An AI strategy studio and execution bridge for Indian intraday F&O. A trader's own TradingView alert becomes an order card in Telegram and on the web, and nothing reaches their broker until they tap Confirm.
+
+- Compliance by construction: no custody and no autonomous mode, so the human confirm is a required step in the data model; one decide() path serves the Telegram bot, the dashboard and the expiry sweeper, and every signal, decision and fill is journaled
+- Per-user webhooks that acknowledge inside TradingView's 3-second timeout before Telegram delivery, with dedupe, an instrument-universe gate, and envelope-encrypted broker credentials under rotatable keys
+- A strategy-studio agent that writes and validates Pine Script v6 with batched human-in-the-loop questions and versioned diffs, billed from an idempotent prepaid-credit ledger through budget-capped per-user OpenRouter keys
+
+Stack: Hono, oRPC, Postgres, Drizzle, Telegram, OpenRouter, Stripe, Clerk
+
+### Riby (Pre-launch)
+
+The pager for AI agents. An agent in Claude Code, Cursor or any MCP harness pages its human for a permission, a plan check or a steering decision; the request lands in Telegram, Discord or the dashboard, and one tap sends the answer back to the waiting agent.
+
+- Requests block correctly where hosted tools time out: a local stdio MCP server keeps the call alive with progress notifications, and the API wakes the waiting agent with a Redis push over long-poll
+- Safe by default: unanswered requests expire to deny after a six-hour TTL, the first answer wins atomically across every channel, and chat messages edit in place once resolved
+- An append-only on-device ledger lets a crashed agent resume exactly where it left off, alongside device-code CLI login, hashed agent tokens, idempotent request creation and hard payload caps at the API
+
+Stack: MCP, Hono, oRPC, Postgres, Drizzle, Redis, Telegram, TanStack Start
+Live: https://runitby.you
+
+### Sourcewell (Internal Tooling)
+
+A private, local-first research gateway that gives coding agents one loopback-only interface to five web-research providers: Context7, Exa, Firecrawl, Parallel and Tavily. It returns the evidence providers found, in full, and never writes its own summaries.
+
+- AES-256-GCM credential vault (macOS Keychain or Docker file key) that rotates across provider keys with per-credential concurrency leases, pacing, cooldowns and stale-lease recovery
+- Every request, execution, artifact and finding persisted in SQLite, so index views stay small and full evidence can be inspected later without a second paid provider call
+- Near-duplicate clustering and conservative independent-source counts that never hide or rerank evidence, plus a Better Auth admin console and a Docker Compose stack bound to 127.0.0.1 behind Caddy
+
+Stack: Hono, oRPC, SQLite, Drizzle, Better Auth, TanStack Start, Docker
+
 ### InferPlane (In Stealth)
 
 An AI control plane for teams: governed model access, credit metering, retained LLM request logs, and audit trails across providers. Currently building in stealth.

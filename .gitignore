@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# local-only working docs (articles, drafts, notes) — not for the public repo
+docs/
