@@ -3,7 +3,7 @@
 ---
 
 <dialog id="lightbox" aria-label="Enlarged project image">
-  <img id="lightbox-img" src="" alt="" />
+  <img id="lightbox-img" alt="" />
 </dialog>
 
 <style>
@@ -12,14 +12,18 @@
     border: 0;
     padding: 0;
     background: transparent;
-    width: min(96vw, 1320px);
+    /* Fit both axes: never wider than the viewport, never taller than 92dvh. */
+    width: min(96vw, 1320px, calc(92dvh * var(--ar, 1.9)));
     max-width: none;
+    max-height: none;
     overflow: visible;
     outline: none;
   }
   #lightbox img {
+    display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: var(--ar, 1.9);
     border-radius: 0.75rem;
     box-shadow: 0 24px 80px rgb(0 0 0 / 0.45);
     outline: none;
@@ -28,9 +32,19 @@
     background: rgb(0 0 0 / 0.65);
     backdrop-filter: blur(4px);
   }
+</style>
+
+<style is:global>
+  /* View-transition pseudo-elements live on the root, so these must be global. */
   ::view-transition-group(lightbox) {
     animation-duration: 300ms;
     animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    /* Drop the morph; the old and new snapshots still cross-fade in place. */
+    ::view-transition-group(*) {
+      animation: none;
+    }
   }
 </style>
 
@@ -49,6 +63,9 @@
 
   function open(thumb: HTMLImageElement) {
     activeThumb = thumb
+    if (thumb.naturalWidth && thumb.naturalHeight) {
+      dialog.style.setProperty('--ar', String(thumb.naturalWidth / thumb.naturalHeight))
+    }
     dialogImg.src = thumb.dataset.full || thumb.currentSrc || thumb.src
     dialogImg.alt = thumb.alt
     thumb.style.viewTransitionName = 'lightbox'

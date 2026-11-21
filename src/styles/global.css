@@ -21,3 +21,21 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+/* Shared link-button surfaces. `btn` follows the theme; `btn-primary` is the
+   inverse (dark in light mode, light in dark mode) for primary actions. */
+@utility btn {
+  @apply rounded border border-gray-300 bg-gray-50 text-gray-900 transition-[box-shadow,background-color,scale] duration-150 ease-out hover:shadow-md active:scale-[0.96] dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-800;
+}
+
+@utility btn-primary {
+  @apply rounded border border-gray-900 bg-gray-900 text-white transition-[box-shadow,background-color,scale] duration-150 ease-out hover:bg-gray-800 hover:shadow-md active:scale-[0.96] dark:border-gray-200 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-white;
+}
+
+/* Keep the page still behind the open lightbox. */
+html {
+  scrollbar-gutter: stable;
+}
+html:has(#lightbox[open]) {
+  overflow: hidden;
+}

@@ -1,5 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components'
+
+const links = [
+  { href: 'https://github.com/SivaramPg', label: 'GitHub', icon: 'simple-icons:github' },
+  { href: 'https://www.linkedin.com/in/sivaram-p/', label: 'LinkedIn', icon: 'simple-icons:linkedin' },
+  { href: 'https://blog.sivaramp.com/', label: 'Blog', icon: 'simple-icons:rss' },
+  { href: 'https://sivarampg.medium.com/', label: 'Medium', icon: 'simple-icons:medium' },
+  { href: 'https://dev.to/sivarampg', label: 'DEV Community', icon: 'simple-icons:devdotto' },
+  { href: 'https://x.com/SivaramPg', label: 'X (Twitter)', icon: 'simple-icons:x' },
+  { href: 'mailto:dev.sivaramp@gmail.com', label: 'Email Address', icon: 'email' },
+]
 ---
 
 <footer
@@ -10,65 +20,17 @@ import { Icon } from 'astro-icon/components'
   </p>
 
   <section class="flex gap-8 items-center flex-wrap">
-    <a target="_blank" href="https://github.com/SivaramPg">
-      <img
-        src="/icons/github.svg"
-        alt="Github"
-        class="w-5 md:w-6 dark:invert"
-        width="24"
-        height="24"
-      />
-    </a>
-    <a
-      target="_blank"
-      href="https://www.linkedin.com/in/sivaram-p/"
-    >
-      <img
-        src="/icons/linkedin.svg"
-        alt="LinkedIn"
-        class="w-5 md:w-6 dark:invert"
-        width="24"
-        height="24"
-      />
-    </a>
-    <a target="_blank" href="https://blog.sivaramp.com/" aria-label="Blog">
-      <Icon
-        name="lucide:rss"
-        class="w-5 h-5 md:w-6 md:h-6 text-gray-900 dark:text-gray-100"
-      />
-    </a>
-    <a target="_blank" href="https://sivarampg.medium.com/">
-      <img
-        src="/icons/medium.svg"
-        alt="Medium"
-        class="w-5 md:w-6 dark:invert"
-        width="24"
-        height="24"
-      />
-    </a>
-    <a target="_blank" href="https://dev.to/sivarampg" aria-label="DEV Community">
-      <Icon
-        name="simple-icons:devdotto"
-        class="w-5 h-5 md:w-6 md:h-6 text-gray-900 dark:text-gray-100"
-      />
-    </a>
-    <a target="_blank" href="https://x.com/SivaramPg">
-      <img
-        src="/icons/x.svg"
-        alt="X (Twitter)"
-        class="w-5 md:w-6 dark:invert"
-        width="24"
-        height="24"
-      />
-    </a>
-    <a target="_blank" href="mailto:dev.sivaramp@gmail.com">
-      <img
-        src="/icons/email.svg"
-        alt="Email Address"
-        class="w-5 md:w-6 dark:invert"
-        width="24"
-        height="24"
-      />
-    </a>
+    {
+      links.map(({ href, label, icon }) => (
+        <a
+          target="_blank"
+          href={href}
+          aria-label={label}
+          class="text-gray-900 dark:text-gray-100"
+        >
+          <Icon name={icon} class="w-5 h-5 md:w-6 md:h-6" aria-hidden="true" />
+        </a>
+      ))
+    }
   </section>
 </footer>

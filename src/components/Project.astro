@@ -149,7 +149,7 @@ const fullImage = image
             <a
               target="_blank"
               href={href}
-              class="border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0 dark:text-black"
+              class="btn-primary flex gap-2 items-center justify-center p-2"
             >
               <Icon name={icon} class="w-4 h-4" />
               <p class="font-semibold text-sm">{label}</p>
@@ -165,7 +165,7 @@ const fullImage = image
         <Image
           src={image}
           alt={imageAlt ?? `${title} preview`}
-          class="w-full aspect-[1.9/1] object-cover rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 cursor-zoom-in"
+          class="w-full aspect-[1.9/1] object-cover rounded-lg outline -outline-offset-1 outline-black/10 dark:outline-white/10 bg-gray-100 dark:bg-gray-900 cursor-zoom-in"
           loading="lazy"
           format="webp"
           widths={[480, 800, 1200]}
@@ -179,7 +179,7 @@ const fullImage = image
               <a
                 target="_blank"
                 href={href}
-                class="odd:last:col-span-2 border rounded flex gap-2 items-center justify-center p-2 hover:shadow-md duration-100 transition-all bg-gray-50 cursor-pointer invert dark:invert-0 dark:text-black"
+                class="odd:last:col-span-2 btn-primary flex gap-2 items-center justify-center p-2"
               >
                 <Icon name={icon} class="w-4 h-4" />
                 <p class="font-semibold text-sm">{label}</p>
